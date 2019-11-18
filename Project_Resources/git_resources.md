@@ -2,6 +2,20 @@ This is a simple Git Tutorial of the commands I use the most often.
 
 ### Intro to git
 
+#### Working on a shared branch:
+
+After you've written your code
+```shell
+git add < RELATIVE_FILE_PATHS >
+git commit -m "Your messages"
+git pull
+git push
+```
+
+Avoid using `force` for the time being
+
+#### Going ham on your own branch
+
 1. To make a new branch:
 
 ```shell
@@ -88,7 +102,19 @@ git s
 Git merges aren't apocalyptic. They're just a nuissance most of the time. Apocalyptic situations occur when you accidentally delete a branch, screw up the Head of the branch, or even accidentally revert back and delete all your progress. Don't worry, I've done all of those. Here are some commands to look into.
 
 ```shell
-git reflog # lets you look into the reference log, displays the comments, and then lets you go see which commit you need to go to.
-# make a branch from that commit, do your days work, then once that branch works, merge it to master, then clean up branches afterwards.
-git fsck # you fscked up. You reverted HARD and accidentally deleted the entire day's work. You need to go to Github's cloud and find it.
+git reflog # lets you look into the reference log, displays the commits and overall structure. 
+git fsck # you fscked up. You reverted HARD and accidentally deleted the entire day's work. 
 ```
+
+  * In general, once you recover what you want, make a branch, do your stuff, push it up to github, and THEN attempt to merge it to master.
+  * We can clean up branches afterwards.
+
+### Deleting branches 
+
+```shell
+  git branch -d < branch_name > # preferred
+  git branch -D branch_name # not as ideal
+```
+
+  * `-D`is forced. It'll force a delete. It's riskier.
+  * `-d` won't let you delete until you merge the changes over. 
