@@ -54,6 +54,12 @@ git push
 
 ### What are commands I use often?
 
+#### To view all branches available, I use
+
+```shell
+git branch
+```
+
 #### To see what git I've done, I use
 ```shell
 git l # abbreviated
