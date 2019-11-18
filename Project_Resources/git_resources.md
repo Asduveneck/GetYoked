@@ -117,4 +117,4 @@ git fsck # you fscked up. You reverted HARD and accidentally deleted the entire 
 ```
 
   * `-D`is forced. It'll force a delete. It's riskier.
-  * `-d` won't let you delete until you merge the changes over. 
+  * `-d` won't let you delete until you merge the changes over. g
