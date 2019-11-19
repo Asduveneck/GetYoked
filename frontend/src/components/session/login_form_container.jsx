@@ -56,10 +56,11 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    return null (
-      
+    return  (
+      <div>
+        this works
+      </div>
     //   <div className="background">
-    //     <GreetingContainer />
     //     {/* <div className="login-form-container"> */}
     //     <form onSubmit={this.handleSubmit} className="login-form-box">
     //       <div className="signInMessage">Sign In</div>
