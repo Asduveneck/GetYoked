@@ -52,6 +52,22 @@ git push
   * If it's a new branch and you haven't pushed before, this will return something like `no upstream branch`. That's okay. 
   * Just go to the previous push command and run that instead.
 
+
+#### How do I merge branches?
+
+  If you are currently on branch B, and you want to merge branch B into branch A,
+
+1. Change to branch A 
+```shell
+git checkout branch_A
+```
+2. Merge branch B into branch A
+```shell
+git merge branch_B
+```
+
+Personally, don't merge branches until you get someone else to double check!
+
 ### What are commands I use often?
 
 #### To view all branches available, I use
