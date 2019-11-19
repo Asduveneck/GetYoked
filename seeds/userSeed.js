@@ -16,7 +16,7 @@ User.create([
   weight: 160,
   activity: "low",
   goals: "",
-  achievement: null
+  achievement: 0
   },
   {
   username: "Super_Buff_Dude",
@@ -26,7 +26,7 @@ User.create([
   weight: 210,
   activity: "low",
   goals: "lose weight",
-  achievement: null
+  achievement: 1
   },
   {
   username: "Maureep",
@@ -36,7 +36,7 @@ User.create([
   weight: 108,
   activity: "medium",
   goals: "Evolve",
-  achievement: null
+  achievement: 2
   },
   {
   username: "Kazu",
@@ -46,7 +46,7 @@ User.create([
   weight: 140,
   activity: "intense",
   goals: "Hakone Ekiden",
-  achievement: "20km"
+  achievement: 3 // "20km"
   },
   {
   username: "ZaShaPaSha",
@@ -56,7 +56,7 @@ User.create([
   weight: 165,
   activity: "intense",
   goals: "ONEPUNCHMANZ",
-  achievement: "genos"
+  achievement: 95 // "genos"
   },
   {
   username: "RickAndMorty",
@@ -66,6 +66,6 @@ User.create([
   weight: 130,
   activity: "medium",
   goals: "RickiestRick",
-  achievement: "MortiestMorty"
+  achievement: 1 // "MortiestMorty"
   },
 ]);
