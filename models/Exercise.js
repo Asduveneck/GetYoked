@@ -11,7 +11,7 @@ const ExerciseSchema = new Schema({
     required: true
   },
   duration: {
-    type: String,
+    type: Number,
     required: false
   },
   sets: {
@@ -22,6 +22,10 @@ const ExerciseSchema = new Schema({
     type: Number,
     required: false
   },
+  weight: {
+    type: Number,
+    required: false
+  }
 });
 
 module.exports = Exercise = mongoose.model('exercises', ExerciseSchema);
