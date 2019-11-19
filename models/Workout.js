@@ -17,6 +17,10 @@ const WorkoutSchema = new Schema({
   description: {
     type: String,
     required: false
+  },
+  user: { // workout belongs to a user...
+    type: Schema.Types.ObjectId,
+    ref: 'users'
   }
 });
 
