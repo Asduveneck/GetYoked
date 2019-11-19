@@ -1,12 +1,17 @@
-// import WorkoutForm from './workout_form';
-// import { connect } from 'react-redux';
+import WorkoutForm from './workout_form';
+import { connect } from 'react-redux';
 
-// const msp = (state) => {}
+const msp = (state) => {
+    return {
+      currentUser: state.session.user
+    //   FIND: need to acess workout
+    };
+}
 
-// const mdp = dispatch => {
-//     return {
-//         fetchWorkout: (id) => dispatch(fetchWorkout(id))
-//     }
-// }
+const mdp = dispatch => {
+    return {
+        fetchWorkout: (id) => dispatch(fetchWorkout(id))
+    }
+}
 
-// export default connect(msp, mdp)(WorkoutForm)
+export default connect(msp, mdp)(WorkoutForm)
