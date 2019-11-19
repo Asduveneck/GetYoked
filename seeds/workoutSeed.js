@@ -7,4 +7,4 @@ const Workout = require("../models/Workout");
 
 Workout.collection.drop();
 
-Workout.create([{}]);
+Workout.create([]);
