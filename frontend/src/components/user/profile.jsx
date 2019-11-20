@@ -1,7 +1,9 @@
-import React, { Component } from 'react'
+import React from 'react'
 import UserInfo from './user_info'
+import UserEditForm from "./user_edit_form"
+import UserWorkouts from './user_workouts'
 
-class Profile extends Component {
+class Profile extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
@@ -10,6 +12,16 @@ class Profile extends Component {
         }
         this.beginEdit = this.beginEdit.bind(this)
         this.cancelEdit = this.cancelEdit.bind(this)
+    }
+
+    componentDidMount() {
+        this.props.fetchUser(this.props.match.params.id)
+    }
+
+    componentDidUpdate(prevProps) {
+        if (this.props.match.params.id !== prevProps.match.params.id) {
+            this.props.fetchUser(this.props.match.params.id)
+        }
     }
 
     selectTab(index) {
@@ -58,7 +70,7 @@ class Profile extends Component {
         } else if (this.state.selectedTab === 2) {
             currentTab = (
                 // FIND ME how is workout info stored in state?
-                <WorkoutHistory />
+                <UserWorkouts />
             )
         }
 
