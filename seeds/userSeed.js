@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const axios = require("axios");
 // const { port, db, secret } = require("../config/env");
 // mongoose.Promise = require("bluebird");
 // mongoose.connect(db);
@@ -9,7 +10,13 @@ User.collection.drop();
 const Workout = require("../models/Workout");
 const workouts = Workout.collection;
 
-User.create([
+/*
+
+https://www.robinwieruch.de/mongodb-express-setup-tutorial
+https://mongoosejs.com/docs/api.html#model_Model.insertMany
+*/
+
+User.create([ //insertMany
   {			
   username: "realYoungJun",
   password: "!password",
