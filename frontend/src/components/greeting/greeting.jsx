@@ -11,18 +11,12 @@ class Greeting extends React.Component {
     if (this.props.location.pathname === '/signup') {
       return (
       <div>
-          <Link className="" to="/login">Sign In</Link>
+          <Link className="" to={"/login"}>Sign In</Link>
       </div>
-    )
-  }
-
-    else if (this.props.location.pathname === '/login') {
-      return (
-       null
-
       )
-};
-  }
-};
+    }; 
+  return (null)
+  };
+}
 
 export default Greeting;

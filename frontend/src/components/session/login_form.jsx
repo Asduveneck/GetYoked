@@ -1,20 +1,25 @@
 import React from "react";
 // import GreetingContainer from "../greeting/greeting_container";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       username: "",
-      password: ""
+      password: "",
+      errors: {}
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.login = this.login.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
-  componentDidMount() {
-    this.props.clearErrors();
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.signedIn === true) {
+      this.props.history.push("/browse");
+    }
+    
+    this.setState({ errors: nextProps.errors });
   }
 
   update(field) {
@@ -27,9 +32,7 @@ class LoginForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = Object.assign({}, this.state);
-    this.props.processForm(user).then(() => {
-      this.props.history.push("/browse");
-    });
+    this.props.processForm(user);
   }
 
   // login(e) {
@@ -48,7 +51,7 @@ class LoginForm extends React.Component {
   renderErrors() {
     return (
       <ul>
-        {this.props.errors.map((error, i) => (
+        {Object.values(this.state.errors).map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
@@ -56,7 +59,7 @@ class LoginForm extends React.Component {
   }
 
   render() {
-    return  (
+    return (
       <div className="background">
         {/* <iframe  width="360" height="480" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/workout-egg-pun-l2JhB4Sp6hz37lU1W">via GIPHY</a></p>
         <div className="login-form-container"> */}
@@ -69,7 +72,7 @@ class LoginForm extends React.Component {
             value={this.state.username}
             onChange={this.update("username")}
             className="login-input"
-            placeholder="Email"
+            placeholder="Username"
           />
           <input
             type="password"
@@ -86,14 +89,13 @@ class LoginForm extends React.Component {
             onClick={this.login}
           />
           <div className="loginErrors">{this.renderErrors()}</div>
-          <Link className="signupLink" to="/signup">
+          <Link className="signupLink" to={"/signup"}>
             SIGNUP
           </Link>
         </form>
-     
       </div>
     );
   }
 }
 
-export default LoginForm;
+export default withRouter(LoginForm);
