@@ -1,6 +1,33 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
+const ExerciseSchema = new Schema({
+  name: {
+    type: String,
+    required: true
+  },
+  description: {
+    type: String,
+    required: true
+  },
+  duration: {
+    type: Number,
+    required: false
+  },
+  sets: {
+    type: Number,
+    required: false
+  },
+  reps: {
+    type: Number,
+    required: false
+  },
+  weight: {
+    type: Number,
+    required: false
+  }
+});
+
 const WorkoutSchema = new Schema({
   name: {
     type: String,
@@ -18,9 +45,12 @@ const WorkoutSchema = new Schema({
     type: String,
     required: false
   },
-  user: { // workout belongs to a user...
-    type: Schema.Types.ObjectId,
-    ref: 'users'
+  // user: { // workout belongs to a user...
+  //   type: Schema.Types.ObjectId,
+  //   ref: 'users'
+  // }
+  exercises: {
+    type: [ExerciseSchema]
   }
 });
 
