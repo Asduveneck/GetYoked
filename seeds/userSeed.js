@@ -15,7 +15,7 @@ User.create([
   height: 69,
   weight: 160,
   activity: "low",
-  goals: "",
+  goals: "5k",
   achievement: 0
   },
   {
@@ -25,7 +25,7 @@ User.create([
   height: 68,
   weight: 210,
   activity: "low",
-  goals: "lose weight",
+  goals: "5k",
   achievement: 1
   },
   {
@@ -35,7 +35,7 @@ User.create([
   height: 60,
   weight: 108,
   activity: "medium",
-  goals: "Evolve",
+  goals: "5k",
   achievement: 2
   },
   {
@@ -45,7 +45,7 @@ User.create([
   height: 68,
   weight: 140,
   activity: "intense",
-  goals: "Hakone Ekiden",
+  goals: "5k",
   achievement: 3 // "20km"
   },
   {
@@ -55,7 +55,7 @@ User.create([
   height: 68,
   weight: 165,
   activity: "intense",
-  goals: "ONEPUNCHMANZ",
+  goals: "5k",
   achievement: 95 // "genos"
   },
   {
@@ -65,7 +65,7 @@ User.create([
   height: 64,
   weight: 130,
   activity: "medium",
-  goals: "RickiestRick",
+  goals: "5k",
   achievement: 1 // "MortiestMorty"
   },
 ]);
