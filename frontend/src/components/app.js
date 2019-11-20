@@ -1,5 +1,6 @@
 import React from 'react';
-import { Switch } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
+import ProfileContainer from "./user/profile_container";
 
 const App = () => (
   <div>
@@ -7,7 +8,7 @@ const App = () => (
     <Switch>
     {/* routes for login and signup */}
     {/* routes for workouts */}
-    {/* route for profile */}
+      <Route path='/users/:id' component={ProfileContainer} />
     </Switch>
     {/* footer? */}
   </div>
