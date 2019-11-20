@@ -16,7 +16,7 @@ https://www.robinwieruch.de/mongodb-express-setup-tutorial
 https://mongoosejs.com/docs/api.html#model_Model.insertMany
 */
 
-User.create([ //insertMany
+User.insertMany([ //insertMany
   {			
   username: "realYoungJun",
   password: "!password",
@@ -96,6 +96,15 @@ User.collection.findOneAndUpdate(
 //     })
 //   }} 
 // );
+
+// FINDME TEST!
+console.log("FINDME");
+console.log(
+  workouts.findOne({
+    name: "Introduction to Strength"
+  })
+);
+console.log("FINDME");
 
 User.collection.findOneAndUpdate(
   {name: "Maureep"},

@@ -7,7 +7,7 @@ const Exercise = require("../models/Exercise");
 
 Exercise.collection.drop();
 
-Exercise.create([
+Exercise.insertMany([
   {
     name: "Squats",
     description:

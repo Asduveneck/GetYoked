@@ -11,7 +11,7 @@ Workout.collection.drop();
 
 let exercises = Exercise.collection
 
-Workout.create([
+Workout.insertMany([
   {
     name: "Introduction to Cardio", 
     type: "cardio",
