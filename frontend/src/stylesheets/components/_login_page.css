@@ -1,0 +1,126 @@
+
+.background {
+    flex-direction: column;
+    display: flex;
+    background-image: url("https://giphy.com/embed/l2JhB4Sp6hz37lU1W");
+    width: 100%;
+    height: 830px;
+    font-family: sans-serif;
+    
+}
+
+.login-form {
+    
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 1px;
+    font-size: 100px;
+    padding: 2px;
+    height: 500px;
+    width: 400px;
+    background-color: black;
+    opacity: .9;
+    font-size: 16px;
+    direction: ltr;
+    /* color: white; */
+    border-radius: 4px;
+    /* float: center; */
+    font-family: sans-serif;
+   
+    
+   
+}
+
+.login-form-box {
+     margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    background: black;
+    opacity: .9;
+    display: flex;
+    flex-direction: column;
+    height: 570px;
+    /* margin: auto; */
+    padding: 30px;
+    border-radius: 4px;
+    margin-bottom: 50px;
+    font-family: sans-serif;
+    align-items: center;
+}
+
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: white;
+  /* opacity: 2; Firefox */
+}
+
+.session-submit {
+    background: blue;
+    color: white;
+    height: 50px;
+    width: 300px;
+  
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 17px;
+    margin-bottom: 15px;
+    font-family: sans-serif;
+    font-weight: bold;
+   
+
+}
+
+.signInMessage {
+    display: flex;
+    color: whitesmoke;
+    font-size: 35px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    font-family: sans-serif;
+    width: 75%;
+}
+
+.login-input {
+    background-color: dimgray;
+    border-radius: 5px;
+    width: 300px;
+    height: 50px;
+    color: white;
+    margin-bottom: 30px;
+    font-family: sans-serif;
+}
+
+.signupLink {
+    text-decoration: none;
+    color: white;
+    margin: 15px;
+    font-family: sans-serif;
+    margin-top: 100px;
+    width: 75%;
+}
+
+.sessionError {
+    
+    z-index: 2;
+    color:white;
+    /* height: 50vh; */
+    width: 50vh;
+    font-size: large;
+    font-weight: bold;
+}
+
+.loginErrors {
+    color: blue;
+    font-size: large;
+    font-weight: bold;
+    
+}
+
+.session-submit:hover {
+     background-color:floralwhite;
+    -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: .3px;
+  -webkit-text-stroke-color: black;
+    opacity: .9;
+    transform: scale(1.15) !important;
+}
