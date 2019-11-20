@@ -7,7 +7,12 @@ class WorkoutForm extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.fetchUser(this.props.currentUser.id)
+    }
+
     render() {
+        console.log(this.props.currentUser)
         return(
             <div>
                 <div className="cardio-button">
