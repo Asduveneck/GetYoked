@@ -5,7 +5,7 @@ const passport = require('passport');
 
 // Validations?
 
-router.get("/test", (req, res) => res.json({ msg: "Workouts test route" }));
+router.get("/workout/test", (req, res) => res.json({ msg: "Workouts test route" }));
 // https://restdb.io/blog/object-relations-in-a-nosql-database
 
 /*
@@ -49,7 +49,7 @@ router.get('/workout', (req, res) => { // Is this what we wanted
 
 // Workout show 
 
-router.get("workout/:id", (req, res) => {
+router.get("/workout/:id", (req, res) => {
   Workout.findById(req.params.id)
     .then(workout => res.json(workout))
     .catch(err =>
