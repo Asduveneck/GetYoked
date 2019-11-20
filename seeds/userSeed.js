@@ -6,6 +6,8 @@ const mongoose = require("mongoose");
 const User = require('../models/User')
 
 User.collection.drop();
+const Workout = require("../models/Workout");
+const workouts = Workout.collection;
 
 User.create([
   {			
@@ -69,5 +71,62 @@ User.create([
   achievement: 1 // "MortiestMorty"
   },
 ]);
+
+User.collection.findOneAndUpdate(
+  {name: "realYoungJun"},
+  {$push: { 
+    workouts: workouts.findOne({
+      name: "Introduction to Cardio"
+    })
+  }} 
+);
+
+// User.collection.findOneAndUpdate( // Case where no workouts
+//   {name: "Super_Buff_Dude"},
+//   {$push: { 
+//     workouts: workouts.findOne({
+//       name: "Introduction to Cardio"
+//     })
+//   }} 
+// );
+
+User.collection.findOneAndUpdate(
+  {name: "Maureep"},
+  {$push: { 
+    workouts: workouts.findOne({
+      name: "Introduction to Strength"
+    })
+  }} 
+);
+
+User.collection.findOneAndUpdate(
+  {name: "Kazu"},
+  {$push: { 
+    workouts: { $each: [
+      workouts.findOne({name: "Introduction to Cardio"}),
+      workouts.findOne({name: "Introduction to Strength"})
+  ]
+  } } } 
+);
+
+User.collection.findOneAndUpdate( // Does order change by default?
+  {name: "ZaShaPaSha"},
+  {$push: { // Where do we store date?
+    workouts: { $each: [
+      workouts.findOne({name: "Introduction to Strength"}),
+      workouts.findOne({name: "Introduction to Cardio"})
+  ]
+  } } } 
+);
+
+
+User.collection.findOneAndUpdate(
+  {name: "RickAndMorty"},
+  {$push: { 
+    workouts: workouts.findOne({
+      name: "Introduction to Flexibility"
+    })
+  }} 
+);
 
 // Exporting these we may need an axios
