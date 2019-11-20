@@ -1,0 +1,67 @@
+
+.index_page_all {
+  .index_page_header {
+    padding: 0 60px;
+
+    h1{
+      font-size: 36px;
+      margin: 32px 0 10px;
+    }
+    h2{
+      font-size: 18px;
+      color: #525558; // instance variable later?
+    }
+  }
+  #index_page_navBar{
+    font-size: 14px;
+    color: $light_grey;
+    padding: 0 60px ;
+    h3{
+      padding: 15px 0px;
+    }
+  } 
+  #index_page_navBar.navBarNow {
+    width: 100%;
+    position: fixed;
+    padding: 16px 60px;
+    background-color: $background_white;
+  }
+}
+
+.index_page_grid{
+  border: 1px;
+  padding: 20px 50px;
+  margin-top : -10px;
+  background-color: #F7F8FA;
+
+
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 60px;
+
+  .indvPhoto { 
+    .i_p_gradient {
+      display: none;
+    }
+  }
+
+  .indvPhoto:hover .i_p_gradient {
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+    color: $background_white;
+    size: 1.5vh;
+
+    .top {
+      padding: 2% 0 20%;
+      box-shadow: inset 0 75px 75px -75px #000000;
+    }
+
+    .bottom {
+      padding: 20% 2% 2%;
+      box-shadow: inset 0 -75px 75px -75px #000000;
+    }
+  } 
+} 

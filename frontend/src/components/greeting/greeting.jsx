@@ -8,8 +8,15 @@ class Greeting extends React.Component {
   }
 
   render() {
-    return null;
-  }
+    if (this.props.location.pathname === '/signup') {
+      return (
+      <div>
+          <Link className="" to={"/login"}>Sign In</Link>
+      </div>
+      )
+    }; 
+  return (null)
+  };
 }
 
 export default Greeting;

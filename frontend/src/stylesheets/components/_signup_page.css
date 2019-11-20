@@ -1,0 +1,110 @@
+.signup-form-box {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    font-family: sans-serif;
+    
+}
+
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 456px;
+    margin: auto;
+    font-family: sans-serif;
+}
+
+.stepTitle {
+    right: auto;
+    left: auto;
+    padding: 10px;
+    font-family: sans-serif;
+}
+
+
+.stepTitle {
+    /* display: inline-block; */
+    /* position: absolute; */
+    font-weight: bold;
+    font-size: 23px;
+    font-family: sans-serif;
+    margin-top: 15px;
+    padding: 5px;
+    height: 15px;
+    margin-top: 15px;
+}
+  
+
+
+.regFormTitle {
+    font-size: 15px;
+     padding: 10px;
+    font-weight: bold;
+    font-family: sans-serif;
+    height: 15px;   
+    margin-top: 15px;
+}
+
+
+
+
+.signup-input{
+    height: 40px;
+    width: 450px;
+    border-radius: 5px;
+    padding: 8px;
+    color: green;
+    font-family: sans-serif;
+}
+
+.signup-session-submit {
+    background: blue;
+    color: white;
+    height: 50px;
+    width: 470px;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: normal;
+    font-size: 17px;
+    text-align: center;
+    font-family: sans-serif;
+
+}
+
+.signup-input-user {
+   padding: 10px;
+   font-family: sans-serif;
+}
+
+
+.signup-input-password {
+   padding: 10px;
+   font-family: sans-serif;
+}
+
+.submitDiv {
+    padding: 15px;
+    font-family: sans-serif;
+}
+
+.signInMessage {
+    font-family: sans-serif;
+}
+
+.signupErrors {
+      font-family: sans-serif;
+      color: red
+
+}
+
+.signup-session-submit:hover {
+     background-color:floralwhite;
+    -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: .3px;
+  -webkit-text-stroke-color: black;
+    opacity: .9;
+    transform: scale(1.15) !important;
+}

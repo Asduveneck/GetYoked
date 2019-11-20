@@ -100,5 +100,23 @@ router.post('/login', (req, res) => {
         })
 })
 
+//ROUTES: user show
+router.get('/:id', (req, res) => {
+    User.findById(req.params.id)
+        .then(user => res.json(user))
+        .catch(err =>
+            res.status(404).json({ nouserfound: "No user found"})
+        )
+})
+
+
+//ROUTES: user udpate
+router.patch('/:id', (req, res, next) => {
+    console.log(req.body);
+    User.findByIdAndUpdate(req.params.id, {
+      $set: req.body
+    }, {new: true}).then(user => res.json(user))
+      .catch(err => res.status(404).json({ nouserfound: "No user found" }));
+})
 
 module.exports = router;

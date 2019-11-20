@@ -1,4 +1,5 @@
 import React from "react";
+import { withRouter } from 'react-router-dom';
 // import GreetingContainer from "../greeting/greeting_container";
 
 class SignUp extends React.Component {
@@ -31,7 +32,7 @@ class SignUp extends React.Component {
   renderErrors() {
     return (
       <ul>
-        {this.props.errors.map((error, i) => (
+        {Object.values(this.props.errors).map((error, i) => (
           <li key={`error-${i}`}>{error}</li>
         ))}
       </ul>
@@ -39,56 +40,54 @@ class SignUp extends React.Component {
   }
 
   render() {
-    return null;
-    // (
-      // <div className="">
-      //   <GreetingContainer />
-      //   <div className="signup-form-container">
-      //     <form onSubmit={this.handleSubmit} className="signup-form-box">
-      //       <div className="form">
-      //         <div className="stepTitle">Sign up to start your free month</div>
+    return (
+      <div className="">
+        <div className="signup-form-container">
+          <form onSubmit={this.handleSubmit} className="signup-form-box">
+            <div className="form">
+              <div className="stepTitle">Sign up</div>
 
-      //         <div className="regFormTitle">Create your account.</div>
-      //         <div className="signupErrors">{this.renderErrors()}</div>
-      //       </div>
+              <div className="regFormTitle">Create your account.</div>
+              <div className="signupErrors">{this.renderErrors()}</div>
+            </div>
 
-      //       <div className="signup-form">
-      //         <div className="signup-input-user">
-      //           {/* <label>Email */}
-      //           <input
-      //             type="text"
-      //             value={this.state.username}
-      //             onChange={this.update("username")}
-      //             className="signup-input"
-      //             placeholder="Email"
-      //           />
-      //           {/* </label> */}
-      //         </div>
+            <div className="signup-form">
+              <div className="signup-input-user">
+                {/* <label>Email */}
+                <input
+                  type="text"
+                  value={this.state.username}
+                  onChange={this.update("username")}
+                  className="signup-input"
+                  placeholder="Username"
+                />
+                {/* </label> */}
+              </div>
 
-      //         <div className="signup-input-password">
-      //           {/* <label>Password */}
-      //           <input
-      //             type="password"
-      //             value={this.state.password}
-      //             onChange={this.update("password")}
-      //             className="signup-input"
-      //             placeholder="Password"
-      //           />
-      //           {/* </label> */}
-      //         </div>
-      //         <div className="submitDiv">
-      //           <input
-      //             className="signup-session-submit"
-      //             type="submit"
-      //             value={this.props.formType}
-      //           />
-      //         </div>
-      //       </div>
-      //     </form>
-      //   </div>
-      // </div>
-    // );
+              <div className="signup-input-password">
+                {/* <label>Password */}
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.update("password")}
+                  className="signup-input"
+                  placeholder="Password"
+                />
+                {/* </label> */}
+              </div>
+              <div className="submitDiv">
+                <input
+                  className="signup-session-submit"
+                  type="submit"
+                  value={this.props.formType}
+                />
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    );
   }
 }
 
-export default SignUp;
+export default withRouter(SignUp);
