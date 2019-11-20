@@ -10,7 +10,7 @@ const msp = (state) => {
 
 const mdp = dispatch => {
     return {
-        fetchWorkout: (id) => dispatch(fetchWorkout(id))
+        // fetchWorkout: (id) => dispatch(fetchWorkout(id))
     }
 }
 

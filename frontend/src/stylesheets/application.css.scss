@@ -14,6 +14,13 @@
  */
 
 
+// work out show scss
+@import 'components/workout_show.scss';
+
+// work out form scss
+ @import 'components/workout_form.scss';
+
+
  // CSS Reset
 
   @import 'base/reset.scss';

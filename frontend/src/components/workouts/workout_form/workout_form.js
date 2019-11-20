@@ -17,3 +17,5 @@ class WorkoutForm extends React.Component {
         )
     }
 }
+
+export default WorkoutForm;
