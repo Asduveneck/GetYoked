@@ -9,15 +9,18 @@ class WorkoutForm extends React.Component {
     }
 
     componentDidMount() {
-        this.props.fetchUser(this.props.currentUser)
+        this.props.fetchUser(this.props.currentUserId)
     }
 
     render() {
+        if (this.props.currentUser === undefined) return null
         console.log(this.props.currentUser)
         console.log(this.props)
         return (
           <div className="workout-form-window">
             <div className="workout-form-title-parent">
+                <h1 className="workout-form-title username">{this.props.currentUser.username}</h1>
+                
                 <h1 className="workout-form-title">What do you want to do today?</h1>
             </div>
                 <div className="workout-buttons-container">
