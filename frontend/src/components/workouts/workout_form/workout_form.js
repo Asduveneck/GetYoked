@@ -15,13 +15,24 @@ class WorkoutForm extends React.Component {
     render() {
         console.log(this.props.currentUser)
         console.log(this.props)
-        return(
-            <div>
-                <div className="cardio-button">
-                    {/* <Link to={`/workouts?=...`}></Link> */}
+        return (
+          <div className="workout-form-window">
+            <div className="workout-form-title-parent">
+                <h1 className="workout-form-title">What do you want to do today?</h1>
+            </div>
+                <div className="workout-buttons-container">
+                <div className="cardio-button workout-form-button">
+                    <button>Cardio</button>
+                </div>
+                <div className="strength-button workout-form-button">
+                    <button>Strength & Weights</button>
+                </div>
+                <div className="flexibility-button workout-form-button">
+                    <button>Balance & Flexibility</button>
                 </div>
             </div>
-        )
+          </div>
+        );
     }
 }
 
