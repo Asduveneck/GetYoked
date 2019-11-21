@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './workout_form.scss'
 
 
 class WorkoutForm extends React.Component {
@@ -7,7 +8,13 @@ class WorkoutForm extends React.Component {
         super(props)
     }
 
+    componentDidMount() {
+        this.props.fetchUser(this.props.currentUser)
+    }
+
     render() {
+        console.log(this.props.currentUser)
+        console.log(this.props)
         return(
             <div>
                 <div className="cardio-button">
@@ -17,3 +24,5 @@ class WorkoutForm extends React.Component {
         )
     }
 }
+
+export default WorkoutForm;
