@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import './workout_form.scss'
 
 
@@ -25,7 +25,9 @@ class WorkoutForm extends React.Component {
             </div>
                 <div className="workout-buttons-container">
                 <div className="cardio-button workout-form-button">
-                    <button>Cardio</button>
+                    {/* <Link to="/workout" params={{type:"cardio"}, {user: this.props.currentUser}}> */}
+                        <button>Cardio</button>
+                    {/* </Link> */}
                 </div>
                 <div className="strength-button workout-form-button">
                     <button>Strength & Weights</button>

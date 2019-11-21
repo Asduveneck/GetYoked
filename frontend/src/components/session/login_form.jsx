@@ -1,5 +1,5 @@
 import React from "react";
-// import GreetingContainer from "../greeting/greeting_container";
+
 import { Link, withRouter, Redirect } from "react-router-dom";
 import "../../stylesheets/components/login_page.css";
 
@@ -9,19 +9,10 @@ class LoginForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      errors: {},
-      redirect: false
+      errors: {}
     };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.signedIn === true) {
-  //     this.props.history.push("/new-workout");
-  //   }
-    
-  //   this.setState({ errors: nextProps.errors });
-  // }
 
   update(field) {
     return e =>
@@ -40,19 +31,6 @@ class LoginForm extends React.Component {
     this.props.processForm(user)
       .then(() => this.props.history.push("/workoutnew"));
   }
-
-  // login(e) {
-  //   e.preventDefault();
-  //   const user = {
-  //     username: "zaidclone",
-  //     password: "password"
-  //   };
-  //   this.setState(user);
-  //   setInterval(() => {});
-  //   this.props.processForm(user).then(() => {
-  //     this.props.history.push("/browse");
-  //   });
-  // }
 
   renderErrors() {
     return (
