@@ -1,3 +1,47 @@
-div {
-    background-color: red;
+.workout-form-window {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(131,58,180);
+    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.workout-form-title-parent {
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+
+}
+
+.workout-form-title {
+    display: inline-block;
+    height: fit-content;
+    width: fit-content;
+    font-size: 50px;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    margin-top: 10%;
+}
+
+.workout-buttons-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.workout-buttons-container button {
+    box-sizing: border-box;
+    border: none;
+    border-radius: 5px;
+    margin: 30px;
+    height: 20vh;
+    width: 20vw;
+    font-size: 25px;
 }
