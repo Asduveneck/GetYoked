@@ -1,8 +1,10 @@
 .workout-form-window {
     height: 100vh;
     width: 100vw;
-    background-color: rgb(131,58,180);
-    background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    // background-color: rgb(131,58,180);
+    // background: linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(253,29,29,1) 50%, rgba(252,176,69,1) 100%);
+    background: rgb(229,244,250);
+    background: linear-gradient(50deg, rgba(229,244,250,1) 0%, rgba(247,238,253,1) 100%);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,20 +12,28 @@
 }
 
 .workout-form-title-parent {
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
     height: fit-content;
     width: fit-content;
-
+    margin-top: 4%;
+    position: relative;
 }
 
 .workout-form-title {
     display: inline-block;
     height: fit-content;
     width: fit-content;
-    font-size: 50px;
-    font-family: Arial, Helvetica, sans-serif;
-    color: white;
-    margin-top: 10%;
+    font-size: 55px;
+    font-family: 'Nunito', sans-serif;
+    color: rgba(128, 128, 128, 0.557);
+    margin: .85rem;
+}
+
+.username {
+    margin: .85rem;
 }
 
 .workout-buttons-container {
@@ -44,4 +54,6 @@
     height: 20vh;
     width: 20vw;
     font-size: 25px;
+    padding: 10px;
+    box-shadow: 3px 10px 15px 2px #888888;
 }
