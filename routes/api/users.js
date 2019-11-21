@@ -8,6 +8,7 @@ const passport = require("passport");
 
 const validateRegisterInput = require('../../validations/register');
 const validateLoginInput = require('../../validations/login');
+const validateUpdateUserInput = require('../../validations/update_user')
 
 // ROUTES: register
 
@@ -112,14 +113,27 @@ router.get('/:id', (req, res) => {
 
 
 //ROUTES: user udpate
-router.patch('/:id', (req, res, next) => {
-    // console.log(req.body);
-    // console.log(req.params.id)
-    console.log(req)
-    User.findByIdAndUpdate(req.params.id, {
-      $set: req.body
-    }, {new: true}).then(user => res.json(user))
-      .catch(err => res.status(404).json({ nouserfound: "No user found" }));
+router.patch('/:id', (req, res) => {
+
+    const { errors, isValid } = validateUpdateUserInput(req.body);
+
+    if (!isValid) {
+        return res.status(400).json(errors);
+    }
+
+    User.findById(req.params.id, (err, user) => {
+        if (req.body._id) {
+            delete req.body._id;
+        }
+        for (let attr in req.body) {
+            user[attr] = req.body[attr];
+        }
+        user.save();
+        res.json(user);
+    })
+        .then(user => res.json(user))
+        .catch(err => res.status(404).json({ nouserfound: "No user found" }))
+        
 })
 
 module.exports = router;
