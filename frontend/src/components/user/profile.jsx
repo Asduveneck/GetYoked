@@ -40,7 +40,8 @@ class Profile extends React.Component {
 
     render() {
         let currentTab;
-
+        debugger;
+        if (this.props.user === undefined) return null;
         if (this.state.selectedTab === 0) {
             currentTab = (
                 <div>
@@ -55,6 +56,7 @@ class Profile extends React.Component {
                     <UserEditForm
                         user={this.props.user}
                         cancelEdit={this.cancelEdit}
+                        patchUser={this.props.patchUser}
                     />
                 )
             } else {
