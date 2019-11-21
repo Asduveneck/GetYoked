@@ -102,6 +102,7 @@ router.post('/login', (req, res) => {
 
 //ROUTES: user show
 router.get('/:id', (req, res) => {
+    console.log(req.body)
     User.findById(req.params.id)
         .then(user => res.json(user))
         .catch(err =>
@@ -112,7 +113,9 @@ router.get('/:id', (req, res) => {
 
 //ROUTES: user udpate
 router.patch('/:id', (req, res, next) => {
-    console.log(req.body);
+    // console.log(req.body);
+    // console.log(req.params.id)
+    console.log(req)
     User.findByIdAndUpdate(req.params.id, {
       $set: req.body
     }, {new: true}).then(user => res.json(user))

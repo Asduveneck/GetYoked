@@ -53,7 +53,7 @@
 |-----------------------|---------------------------------------------------------|-------------------------------------------------|
 | `/`                   |   Splash                                                |                                                 |
 | `/login`              | `<LoginFormContainer>`                                  | Auth                                            |
-| `/signup`             | `<SignupFormContainer>`                                 | Auth                                            |
+| `/register`             | `<SignupFormContainer>`                                 | Auth                                            |
 
 
 

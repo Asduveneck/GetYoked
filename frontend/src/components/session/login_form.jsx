@@ -1,6 +1,6 @@
 import React from "react";
 // import GreetingContainer from "../greeting/greeting_container";
-import { Link, withRouter } from "react-router-dom";
+import { Link, withRouter, Redirect } from "react-router-dom";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -8,19 +8,19 @@ class LoginForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      errors: {}
+      errors: {},
+      redirect: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
-    this.renderErrors = this.renderErrors.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push("/browse");
-    }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.signedIn === true) {
+  //     this.props.history.push("/new-workout");
+  //   }
     
-    this.setState({ errors: nextProps.errors });
-  }
+  //   this.setState({ errors: nextProps.errors });
+  // }
 
   update(field) {
     return e =>
@@ -31,8 +31,13 @@ class LoginForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    const user = {
+      username: this.state.username,
+      password: this.state.password
+    }
+    console.log(user);
+    this.props.processForm(user)
+      .then(() => this.props.history.push("/workoutnew"));
   }
 
   // login(e) {
