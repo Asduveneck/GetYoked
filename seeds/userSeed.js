@@ -79,15 +79,43 @@ User.insertMany([ //insertMany
   },
 ]);
 
-User.collection.findOneAndUpdate(
-  {name: "realYoungJun"},
-  {$push: { 
-    workouts: workouts.findOne({
-      name: "Introduction to Cardio"
-    })
-  }} 
-);
+const cardWork = Workout.find({name: "Introduction to Cardio"}).exec( function(err, obj) {obj} );
 
+User.findOneAndUpdate(
+  // conditions            update               options,           callback
+  {name: "realYoungJun"}, {$push: { cardWork} }, {}, function(err, obj)  {obj}
+);
+// const cardWork = Workout.findOne({ name: "Introduction to Cardio"})
+//   .then(workout => res.status(200).json(workout))
+//   .catch(err => err => res.status(400).json({workout: "workout not found"}));
+
+
+// User.collection.findOneAndUpdate(
+//   {name: "realYoungJun"},
+//   {$push: { cardWork} } 
+// )
+//   .then(workout => res.status(200).json(workout))
+//   .catch(err => res.status(400).json({ workout: 'Workout not found' }));
+// User.collection.findOneAndUpdate(
+//   {name: "realYoungJun"},
+//   {$push: { 
+//     workouts: Workout.findOne({
+//       name: "Introduction to Cardio"
+//     }).then(bla => res.status(200).json(workout))
+//     .catch(err => res.status(400).json({ workout: "blablablaerror"}))
+//   }} 
+// )
+//   .then(workout => res.status(200).json(workout))
+//   .catch(err => res.status(400).json({ workout: 'Workout not found' }));
+
+// Festival.findOneAndUpdate(
+//   { _id: req.params.festivalId },
+//   { $push: { lineup: newSet } },
+//   { "new": true })
+//   .then(festival => res.status(200).json(festival))
+//   .catch(err => res.status(400).json({ festival: 'Festival not found' }));
+
+// https://mongoosejs.com/docs/queries.html Update your findOne to take in a callback! 
 // User.collection.findOneAndUpdate( // Case where no workouts
 //   {name: "Super_Buff_Dude"},
 //   {$push: { 
@@ -98,20 +126,29 @@ User.collection.findOneAndUpdate(
 // );
 
 // FINDME TEST!
-console.log("FINDME");
-console.log(
-  workouts.findOne({
-    name: "Introduction to Strength"
-  })
-);
-console.log("FINDME");
 
-User.collection.findOneAndUpdate(
+// const findOneRO = (str) => {
+//   workouts.findOne({name: str}, function(err, obj) { console.log(obj);})
+// }
+
+// workouts.findOne({ name: "Introduction to Strength" }, function(err, obj) {
+//   console.log(obj);
+// });
+
+// User.collection.findOneAndUpdate(
+//   { name: "Maureep" },
+//   {$push: { workouts: "testing 1" }
+//   }
+// );
+
+
+User.findOneAndUpdate(
   {name: "Maureep"},
   {$push: { 
-    workouts: workouts.findOne({
-      name: "Introduction to Strength"
-    })
+    workouts: Workout.findOne({name: "Introduction to Strength"}, function(err, obj) { obj })
+    // workouts: Workout.findOne().lean().exec({ name: "Introduction to Strength" },function(err, obj) {
+    //   obj
+    // } )
   }} 
 );
 

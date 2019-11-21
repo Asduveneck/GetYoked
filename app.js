@@ -3,7 +3,6 @@ const express = require("express");
 const app = express();
 const db = require('./config/keys').mongoURI;
 const users = require("./routes/api/users");
-// const workouts = require("./routes/api/workouts");
 const workouts = require("./routes/api/workouts");
 const bodyParser = require('body-parser');
 
@@ -16,9 +15,9 @@ mongoose
     .catch(err => console.log(err));
 
 // SEEDS 
-// require('./seeds/exerciseSeed');
-// require('./seeds/workoutSeed');
-// require('./seeds/userSeed');
+require('./seeds/exerciseSeed');
+require('./seeds/workoutSeed');
+require('./seeds/userSeed');
 
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
