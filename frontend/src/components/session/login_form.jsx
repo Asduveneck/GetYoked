@@ -14,13 +14,13 @@ class LoginForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.signedIn === true) {
-      this.props.history.push("/browse");
-    }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.signedIn === true) {
+  //     this.props.history.push("/new-workout");
+  //   }
     
-    this.setState({ errors: nextProps.errors });
-  }
+  //   this.setState({ errors: nextProps.errors });
+  // }
 
   update(field) {
     return e =>
@@ -36,7 +36,8 @@ class LoginForm extends React.Component {
       password: this.state.password
     }
     console.log(user);
-    this.props.processForm(user);
+    this.props.processForm(user)
+      .then(() => this.props.history.push("/workoutnew"));
   }
 
   // login(e) {

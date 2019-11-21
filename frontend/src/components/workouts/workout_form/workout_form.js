@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import './workout_form.scss'
 
 
 class WorkoutForm extends React.Component {
