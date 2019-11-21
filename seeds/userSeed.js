@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const axios = require("axios");
 // const { port, db, secret } = require("../config/env");
 // mongoose.Promise = require("bluebird");
 // mongoose.connect(db);
@@ -6,8 +7,16 @@ const mongoose = require("mongoose");
 const User = require('../models/User')
 
 User.collection.drop();
+const Workout = require("../models/Workout");
+const workouts = Workout.collection;
 
-User.create([
+/*
+
+https://www.robinwieruch.de/mongodb-express-setup-tutorial
+https://mongoosejs.com/docs/api.html#model_Model.insertMany
+*/
+
+User.insertMany([ //insertMany
   {			
   username: "realYoungJun",
   password: "!password",
@@ -69,5 +78,71 @@ User.create([
   achievement: 1 // "MortiestMorty"
   },
 ]);
+
+User.collection.findOneAndUpdate(
+  {name: "realYoungJun"},
+  {$push: { 
+    workouts: workouts.findOne({
+      name: "Introduction to Cardio"
+    })
+  }} 
+);
+
+// User.collection.findOneAndUpdate( // Case where no workouts
+//   {name: "Super_Buff_Dude"},
+//   {$push: { 
+//     workouts: workouts.findOne({
+//       name: "Introduction to Cardio"
+//     })
+//   }} 
+// );
+
+// FINDME TEST!
+console.log("FINDME");
+console.log(
+  workouts.findOne({
+    name: "Introduction to Strength"
+  })
+);
+console.log("FINDME");
+
+User.collection.findOneAndUpdate(
+  {name: "Maureep"},
+  {$push: { 
+    workouts: workouts.findOne({
+      name: "Introduction to Strength"
+    })
+  }} 
+);
+
+User.collection.findOneAndUpdate(
+  {name: "Kazu"},
+  {$push: { 
+    workouts: { $each: [
+      workouts.findOne({name: "Introduction to Cardio"}),
+      workouts.findOne({name: "Introduction to Strength"})
+  ]
+  } } } 
+);
+
+User.collection.findOneAndUpdate( // Does order change by default?
+  {name: "ZaShaPaSha"},
+  {$push: { // Where do we store date?
+    workouts: { $each: [
+      workouts.findOne({name: "Introduction to Strength"}),
+      workouts.findOne({name: "Introduction to Cardio"})
+  ]
+  } } } 
+);
+
+
+User.collection.findOneAndUpdate(
+  {name: "RickAndMorty"},
+  {$push: { 
+    workouts: workouts.findOne({
+      name: "Introduction to Flexibility"
+    })
+  }} 
+);
 
 // Exporting these we may need an axios

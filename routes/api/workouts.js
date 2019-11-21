@@ -1,34 +1,32 @@
 const express = require("express");
 const router = express.Router();
 const mongoose = require('mongoose');
-const passport = require('passport');
+const Workout = require('../../models/Workout');
+const keys = require("../../config/keys");
+const jwt = require("jsonwebtoken");
+const passport = require("passport");
 
 // Validations?
 
-router.get("/test", (req, res) => res.json({ msg: "Workouts test route" }));
-// https://restdb.io/blog/object-relations-in-a-nosql-database
-
-/*
-* `GET /workouts`
-  * ? intensity = light AND category = cardio
-  * Has query parameters
-  * includes`exerciseWorkouts` & `exercises`
-* `GET /workouts/:id`
-  * On User show page
-*/
-
-const Workout = require('../../models/Workout'); // to be made
-const UserWorkout = require('../../models/UserWorkout');
-
-//GET workout. 
-router.get('/workout', (req, res) => { // Is this what we wanted
+// Index
+router.get("/", (req, res) => {
   Workout.find()
     .sort({ date: -1 })
     .then(workouts => res.json(workouts))
-    .catch(err => res.status(404).json({ noworkoutsfound: 'No workouts found' }));
+    .catch(err => res.status(404).json({ noworkoutsfound: "No workouts found" }));
 });
 
-// Workouts for a user
+// Specific Workout Show
+router.get('/:id', (req, res) => { // Is this what we wanted
+  Workout.findById(req.params.id)
+    .sort({ date: -1 })
+    .then(workouts => res.json(workouts))
+    .catch(err =>
+      res.status(404).json({ noworkoutsfound: "No workouts found" })
+    );
+});
+
+// Workouts for a user //BROKEN
 // router.get('/user/:user_id', (req, res) => { // We want the workouts to be on the users page, right?
 //   let workoutIds = UserWorkout.find({user: req.params.user_id}).workout_id // returns an array or something of workout IDs.
   
@@ -46,13 +44,4 @@ router.get('/workout', (req, res) => { // Is this what we wanted
 //   return res.json(workouts)
 // });
 
-
-// Workout show 
-
-router.get("workout/:id", (req, res) => {
-  Workout.findById(req.params.id)
-    .then(workout => res.json(workout))
-    .catch(err =>
-      res.status(404).json({ noworkoutfound: "No workout found with that ID" })
-    );
-});
+module.exports = router;
