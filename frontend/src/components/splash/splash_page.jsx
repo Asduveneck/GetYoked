@@ -18,15 +18,15 @@ class SplashPage extends React.Component {
           <div className="sp_hyg_3_cols">
             <div className="sp_hyg_col"> {/* column 1*/}
               {/* corresponding image to */}
-              <h1>Increase your Strength and Durability</h1>
+              <h2>Increase your Strength and Durability</h2>
             </div>
             <div className="sp_hyg_col"> {/* column 2*/}
               {/* corresponding image to */}
-              <h1>Enhance your Cardiovascular Health</h1>
+              <h2>Enhance your Cardiovascular Health</h2>
             </div>
             <div className="sp_hyg_col"> {/* column 3*/}
               {/* corresponding image to */}
-              <h1>Become more flexible</h1>
+              <h2>Become more flexible</h2>
             </div>
           </div>
 
@@ -40,7 +40,7 @@ class SplashPage extends React.Component {
         <div className="join_us"> 
         <h2>Sign up link disguised as button</h2>
         </div>
-        
+
       </div> // End of splashPage
     );
   }
