@@ -5,8 +5,10 @@
   flex-direction: column;
 
   h1 {
-    color: red;
-
+    color: blue;
+  }
+  h2 {
+    color: #FFFFFF;
   }
   .what_we_do {
     background-color: lightblue;
@@ -18,6 +20,8 @@
     .sp_hyg_3_cols {
       display: flex;
       flex-direction: row;
+      justify-content: space-between;
+      
     }
     .sp_hyg_col {
       align-self: center; // aligns content to center?
