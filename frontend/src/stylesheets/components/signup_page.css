@@ -1,3 +1,13 @@
+.signup-input{
+  background-color:blue;
+  height: 40px;
+    width: 250px;
+    border-radius: 5px;
+    padding: 8px;
+    color: white;;
+  
+}
+
 .signup-form-box {
     display: flex;
     justify-content: center;
@@ -7,26 +17,11 @@
     
 }
 
-
-.form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    width: 456px;
-    margin: auto;
-    font-family: sans-serif;
-}
-
 .stepTitle {
     right: auto;
     left: auto;
     padding: 10px;
     font-family: sans-serif;
-}
-
-
-.stepTitle {
-    /* display: inline-block; */
     /* position: absolute; */
     font-weight: bold;
     font-size: 23px;
@@ -36,8 +31,6 @@
     height: 15px;
     margin-top: 15px;
 }
-  
-
 
 .regFormTitle {
     font-size: 15px;
@@ -48,23 +41,11 @@
     margin-top: 15px;
 }
 
-
-
-
-.signup-input{
-    height: 40px;
-    width: 450px;
-    border-radius: 5px;
-    padding: 8px;
-    color: green;
-    font-family: sans-serif;
-}
-
 .signup-session-submit {
     background: blue;
     color: white;
     height: 50px;
-    width: 470px;
+    width: 350px;
     padding: 10px;
     border-radius: 5px;
     font-weight: normal;
@@ -75,19 +56,13 @@
 }
 
 .signup-input-user {
-   padding: 10px;
+   padding: 5px;
    font-family: sans-serif;
 }
-
 
 .signup-input-password {
-   padding: 10px;
+   padding: 5px;
    font-family: sans-serif;
-}
-
-.submitDiv {
-    padding: 15px;
-    font-family: sans-serif;
 }
 
 .signInMessage {
@@ -96,15 +71,6 @@
 
 .signupErrors {
       font-family: sans-serif;
-      color: red
+      color: blue
 
-}
-
-.signup-session-submit:hover {
-     background-color:floralwhite;
-    -webkit-text-fill-color: black; /* Will override color (regardless of order) */
-  -webkit-text-stroke-width: .3px;
-  -webkit-text-stroke-color: black;
-    opacity: .9;
-    transform: scale(1.15) !important;
 }
