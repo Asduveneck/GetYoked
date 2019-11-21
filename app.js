@@ -15,9 +15,18 @@ mongoose
     .catch(err => console.log(err));
 
 // SEEDS 
-require('./seeds/exerciseSeed');
-require('./seeds/workoutSeed');
-require('./seeds/userSeed');
+// require('./seeds/exerciseSeed');
+// require('./seeds/workoutSeed');
+// require('./seeds/userSeed');
+
+
+let test = require("./models/Workout").collection
+let test2 = require("./models/Workout"); 
+console.log("findme");
+console.log(
+  test.findOne({ name: "Introduction to Strength" }, function(err, obj) { console.log(obj);}) // returns undefined, then returns console.log at very end... so not quite
+); 
+console.log("findme");
 
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
