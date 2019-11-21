@@ -22,19 +22,16 @@ class UserEditForm extends React.Component {
 
     handleSubmit(e) {
         e.preventDefault();
-        // this.props.updateUser(this.state)
+        this.props.patchUser(this.state)
     }
 
     render() {
         return (
             <div>
-                <h1>BUILD THIS (UserEditForm)</h1>
+                <h1>Edit User Info</h1>
                 <form>
                     <label>Username
-                        <input type="text" 
-                            value={this.state.username}
-                            onChange={this.handleChange('username')}
-                        />
+                        <p>{this.state.username}</p>
                     </label>
                     <label>Age
                         <input type="text" 

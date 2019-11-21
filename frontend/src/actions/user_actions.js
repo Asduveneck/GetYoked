@@ -13,7 +13,7 @@ export const fetchUser = id => dispatch => (
         .catch(err => console.log(err))
 );
 
-export const updateUser = user => dispatch => (
+export const patchUser = user => dispatch => (
     updateUser(user)
         .then(user => dispatch(receiveUser(user)))
         .catch(err => console.log(err))
