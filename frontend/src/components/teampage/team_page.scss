@@ -1,0 +1,17 @@
+.team_page {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    // maybe set a height?
+    .col {
+      width: 20vw;
+      margin: 1vw;
+    }
+  }
+} // ~15 minutes for skeleton

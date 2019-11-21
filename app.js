@@ -15,9 +15,9 @@ mongoose
     .catch(err => console.log(err));
 
 // SEEDS 
-require('./seeds/exerciseSeed');
-require('./seeds/workoutSeed');
-require('./seeds/userSeed');
+// require('./seeds/exerciseSeed');
+// require('./seeds/workoutSeed');
+// require('./seeds/userSeed');
 
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
