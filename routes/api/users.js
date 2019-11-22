@@ -120,7 +120,6 @@ router.patch('/:id', (req, res) => {
     if (!isValid) {
         return res.status(400).json(errors);
     }
-
     User.findById(req.params.id, (err, user) => {
         if (req.body._id) {
             delete req.body._id;
@@ -131,8 +130,8 @@ router.patch('/:id', (req, res) => {
         user.save();
         res.json(user);
     })
-        .then(user => res.json(user))
-        .catch(err => res.status(404).json({ nouserfound: "No user found" }))
+        // .then(user => res.json(user))
+        // .catch(err => res.status(404).json({ nouserfound: "No user found" }))
         
 })
 
