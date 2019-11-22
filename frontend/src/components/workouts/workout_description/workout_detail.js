@@ -20,13 +20,15 @@ class WorkoutDetail extends React.Component {
 
             <div className="workout-detail-scroll">
                 <div className="screen">Your workout today</div>
-                <Link to="/workoutnew"><button>Select a different type of workout</button></Link>
+                <Link to="/workoutnew"><button className="back-button">Select a different type of workout</button></Link>
                 <div className="workout-detail-description-parent">
                     <div className="wo-detail-name">Workout Name Placeholder</div>
                     <div className="wo-detail-item">
                         <div className="workout-detail-item-pic">Workout picture placeholder</div>
                         <div className="workout-detail-item-exercise">Exercise description placeholder</div>
                     </div>
+
+                    <Link><button className="wo-detail-finished-button">I finished this workout!</button></Link>
                 </div>
             </div>
 
