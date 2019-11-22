@@ -12,8 +12,10 @@ const Workout = require("../models/Workout");
 // https://stackoverflow.com/questions/24035872/return-results-mongoose-in-find-query-to-a-variable
 
 // Helper method to return a promise to find a specific workout POJO
-const workoutFindOneByName = entry => (
-  Workout.find({ name: "Introduction to Strength" }, function(err, data) {
+const workoutFindOneByName = entry => {
+  console.log("We're in workoutFindOneByName");
+  return Workout.find({ name: entry }, function(err, data) {
+    console.log(`Our entry in workoutFindOneByName: ${entry}`)
     // error handling
     if (err) {
       console.log(err);
@@ -24,36 +26,54 @@ const workoutFindOneByName = entry => (
       return;
     }
     return data;
-  })
-);
+  }).lean().exec()
+};
 
 // Makes an array of workouts that wait until each workout is found 
 // (so we have a proper array of pojos that came from evaluated promises)
 
-  async function workoutArrayResMaker(workoutsArray) {
-    workoutArray = []
-    for(workoutName in workoutsArray) {
-      // let workout = await workoutFindOneByName(workoutName);
+  const workoutArrayResMaker = workoutsArray => {
+    if(!Array.isArray(workoutsArray)) {
+      console.log("workoutArrayResMaker received a string. We need to error out");
+      return; // should learn to throw errors
+    }
+
+    finalWorkoutArr = []
+    console.log(`In workoutArrayResMaker before looping through: ${workoutsArray}`);
+    for(let i = 0; i < workoutsArray.length; i++) { // my iterating through elements was broken
+      // let workout = await workoutFindOneByName(workoutName); // async didn't work...
       // workoutArray.push(workout);
-      workoutFindOneByName(workoutName).then(workout =>
-        workoutArray.push(workout)
-      )
-      .catch( () => "No workout found in workoutArrayResMaker");
+      console.log("In workoutArrayResMaker now. Looking for: ");
+      console.log(workoutsArray[i]);
+
+      workoutFindOneByName(workoutsArray[i])
+        .then(workout => finalWorkoutArr.push(workout))
+        .catch(() => "No workout found in workoutArrayResMaker");
       // workoutArray.push(workout) //Soft fail because worst case empty array
     }
-    return workoutArray; 
+    console.log("still in workoutArrayResMaker");
+    console.log(`found: ${finalWorkoutArr}`);
+    return finalWorkoutArr; 
   };
 
   // DARN IT achievements 0 is treated as a null...
 const userCreate = (username, password, age, height, 
   weight, activity, goals, achievement, workouts = []) => {
-    User.create({username, password, age, height, weight, 
-      activity, goals, achievement, workouts
-    }) // returns a POJO where username: username, password: password, etc.
+
+    if (workouts.length === 0) {
+      console.log("In userCreate function, no workouts were present")
+      User.create({
+        username, password, age, height, weight, activity, goals, achievement
+      }); 
+    } else { // create the following
+      User.create({username, password, age, height, weight, 
+        activity, goals, achievement, workouts
+      }) 
+    }
   }; 
 
-async function userResHandler(username, password, age, height, 
-  weight, activity, goals, achievement, workoutsArray = []) {
+const userResHandler = (username, password, age, height, 
+  weight, activity, goals, achievement, workoutsArray = []) => {
 
   // Screening workoutsArray to be an array or string.
   let screenedWorkouts = []; // storing everything
@@ -73,19 +93,35 @@ async function userResHandler(username, password, age, height,
     console.log("querying database with: ");
     console.log(screenedWorkouts);
     console.log(" ");
-     try {
-      workouts = await workoutArrayResMaker(workoutsArray); 
-      console.log("finished querying database. Workouts:");
-      console.log(workouts);
-    } catch (error) {
-      console.log("Something went wrong when waiting for workoutArrayResMaker");
-      console.log(error.message);
-    }
-    
+    // try { // didn't work too
+    // workouts = await workoutArrayResMaker(workoutsArray); 
+    // console.log("finished querying database. Workouts:");
+    // console.log(workouts);
+    // } catch (error) {
+    // console.log("Something went wrong when waiting for workoutArrayResMaker");
+    // console.log(error.message);
+    // }
+  
+    // workoutArrayResMaker(workoutsArray) // NOT A FUNCTION?!? 
+    //   .then( workouts => {
+    //     console.log("finished querying database. Workouts:");
+    //     console.log(workouts);
+    //     userCreate(username, password, age, height, weight, activity, goals, achievement, workouts)
+    //   })
+    //   .catch(err => {
+    //     console.log("workoutArrayResMaker errored out:");
+    //     console.log(err.messages);
+    //   });
+    workouts = workoutArrayResMaker(screenedWorkouts);
+    console.log("finished querying database. Workouts:");
+    console.log(workouts);
+    userCreate(username, password, age, height, weight, activity, goals, 
+      achievement, workouts)
+
   };
 
-  userCreate(username, password, age, height, 
-    weight, activity, goals, achievement, workouts)
+  // userCreate(username, password, age, height, 
+  //   weight, activity, goals, achievement, workouts)
     // .then(() => console.log(`User ${username} successfully created`) )
     // .catch( () => console.log(`Something failed`) )
 };
@@ -100,7 +136,7 @@ userResHandler(
   "low", 
   "5k", 
   1, // achievement
-  ["Introduction to Strength"]
+  "Introduction to Strength"
 )
 
 
