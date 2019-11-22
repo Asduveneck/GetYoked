@@ -1,5 +1,5 @@
 import React from "react";
-// import GreetingContainer from "../greeting/greeting_container";
+
 import { Link, withRouter, Redirect } from "react-router-dom";
 import "../../stylesheets/components/login_page.css";
 
@@ -9,19 +9,11 @@ class LoginForm extends React.Component {
     this.state = {
       username: "",
       password: "",
-      errors: {},
-      redirect: false
+      errors: {}
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.login = this.login.bind(this);
   }
-
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.signedIn === true) {
-  //     this.props.history.push("/new-workout");
-  //   }
-    
-  //   this.setState({ errors: nextProps.errors });
-  // }
 
   update(field) {
     return e =>
@@ -41,18 +33,17 @@ class LoginForm extends React.Component {
       .then(() => this.props.history.push("/workoutnew"));
   }
 
-  // login(e) {
-  //   e.preventDefault();
-  //   const user = {
-  //     username: "zaidclone",
-  //     password: "password"
-  //   };
-  //   this.setState(user);
-  //   setInterval(() => {});
-  //   this.props.processForm(user).then(() => {
-  //     this.props.history.push("/browse");
-  //   });
-  // }
+  login(e) {
+    e.preventDefault();
+    const user = {
+      username: "zaidclone",
+      password: "password"
+    };
+    this.setState(user);
+    this.props.processForm(user).then(() => {
+      this.props.history.push("/workoutnew");
+    });
+  }
 
   renderErrors() {
     return (
@@ -67,7 +58,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="background">
           
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className="signInMessage">Sign In</div>
