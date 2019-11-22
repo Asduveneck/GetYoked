@@ -19,6 +19,8 @@ mongoose
 // require('./seeds/workoutSeed');
 // require('./seeds/userSeed');
 
+// heroku prep
+
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
 app.use("/api/workouts", workouts);
