@@ -81,6 +81,15 @@
     background-color: rgba(0, 66, 123, 0);
 }
 
+@media screen and (max-width: 1000px) {
+  .back-button {
+    top: 20%;
+    left: 5%;
+    background-color: black;
+    color: white;
+  }
+}
+
 .workout-detail-description-parent {
     width: 100%;
     height: 1000px;
