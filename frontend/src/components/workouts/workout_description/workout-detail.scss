@@ -65,7 +65,7 @@
     border-bottom: 3px solid rgba(0, 14, 123, 0.392);
 }
 
-.workout-detail-window button {
+.back-button {
     position: absolute;
     top: 10%;
     left: 5%;
@@ -91,6 +91,7 @@
     display: flex;
     flex-direction: column;
     align-items: stretch;
+    text-align: center;
 }
 
 .wo-detail-name {
@@ -98,14 +99,16 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(229,229,238);
-    padding: .85em;
-    height: 100px;
-    color: white;
+    // background-color: rgb(229,229,238);
+    padding: .85em; 
+    color: rgb(223,147,77);
+    // height: 100px;
+    // color: white;
     font-size: 40px;
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
     margin: .85em;
+    
 }
 
 .wo-detail-item {
@@ -125,11 +128,22 @@
     box-sizing: border-box;
     height: 300px;
     width: 300px;
-    border: 1px solid fuchsia;
+    border: 3px solid black;
 }
 
 .workout-detail-item-exercise {
     height: 300px;
     width: 100%;
-    border: 1px solid fuchsia;
+    border: 3px solid black;
+}
+
+.wo-detail-finished-button {
+    background-color: rgb(213,69,77);
+    color: white;
+    font-size: 30px;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    margin: .85em;
+    border: none;
+    border-radius: 3px;
 }
