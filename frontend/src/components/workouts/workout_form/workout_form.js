@@ -19,22 +19,30 @@ class WorkoutForm extends React.Component {
         return (
           <div className="workout-form-window">
             <div className="workout-form-title-parent">
-                <h1 className="workout-form-title username">{this.props.currentUser.username}</h1>
-                
-                <h1 className="workout-form-title">What do you want to do today?</h1>
+              <h1 className="workout-form-title username">
+                {this.props.currentUser.username}
+              </h1>
+
+              <h1 className="workout-form-title">
+                What do you want to do today?
+              </h1>
             </div>
-                <div className="workout-buttons-container">
-                <div className="cardio-button workout-form-button">
-                    {/* <Link to="/workout" params={{type:"cardio"}, {user: this.props.currentUser}}> */}
-                        <button>Cardio</button>
-                    {/* </Link> */}
-                </div>
-                <div className="strength-button workout-form-button">
-                    <button>Strength & Weights</button>
-                </div>
-                <div className="flexibility-button workout-form-button">
-                    <button>Balance & Flexibility</button>
-                </div>
+            <div className="workout-buttons-container">
+              <div className="cardio-button workout-form-button">
+                <Link to="/workout">
+                  <button>Cardio</button>
+                </Link>
+              </div>
+              <div className="strength-button workout-form-button">
+                <Link to="/workout">
+                  <button>Strength & Weights</button>
+                </Link>
+              </div>
+              <div className="flexibility-button workout-form-button">
+                <Link to="/workout">
+                  <button>Balance & Flexibility</button>
+                </Link>
+              </div>
             </div>
           </div>
         );
