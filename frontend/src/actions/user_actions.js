@@ -17,10 +17,8 @@ export const fetchUser = id => dispatch => (
         .catch(err => console.log(err))
 );
 
-export const patchUser = user => dispatch => {
-
-    debugger;
-    return updateUser(user)
+export const patchUser = user => dispatch => (
+    updateUser(user)
         .then(user => dispatch(receiveUser(user)))
         .catch(err => console.log(err))
-};
+);

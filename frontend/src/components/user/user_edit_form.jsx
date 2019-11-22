@@ -4,13 +4,14 @@ class UserEditForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            id: this.props.user._id,
+            _id: this.props.user._id,
             username: this.props.user.username, 
             age: this.props.user.age,
-            // height: this.props.user.height,
+            height: this.props.user.height,
             weight: this.props.user.weight,
             activity: this.props.user.activity,
             goals: this.props.user.goals,
+            achievement: this.props.user.achievement,
 
         }
         this.handleSubmit = this.handleSubmit.bind(this)
