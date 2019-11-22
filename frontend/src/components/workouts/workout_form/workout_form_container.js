@@ -5,7 +5,8 @@ import { fetchUser } from '../../../actions/user_actions';
 const msp = (state) => {
     console.log(state)
     return {
-      currentUser: state.session.user.id
+      currentUserId: state.session.user.id,
+      currentUser: state.entities.users[state.session.user.id]
     };
 }
 

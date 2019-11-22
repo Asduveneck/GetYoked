@@ -7,6 +7,7 @@ import SignUpFormContainer from './session/signup_form_container';
 import WorkoutFormContainer from './workouts/workout_form/workout_form_container';
 import TeamMembers from './teampage/team_page'
 import Splash from './splash/splash_page'
+import WorkoutDetailContainer from './workouts/workout_description/workout_detail_container';
 
 import './reset.scss'
 import ProfileContainer from "./user/profile_container";
@@ -16,8 +17,7 @@ const App = () => (
     <GreetingContainer />
     <Switch>
       <ProtectedRoute exact path="/workoutnew" component={WorkoutFormContainer} />
-      {/* routes for login and signup */}
-      {/* routes for workouts */}
+      <ProtectedRoute exact path="/workout" component={WorkoutDetailContainer} />
       <ProtectedRoute path='/users/:id' component={ProfileContainer} />
       <AuthRoute path="/login" component={LogInFormContainer} />
       <AuthRoute path="/signup" component={SignUpFormContainer} />
