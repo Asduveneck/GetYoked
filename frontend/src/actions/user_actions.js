@@ -11,11 +11,15 @@ export const receiveUser = user => {
     }
 };
 
-export const fetchUser = id => dispatch => (
+export const fetchUser = id => dispatch => {
+    console.log("this is happening")
     getUser(id)
-        .then(user => dispatch(receiveUser(user)))
+        .then(user => {
+            console.log("user=")
+            console.log(user)
+            dispatch(receiveUser(user))})
         .catch(err => console.log(err))
-);
+};
 
 export const patchUser = user => dispatch => (
     updateUser(user)
