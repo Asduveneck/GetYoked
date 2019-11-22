@@ -36,7 +36,7 @@ class WorkoutDetail extends React.Component {
                         <div className="workout-detail-item-exercise">Exercise description placeholder</div>
                     </div>
 
-                    <Link><button className="wo-detail-finished-button">I finished this workout!</button></Link>
+                    <button className="wo-detail-finished-button">I finished this workout!</button>
                 </div>
             </div>
 

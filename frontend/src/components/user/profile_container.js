@@ -5,7 +5,6 @@ import Profile from "./profile";
 let _defaultState = {}
 
 const mapSTP = (state = _defaultState, ownProps) => {
-    debugger;
     return {
         user: state.entities.users[ownProps.match.params.id],
     }
