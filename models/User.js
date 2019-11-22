@@ -1,23 +1,24 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
-
-const WorkoutSchema = new Schema({
-    _workoutId: {
-        type: Schema.Types.ObjectId,
-        required: true
-    },
-    date: {
-        type: Date,
-        default: Date.now
-    },
-    name: {
-        type: String,
-        required: true
-    },
-    intensity: {
-        type: Number
-    }
-})
+const Workout = require('./Workout');
+const WorkoutSchema = Workout.Schema;
+// const WorkoutSchema = new Schema({
+//     _workoutId: {
+//         type: Schema.Types.ObjectId,
+//         required: true
+//     },
+//     date: {
+//         type: Date,
+//         default: Date.now
+//     },
+//     name: {
+//         type: String,
+//         required: true
+//     },
+//     intensity: {
+//         type: Number
+//     }
+// })
 
 const UserSchema = new Schema({
     username: {
