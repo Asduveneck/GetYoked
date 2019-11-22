@@ -13,6 +13,7 @@ class LoginForm extends React.Component {
       redirect: false
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.login = this.login.bind(this);
   }
 
   // componentWillReceiveProps(nextProps) {
@@ -41,18 +42,17 @@ class LoginForm extends React.Component {
       .then(() => this.props.history.push("/workoutnew"));
   }
 
-  // login(e) {
-  //   e.preventDefault();
-  //   const user = {
-  //     username: "zaidclone",
-  //     password: "password"
-  //   };
-  //   this.setState(user);
-  //   setInterval(() => {});
-  //   this.props.processForm(user).then(() => {
-  //     this.props.history.push("/browse");
-  //   });
-  // }
+  login(e) {
+    e.preventDefault();
+    const user = {
+      username: "zaidclone",
+      password: "password"
+    };
+    this.setState(user);
+    this.props.processForm(user).then(() => {
+      this.props.history.push("/workoutnew");
+    });
+  }
 
   renderErrors() {
     return (
@@ -67,7 +67,7 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div>
-        <div>
+        <div className="background">
           
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className="signInMessage">Sign In</div>
