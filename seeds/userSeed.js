@@ -48,7 +48,8 @@ async function workoutFindOneByName(entry) {
       console.log("In workoutArrayResMaker now. Looking for: ");
       console.log(workoutsArray[i]);
       let workout = await workoutFindOneByName(workoutsArray[i]);
-      finalWorkoutArr.push(workout);
+      // finalWorkoutArr.push(workout);  // Somehow nests everything as one giant array
+      finalWorkoutArr += workout;
 
       // workoutFindOneByName(workoutsArray[i])
       //   .then(workout => finalWorkoutArr.push(workout))
@@ -57,7 +58,7 @@ async function workoutFindOneByName(entry) {
     }
     console.log("still in workoutArrayResMaker");
     console.log(`found: ${finalWorkoutArr}`);
-    return finalWorkoutArr; 
+    return await finalWorkoutArr; 
   };
 
   // DARN IT achievements 0 is treated as a null...
@@ -70,6 +71,8 @@ const userCreate = (username, password, age, height,
         username, password, age, height, weight, activity, goals, achievement
       }); 
     } else { // create the following
+      console.log(workouts)
+      // right now each workout is nested in an array. Why?
       User.create({username, password, age, height, weight, 
         activity, goals, achievement, workouts //FINDME SWITCH TO the findONE AND UPDATE THINGAMIJIGGY
         // https://www.wlaurance.com/2017/04/mongoose-tip-push/
@@ -121,12 +124,12 @@ userResHandler(
   "low", 
   "5k", 
   1, // achievement
-  "Introduction to Strength"
+  ["Introduction to Strength", "Introduction to Cardio"]
 )
 
 
 /*
-https://stackoverflow.com/questions/48255659/node-js-mongoose-find
+https://stackoverflow.com/questions/48255659/node-js-mongoose-find // WHAT A LIE
 https://www.robinwieruch.de/mongodb-express-setup-tutorial
 https://mongoosejs.com/docs/api.html#model_Model.insertMany
 */
@@ -230,7 +233,7 @@ User.insertMany([
     height: 77,
     weight: 50,
     activity: "light",
-    goals: "lose weight ",
+    goals: "lose weight",
     achievement: 0 // Zaid
   },
   {

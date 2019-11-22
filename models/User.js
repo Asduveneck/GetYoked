@@ -59,6 +59,8 @@ const UserSchema = new Schema({
     },
     workouts: {
         type: [WorkoutSchema]
+        // type: mongoose.Schema.Types.ObjectId,
+        // ref: 'Workout'
     }
 })
 
