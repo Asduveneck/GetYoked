@@ -93,25 +93,7 @@ const userResHandler = (username, password, age, height,
     console.log("querying database with: ");
     console.log(screenedWorkouts);
     console.log(" ");
-    // try { // didn't work too
-    // workouts = await workoutArrayResMaker(workoutsArray); 
-    // console.log("finished querying database. Workouts:");
-    // console.log(workouts);
-    // } catch (error) {
-    // console.log("Something went wrong when waiting for workoutArrayResMaker");
-    // console.log(error.message);
-    // }
-  
-    // workoutArrayResMaker(workoutsArray) // NOT A FUNCTION?!? 
-    //   .then( workouts => {
-    //     console.log("finished querying database. Workouts:");
-    //     console.log(workouts);
-    //     userCreate(username, password, age, height, weight, activity, goals, achievement, workouts)
-    //   })
-    //   .catch(err => {
-    //     console.log("workoutArrayResMaker errored out:");
-    //     console.log(err.messages);
-    //   });
+
     workouts = workoutArrayResMaker(screenedWorkouts);
     console.log("finished querying database. Workouts:");
     console.log(workouts);
@@ -120,10 +102,6 @@ const userResHandler = (username, password, age, height,
 
   };
 
-  // userCreate(username, password, age, height, 
-  //   weight, activity, goals, achievement, workouts)
-    // .then(() => console.log(`User ${username} successfully created`) )
-    // .catch( () => console.log(`Something failed`) )
 };
 
 
