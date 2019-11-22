@@ -7,6 +7,14 @@ class WorkoutDetail extends React.Component {
         super(props)
     }
 
+    handleClick() {
+      // redirect to user show page when I can figure out how to get there
+    }
+
+    // componentDidMount() {
+    //   // fetch workout when I can figure out how to
+    // }
+
     render() {
         return (
           <div className="workout-detail-window">
