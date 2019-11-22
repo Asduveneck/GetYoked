@@ -8,13 +8,13 @@ const User = require('../models/User')
 
 User.collection.drop();
 const Workout = require("../models/Workout");
-
+// Following failed:
 // https://stackoverflow.com/questions/24035872/return-results-mongoose-in-find-query-to-a-variable
 
 // Helper method to return a promise to find a specific workout POJO
-const workoutFindOneByName = entry => {
+async function workoutFindOneByName(entry) {
   console.log("We're in workoutFindOneByName");
-  return Workout.find({ name: entry }, function(err, data) {
+  let workout = await Workout.find({ name: entry }, function(err, data) {
     console.log(`Our entry in workoutFindOneByName: ${entry}`)
     // error handling
     if (err) {
@@ -26,29 +26,33 @@ const workoutFindOneByName = entry => {
       return;
     }
     return data;
-  }).lean().exec()
+  })
+  return workout;
 };
 
 // Makes an array of workouts that wait until each workout is found 
 // (so we have a proper array of pojos that came from evaluated promises)
 
-  const workoutArrayResMaker = workoutsArray => {
+  async function workoutArrayResMaker(workoutsArray) {
+  // const workoutArrayResMaker = workoutsArray => {
     if(!Array.isArray(workoutsArray)) {
       console.log("workoutArrayResMaker received a string. We need to error out");
       return; // should learn to throw errors
     }
 
     finalWorkoutArr = []
+
     console.log(`In workoutArrayResMaker before looping through: ${workoutsArray}`);
+
     for(let i = 0; i < workoutsArray.length; i++) { // my iterating through elements was broken
-      // let workout = await workoutFindOneByName(workoutName); // async didn't work...
-      // workoutArray.push(workout);
       console.log("In workoutArrayResMaker now. Looking for: ");
       console.log(workoutsArray[i]);
+      let workout = await workoutFindOneByName(workoutsArray[i]);
+      finalWorkoutArr.push(workout);
 
-      workoutFindOneByName(workoutsArray[i])
-        .then(workout => finalWorkoutArr.push(workout))
-        .catch(() => "No workout found in workoutArrayResMaker");
+      // workoutFindOneByName(workoutsArray[i])
+      //   .then(workout => finalWorkoutArr.push(workout))
+      //   .catch(() => "No workout found in workoutArrayResMaker");
       // workoutArray.push(workout) //Soft fail because worst case empty array
     }
     console.log("still in workoutArrayResMaker");
@@ -67,13 +71,16 @@ const userCreate = (username, password, age, height,
       }); 
     } else { // create the following
       User.create({username, password, age, height, weight, 
-        activity, goals, achievement, workouts
-      }) 
+        activity, goals, achievement, workouts //FINDME SWITCH TO the findONE AND UPDATE THINGAMIJIGGY
+        // https://www.wlaurance.com/2017/04/mongoose-tip-push/
+      })
+      
+      
     }
   }; 
 
-const userResHandler = (username, password, age, height, 
-  weight, activity, goals, achievement, workoutsArray = []) => {
+async function userResHandler(username, password, age, height, 
+  weight, activity, goals, achievement, workoutsArray = []){
 
   // Screening workoutsArray to be an array or string.
   let screenedWorkouts = []; // storing everything
@@ -94,7 +101,7 @@ const userResHandler = (username, password, age, height,
     console.log(screenedWorkouts);
     console.log(" ");
 
-    workouts = workoutArrayResMaker(screenedWorkouts);
+    workouts = await workoutArrayResMaker(screenedWorkouts);
     console.log("finished querying database. Workouts:");
     console.log(workouts);
     userCreate(username, password, age, height, weight, activity, goals, 

@@ -19,7 +19,9 @@ mongoose
 // require('./seeds/workoutSeed');
 require('./seeds/userSeed');
 
-console.log("findme");
+console.log("");
+console.log("findme back in app.js . userSeed thread stack has ended in terms of stack...");
+console.log("");
 
 
 // https://stackoverflow.com/questions/48255659/node-js-mongoose-find
