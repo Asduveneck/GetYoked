@@ -8,62 +8,8 @@ const User = require('../models/User')
 
 User.collection.drop();
 const Workout = require("../models/Workout");
-// const workouts = Workout.collection;
+
 // https://stackoverflow.com/questions/24035872/return-results-mongoose-in-find-query-to-a-variable
-/* 
-// returns undefined, which then breaks workouts 
-// Part 1 of above SO top answer
-const workoutFinder = name => {
- let query = Workout.find({ name })
-  return query.exec(function(err, data) {
-    if (err) {
-      console.log(err);
-      return;
-    }
-    if (data.length == 0) {
-      console.log("No record found");
-      return;
-    }
-    return data;
-  })
-};
-
-*/
-// Still async hell with create.
-// const workoutFinder = name => (
-//   Workout.find({ name }, function(err, data) {
-//     if (err) {
-//       console.log(err);
-//       return;
-//     }
-//     if (data.length == 0) {
-//       console.log("No record found");
-//       return;
-//     }
-//     return data;
-//   })// Promise as of now
-//   .then(function(workouts) {
-//     workouts.forEach(function(workout){
-//       return workout
-//     });
-//   })
-// );
-
-
-// workoutFinder("Introduction to Cardio").then(res =>
-//   User.create({
-//     username: "PromisedNeverland",
-//     password: "12345!",
-//     age: 27,
-//     height: 69,
-//     weight: 160,
-//     activity: "low",
-//     goals: "5k",
-//     achievement: 0,
-//     workouts: res
-//   })
-// );
-
 
 // Helper method to return a promise to find a specific workout POJO
 const workoutFindOneByName = entry => (
