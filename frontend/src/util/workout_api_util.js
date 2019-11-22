@@ -1,6 +1,4 @@
 import axios from "axios";
-import { fileURLToPath } from "url";
-import { DH_UNABLE_TO_CHECK_GENERATOR } from "constants";
 
 export const fetchWorkouts = () => {
   return axios.get("/api/workouts")
