@@ -4,6 +4,6 @@ export const fetchWorkouts = () => {
   return axios.get("/api/workouts")
 };
 
-export const fetchWorkout = id => {
-  return axios.get(`/api/workouts/${id}`);
+export const fetchWorkout = (type, intensity) => {
+  return axios.get(`/api/workouts/find?type=${type}&intensity=${intensity}`);
 };

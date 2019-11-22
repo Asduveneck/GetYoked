@@ -1,6 +1,7 @@
 import WorkoutForm from './workout_form';
 import { connect } from 'react-redux';
 import { fetchUser } from '../../../actions/user_actions';
+import { getWorkout } from '../../../actions/workout_actions';
 
 const msp = (state) => {
     console.log(state)
@@ -12,8 +13,8 @@ const msp = (state) => {
 
 const mdp = dispatch => {
     return {
-        fetchUser: id => dispatch(fetchUser(id))
-        // fetchWorkout: (id) => dispatch(fetchWorkout(id))
+        fetchUser: id => dispatch(fetchUser(id)),
+        getWorkout: (type, intensity) => dispatch(getWorkout(type, intensity))
     }
 }
 

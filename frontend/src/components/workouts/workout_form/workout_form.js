@@ -6,10 +6,17 @@ import './workout_form.scss'
 class WorkoutForm extends React.Component {
     constructor(props) {
         super(props)
+
+        // this.getWorkout = this.getWorkout.bind(this)
     }
 
     componentDidMount() {
         this.props.fetchUser(this.props.currentUserId)
+    }
+
+    getWorkout(type) {
+      const intensity = this.props.currentUser.achievement
+      this.props.getWorkout(type, intensity)
     }
 
     render() {
@@ -30,7 +37,7 @@ class WorkoutForm extends React.Component {
             <div className="workout-buttons-container">
               <div className="cardio-button workout-form-button">
                 <Link to="/workout">
-                  <button>Cardio</button>
+                  <button onClick={() => {this.getWorkout("cardio")}}>Cardio</button>
                 </Link>
               </div>
               <div className="strength-button workout-form-button">

@@ -40,7 +40,6 @@ class Profile extends React.Component {
 
     render() {
         let currentTab;
-        debugger;
         if (this.props.user === undefined) return null;
         if (this.state.selectedTab === 0) {
             currentTab = (
