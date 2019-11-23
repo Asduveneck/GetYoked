@@ -3,7 +3,7 @@ import React from 'react'
 class UserWorkouts extends React.Component {
     render() {
         return (
-            <div>
+            <div className="user-workouts-parent">
               f  
             </div>
         )

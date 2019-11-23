@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import WorkoutDetail from './workout_detail';
 import { getOneWorkout } from '../../../actions/workout_actions'
-import { fetchUser } from "../../../actions/user_actions";
+import { fetchUser, patchUserWorkouts } from "../../../actions/user_actions";
 import queryString from "query-string";
 
 const msp = (state, ownProps) => {
@@ -19,7 +19,8 @@ const msp = (state, ownProps) => {
 const mdp = dispatch => {
     return {
       fetchWorkout: id => dispatch(getOneWorkout(id)),
-      fetchUser: id => dispatch(fetchUser(id))
+      fetchUser: id => dispatch(fetchUser(id)),
+      updateUserWorkouts: (user) => dispatch(patchUserWorkouts(user))
     };
 }
 

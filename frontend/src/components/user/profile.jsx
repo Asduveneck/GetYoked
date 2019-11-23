@@ -44,7 +44,7 @@ class Profile extends React.Component {
         if (this.props.user === undefined) return null;
         if (this.state.selectedTab === 0) {
             currentTab = (
-                <div>
+                <div className="achievement-parent">
                     <h2>{this.props.user.username}'s Achievements</h2>
 
                     <p>You're currently at Achievement level {this.props.user.achievement}</p>
@@ -54,6 +54,7 @@ class Profile extends React.Component {
             if (this.state.edit) {
                 currentTab = (
                     <UserEditForm
+                        className="edit-user-parent"
                         user={this.props.user}
                         cancelEdit={this.cancelEdit}
                         patchUser={this.props.patchUser}
@@ -62,6 +63,7 @@ class Profile extends React.Component {
             } else {
                 currentTab = (
                     <UserInfo 
+                        className="user-info-parent"
                         user={this.props.user}
                         beginEdit={this.beginEdit}
                         cancelEdit={this.cancelEdit}
@@ -72,7 +74,8 @@ class Profile extends React.Component {
         } else if (this.state.selectedTab === 2) {
             currentTab = (
                 // FIND ME how is workout info stored in state?
-                <UserWorkouts />
+                <UserWorkouts
+                />
             )
         }
 

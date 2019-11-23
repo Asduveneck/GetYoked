@@ -1,4 +1,4 @@
-import { getUser, updateUser } from '../util/user_api_util';
+import { getUser, updateUser, updateUserWorkouts } from '../util/user_api_util';
 
 export const RECEIVE_USER = "RECEIVE_USER";
 
@@ -21,3 +21,10 @@ export const patchUser = user => dispatch => (
         .then(user => dispatch(receiveUser(user)))
         .catch(err => console.log(err))
 );
+
+export const patchUserWorkouts = (userId, workout) => dispatch => {
+    updateUserWorkouts(userId, workout)
+        .then(user => {
+            dispatch(receiveUser(user))})
+        .catch(err => console.log(err))
+}   

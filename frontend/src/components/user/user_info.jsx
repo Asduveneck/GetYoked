@@ -3,7 +3,7 @@ import React from 'react'
 class UserInfo extends React.Component {
     render() {
         return (
-            <div>
+            <div className="user-info-parent">
                 <h2>{this.props.user.username}'s Info</h2>
 
                 <ul>

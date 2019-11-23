@@ -26,13 +26,25 @@ class WorkoutDetail extends React.Component {
 
     handleClick() {
       console.log(this.props)
+      const workoutObject = {
+        _workoutId: this.props.workoutId,
+        date: Date(Date.now()),
+        name: this.props.workout.name,
+        intensity: this.props.workout.intensity
+      }
+      const userWorkouts = (this.props.currentUser.workouts).slice();
+      userWorkouts.push(workoutObject);
+      console.log(userWorkouts);
+
+      this.props.updateUserWorkouts(this.props.currentUserId, userWorkouts);
+
       this.props.history.push(`/users/${this.props.currentUserId}`)
       //logic to append workout to their workout history
     }
 
     render() {
       if (this.props.workout === undefined) return null;
-
+      console.log(this.props)
         return (
           <div className="workout-detail-window">
             <div className="workout-detail-header">
