@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import './workout_form.scss'
 
 
@@ -7,22 +7,30 @@ class WorkoutForm extends React.Component {
     constructor(props) {
         super(props)
 
-        // this.getWorkout = this.getWorkout.bind(this)
+        this.getWorkout = this.getWorkout.bind(this)
     }
 
     componentDidMount() {
+      this.props.fetchUser(this.props.currentUserId)
+    }
+
+    componentDidUpdate(prevProps) {
+      if (this.props.currentUser === undefined) {
         this.props.fetchUser(this.props.currentUserId)
+      }
     }
 
     getWorkout(type) {
       const intensity = this.props.currentUser.achievement
       this.props.getWorkout(type, intensity)
+        .then(res => {
+          this.props.history.push(`/workout?workoutId=${res.workout.data._id}`)
+        })
     }
 
     render() {
-        if (this.props.currentUser === undefined) return null
-        console.log(this.props.currentUser)
-        console.log(this.props)
+        if (this.props.currentUser === undefined) return null;
+        
         return (
           <div className="workout-form-window">
             <div className="workout-form-title-parent">
@@ -36,19 +44,13 @@ class WorkoutForm extends React.Component {
             </div>
             <div className="workout-buttons-container">
               <div className="cardio-button workout-form-button">
-                <Link to="/workout">
                   <button onClick={() => {this.getWorkout("cardio")}}>Cardio</button>
-                </Link>
               </div>
               <div className="strength-button workout-form-button">
-                <Link to="/workout">
-                  <button>Strength & Weights</button>
-                </Link>
+                  <button onClick={() => {this.getWorkout("strength")}}>Strength & Weights</button>
               </div>
               <div className="flexibility-button workout-form-button">
-                <Link to="/workout">
-                  <button>Balance & Flexibility</button>
-                </Link>
+                  <button onClick={() => {this.getWorkout("flexibility")}}>Balance & Flexibility</button>
               </div>
             </div>
           </div>
@@ -56,4 +58,4 @@ class WorkoutForm extends React.Component {
     }
 }
 
-export default WorkoutForm;
+export default withRouter(WorkoutForm);

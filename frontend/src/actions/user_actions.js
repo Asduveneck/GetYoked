@@ -3,7 +3,6 @@ import { getUser, updateUser } from '../util/user_api_util';
 export const RECEIVE_USER = "RECEIVE_USER";
 
 export const receiveUser = user => {
-    console.log(user)
     return {
         type: RECEIVE_USER,
         user
@@ -11,11 +10,8 @@ export const receiveUser = user => {
 };
 
 export const fetchUser = id => dispatch => {
-    console.log("this is happening")
     getUser(id)
         .then(user => {
-            console.log("user=")
-            console.log(user)
             dispatch(receiveUser(user))})
         .catch(err => console.log(err))
 };

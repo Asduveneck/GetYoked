@@ -3,8 +3,7 @@ import { connect } from 'react-redux';
 import { fetchUser } from '../../../actions/user_actions';
 import { getWorkout } from '../../../actions/workout_actions';
 
-const msp = (state) => {
-    console.log(state)
+const msp = (state, ownProps) => {
     return {
       currentUserId: state.session.user.id,
       currentUser: state.entities.users[state.session.user.id]

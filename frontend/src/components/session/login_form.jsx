@@ -28,7 +28,6 @@ class LoginForm extends React.Component {
       username: this.state.username,
       password: this.state.password
     }
-    console.log(user);
     this.props.processForm(user)
       .then(() => this.props.history.push("/workoutnew"));
   }

@@ -13,7 +13,6 @@ const validateUpdateUserInput = require('../../validations/update_user')
 // ROUTES: register
 
 router.post('/register', (req, res) => {
-    console.log(req.body)
     const { errors, isValid } = validateRegisterInput(req.body);
 
     if (!isValid) {
@@ -103,7 +102,6 @@ router.post('/login', (req, res) => {
 
 //ROUTES: user show
 router.get('/:id', (req, res) => {
-    console.log(req.body)
     User.findById(req.params.id)
         .then(user => res.json(user))
         .catch(err =>
