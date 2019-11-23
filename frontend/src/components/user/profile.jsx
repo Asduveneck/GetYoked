@@ -54,7 +54,6 @@ class Profile extends React.Component {
             if (this.state.edit) {
                 currentTab = (
                     <UserEditForm
-                        className="edit-user-parent"
                         user={this.props.user}
                         cancelEdit={this.cancelEdit}
                         patchUser={this.props.patchUser}
@@ -63,7 +62,6 @@ class Profile extends React.Component {
             } else {
                 currentTab = (
                     <UserInfo 
-                        className="user-info-parent"
                         user={this.props.user}
                         beginEdit={this.beginEdit}
                         cancelEdit={this.cancelEdit}
@@ -75,23 +73,28 @@ class Profile extends React.Component {
             currentTab = (
                 // FIND ME how is workout info stored in state?
                 <UserWorkouts
+                    user={this.props.user}
+                    workouts={this.props.user.workouts}
                 />
             )
         }
 
         return (
-            <div className="user-profile">
-                <ul className="tab-container">
-                    <h2 onClick={this.selectTab(0)}>Achievements</h2>
-                    <h2 onClick={this.selectTab(1)}>User Info</h2>
-                    <h2 onClick={this.selectTab(2)}>Workout History</h2>
-                </ul>
+            <div className="profile-window">
+                <div className="user-profile">
+                    <div className="user-profile-greeting">Hi there, {this.props.user.username}</div>
+                    <ul className="tab-container">
+                        <h2 onClick={this.selectTab(0)}>Achievements</h2>
+                        <h2 onClick={this.selectTab(1)}>User Info</h2>
+                        <h2 onClick={this.selectTab(2)}>Workout History</h2>
+                    </ul>
 
-                <div>
-                    {currentTab}
+                    <div className="currentTab">
+                        {currentTab}
+                    </div>
+                    
                 </div>
-                
-            </div>
+            </div>    
         )
     }
 }

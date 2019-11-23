@@ -1,15 +1,84 @@
-.achievement-parent {
-    background-color: fuchsia;
+// fonts:
+// font-family: 'Nunito', sans-serif; --> angular, subtext of Rubik
+// font-family: 'Open Sans', sans-serif; --> basic, content
+// font-family: 'Rubik', sans-serif; --> angular, basic, mainttext/ titles
+// font-family: 'Dosis', sans-serif; --> cute small notes, the 0s have dots in them
+// font-family: 'Poiret One', cursive; --> cute big notes, priority not main
+$gradient: linear-gradient(50deg, rgba(228,220,255,1) 0%, rgba(215,222,235,1) 100%);
+$main-background: rgb(242,245,245);
+$shadow: 0 1px #FFFFFF inset, 0 1px 3px rgba(34, 25, 25, 0.4);
+$navy: rgb(15, 14, 57);
+$navy2: rgb(39,38,69);
+$divider: 1px solid rgba(97, 94, 106, 0.064);
+$hover: rgba(97, 94, 106, 0.064);
+
+.profile-window {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(121, 117, 133, 0.927);
+    background: $gradient;
 }
 
-.edit-user-parent {
-    background-color: lightsteelblue;
+.user-profile {
+    width: 100vw;
+    height: 100vh;
+    margin-top: 100px;
+    background: $main-background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 
-.user-info-parent {
-    background-color: mediumaquamarine;
+.user-profile-greeting {
+    font-family: 'Rubik', sans-serif;
+    position: absolute;
+    display: inline block;
+    font-size: 30px;
+    left: 35vw;
+    top: 25px;
+    background: white;
+    padding: .5em;
+    border-radius: 3px;
 }
 
-.user-workouts-parent {
-    background-color: coral;
+.tab-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 4rem;
+    font-family: 'Nunito', sans-serif;
+    background-color: white;
+    border-radius: 3px;
+    width: 60%;
+    height: 35px;
+    border-bottom: $divider
+}
+
+.tab-container > * {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+.tab-container > *:hover {
+    cursor: pointer;
+    background-color: $hover;
+}
+
+.currentTab {
+    width: 80%;
+    background-color: white;
+    margin-top: 0px;
+    padding-top: 0px;
+    height: 80vh;
+    border-radius: 3px;
 }
