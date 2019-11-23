@@ -3,6 +3,7 @@ import UserInfo from './user_info'
 import UserEditForm from "./user_edit_form"
 import UserWorkouts from './user_workouts'
 import './profile.scss'
+import { withRouter} from 'react-router-dom'
 
 class Profile extends React.Component {
     constructor(props) {
@@ -47,7 +48,8 @@ class Profile extends React.Component {
                 <div className="achievement-parent">
                     <h2>{this.props.user.username}'s Achievements</h2>
 
-                    <p>You're currently at Achievement level {this.props.user.achievement}</p>
+                    <p>You're currently at Achievement level {this.props.user.achievement}!</p>
+                    <p>Keep up the good work!</p>
                 </div>
             )
         } else if (this.state.selectedTab === 1) {
