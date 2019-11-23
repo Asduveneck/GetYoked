@@ -7,6 +7,8 @@ import ExerciseItem from './exercise_item.js'
 class WorkoutDetail extends React.Component {
     constructor(props) {
         super(props)
+
+        this.handleClick = this.handleClick.bind(this)
     }
 
     componentDidMount() {
@@ -23,12 +25,10 @@ class WorkoutDetail extends React.Component {
     }
 
     handleClick() {
-      // redirect to user show page when I can figure out how to get there
+      console.log(this.props)
+      this.props.history.push(`/users/${this.props.currentUserId}`)
+      //logic to append workout to their workout history
     }
-
-    // componentDidMount() {
-    //   // fetch workout when I can figure out how to
-    // }
 
     render() {
       if (this.props.workout === undefined) return null;
@@ -75,7 +75,7 @@ class WorkoutDetail extends React.Component {
                   </div>
                 </div>
 
-                <button className="wo-detail-finished-button">
+                <button onClick={this.handleClick} className="wo-detail-finished-button">
                   I finished this workout!
                 </button>
               </div>
