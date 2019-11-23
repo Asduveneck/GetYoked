@@ -59,7 +59,7 @@ const UserSchema = new Schema({
     },
     workouts: {
         type: [WorkoutSchema]
-        // type: mongoose.Schema.Types.ObjectId,
+        // type: mongoose.Schema.Types.ObjectId, // returns a reference to the ID
         // ref: 'Workout'
     }
 })
