@@ -2,6 +2,7 @@ import React from 'react'
 import UserInfo from './user_info'
 import UserEditForm from "./user_edit_form"
 import UserWorkouts from './user_workouts'
+import './profile.scss'
 
 class Profile extends React.Component {
     constructor(props) {
