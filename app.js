@@ -28,7 +28,7 @@ mongoose
 // // require('./seeds/exerciseSeed');
 // require('./seeds/workoutSeed');
 // require('./seeds/userSeed');
-require('./seeds/seeding_all');
+// require('./seeds/seeding_all');
 
 console.log("");
 console.log("findme back in app.js . userSeed thread stack has ended in terms of stack...");
