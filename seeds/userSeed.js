@@ -132,6 +132,44 @@ userResHandler(
   "No Workout With This Name" // Null entry in workouts array. Potential problem?
 );
 
+userResHandler(
+  "zaidclone",
+  "$2a$10$2G9p/.xZwFLETGPc0Jjb/ulyznev4tCRQiDnBe5cDy4w6an9Cqa36",
+  69,
+  69,
+  69,
+  "light",
+  "Michelle Obama arms",
+  1,
+  ["Introduction to Strength", "Introduction to Cardio"]
+);
+
+userResHandler(
+   "btest0",
+   "$2a$10$VoRTZMCNBZGC9aQYywLqM.P3bpfkyc9Woxq2rjFJxgPWYbX/RenVK",
+   24,
+   77,
+   50,
+   "light",
+   "lose weight",
+   1,
+   "Introduction to Strength"
+);
+
+userResHandler(
+ "modanger3275",
+ "$2a$10$wEzxrkYWvxVghQxVh2nj6eyrzORE2uKNrWrKTlW4qBqHHqbDaC63i",
+ 50,
+ 70,
+ 200,
+ "medium",
+ "5k",
+ 9,
+ ["Introduction to Strength", "Introduction to Cardio", "Introduction to Flexibility"]
+)
+
+// adfa
+
 User.insertMany([
   {
     username: "Super_Buff_Dude",
@@ -182,35 +220,35 @@ User.insertMany([
     activity: "medium",
     goals: "5k",
     achievement: 1 // "MortiestMorty"
-  },
-  {
-    username: "zaidclone",
-    password: "$2a$10$2G9p/.xZwFLETGPc0Jjb/ulyznev4tCRQiDnBe5cDy4w6an9Cqa36",
-    age: 69,
-    height: 69,
-    weight: 69,
-    activity: "light",
-    goals: "Michelle Obama arms",
-    achievement: 0 // Zaid
-  },
-  {
-    username: "btest0",
-    password: "$2a$10$VoRTZMCNBZGC9aQYywLqM.P3bpfkyc9Woxq2rjFJxgPWYbX/RenVK",
-    age: 24,
-    height: 77,
-    weight: 50,
-    activity: "light",
-    goals: "lose weight",
-    achievement: 0 // Braeden
-  },
-  {
-    username: "modanger3275",
-    password: "$2a$10$wEzxrkYWvxVghQxVh2nj6eyrzORE2uKNrWrKTlW4qBqHHqbDaC63i",
-    age: 50,
-    height: 70,
-    weight: 200,
-    activity: "medium",
-    goals: "5k",
-    achievement: 1 // Maurine
-  }
+  }//,
+  // {
+  //   username: "zaidclone",
+  //   password: "$2a$10$2G9p/.xZwFLETGPc0Jjb/ulyznev4tCRQiDnBe5cDy4w6an9Cqa36",
+  //   age: 69,
+  //   height: 69,
+  //   weight: 69,
+  //   activity: "light",
+  //   goals: "Michelle Obama arms",
+  //   achievement: 0 // Zaid
+  // },
+  // {
+  //   username: "btest0",
+  //   password: "$2a$10$VoRTZMCNBZGC9aQYywLqM.P3bpfkyc9Woxq2rjFJxgPWYbX/RenVK",
+  //   age: 24,
+  //   height: 77,
+  //   weight: 50,
+  //   activity: "light",
+  //   goals: "lose weight",
+  //   achievement: 0 // Braeden
+  // },
+  // {
+  //   username: "modanger3275",
+  //   password: "$2a$10$wEzxrkYWvxVghQxVh2nj6eyrzORE2uKNrWrKTlW4qBqHHqbDaC63i",
+  //   age: 50,
+  //   height: 70,
+  //   weight: 200,
+  //   activity: "medium",
+  //   goals: "5k",
+  //   achievement: 1 // Maurine
+  // }
 ]);
