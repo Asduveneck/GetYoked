@@ -25,9 +25,10 @@ mongoose
     .catch(err => console.log(err));
 
 // SEEDS 
-// require('./seeds/exerciseSeed');
+// // require('./seeds/exerciseSeed');
 // require('./seeds/workoutSeed');
-require('./seeds/userSeed');
+// require('./seeds/userSeed');
+require('./seeds/seeding_all');
 
 console.log("");
 console.log("findme back in app.js . userSeed thread stack has ended in terms of stack...");

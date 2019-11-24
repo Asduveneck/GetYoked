@@ -9,8 +9,7 @@ const Workout = require("../models/Workout");
 
 // Helper method to return a promise to find a specific workout POJO. 
 async function workoutFindOneByName(name) {
-  let workout = await Workout.find({ name }, 
-    function(err, data) {
+  let workout = await Workout.findOne({ name }, function(err, data) {
     // error handling
     if (err) {
       return;
@@ -34,12 +33,13 @@ async function workoutArrayResMaker(workoutsArray) {
   let finalWorkoutArr = [] // stores results from each query
   // For each name you'll query
   for(let i = 0; i < workoutsArray.length; i++) { 
+    // SWITCH TO A .then if possible. Bottleneck here
     let workout = await workoutFindOneByName(workoutsArray[i]); // uses above helper method
-    finalWorkoutArr.push(workout[0]); // add to our returned output
+    if(workout) { finalWorkoutArr.push(workout[0]) } ; // add to our returned output
   }
 
-  return await finalWorkoutArr; 
-}; // Used in userResHandler (final step)
+  return finalWorkoutArr; 
+}; // Used in userResHandler (final step  to seed individual )
 
 // Helper Method to create a user based on whether workouts are present or not
 const userCreate = (username, password, age, height, 
@@ -55,6 +55,7 @@ const userCreate = (username, password, age, height,
     })
     // Use mongoose push to add a workout to each new user
     for(let i = 0; i < workouts.length; i++) {
+      // Maybe add a safe option here, so if the workouts[i] is null, call next?
       newUser.workouts.push(workouts[i])
     }
     // Save to mongoose DB:
@@ -83,9 +84,13 @@ async function userResHandler(username, password, age, height,
         achievement, workouts) // has a safeguard to detect if a workout is present or not.
     })
     .catch(err => {
-      console.log("Something went wrong"); // throw an error here later
+      console.log("Something went wrong in User Seeds"); // throw an error here later
+      console.log(err);
     });
 };
+
+// Write a function to seed everything else. So you pass in an array of entries to each userResHandler, so calling that one function will exeute seeds. Should tidy up the below examples a LOT more.
+
 
 userResHandler(
   "PromisedNeverland2", // username
@@ -123,7 +128,6 @@ userResHandler(
   "No Workout With This Name" // Null entry in workouts array. Potential problem?
 );
 
-
 User.insertMany([
   {
     username: "Super_Buff_Dude",
@@ -134,9 +138,6 @@ User.insertMany([
     activity: "low",
     goals: "5k",
     achievement: 1
-    // workouts: [
-    //   workoutFinder("Shoudld return null and therefore have nothing")
-    // ]
   },
   {
     username: "Maureep",
@@ -147,10 +148,6 @@ User.insertMany([
     activity: "medium",
     goals: "5k",
     achievement: 2
-    // workouts: [
-    //   workoutFinder("Introduction to Strength"),
-    //   workoutFinder("Introduction to Cardio")
-    // ]
   },
   {
     username: "Kazu",
@@ -161,10 +158,6 @@ User.insertMany([
     activity: "intense",
     goals: "5k",
     achievement: 3 // "20km"
-    // workouts: [
-    //   workoutFinder("Introduction to Cardio"),
-    //   workoutFinder("Introduction to Flexibility")
-    // ]
   },
   {
     username: "ZaShaPaSha",
@@ -175,11 +168,6 @@ User.insertMany([
     activity: "intense",
     goals: "5k",
     achievement: 95 // "genos"
-    // workouts: [
-    //   workoutFinder("Introduction to Cardio"),
-    //   workoutFinder("Error"),
-    //   workoutFinder("Introduction to Strength")
-    // ]
   },
   {
     username: "RickAndMorty",
