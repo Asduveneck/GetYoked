@@ -112,13 +112,8 @@ const userCreate = (username, password, age, height,
     console.log(`In user create function, and ${workouts.length} workouts were present:`);
     console.log(`Is the workout an array? ${Array.isArray(workouts)}`)
     console.log(`\n\n`);
-    console.log(typeof(workouts[0]))
+    console.log(workouts);
     console.log(`\n\n`);
-    // right now each workout is nested in an array. Why?
-
-
-  // WE ARE ABLE TO HIT THIS WHEN WE PASS IN A STRING AND IT ERRORS OUT HERE
-
 
     // User.create({username, password, age, height, weight, 
     //   activity, goals, achievement, 
@@ -126,28 +121,34 @@ const userCreate = (username, password, age, height,
     //   // https://www.wlaurance.com/2017/04/mongoose-tip-push/
     // })
     
+
+    const newUser = new User({
+      username, password, age, height, weight, activity, goals, achievement
+    })
+    for(let i = 0; i < workouts.length; i++) {
+      newUser.workouts.push(workouts[i])
+    }
+    newUser.save();
     //testing stuff
-    const testUser = new User({
-    username: "BobbyTester",
-    password: "szechuansauce",
-    age: 15,
-    height: 64,
-    weight: 130,
-    activity: "medium",
-    goals: "5k",
-    achievement: 1 // "MortiestMorty"
-  })
-  testUser.workouts.push(workouts[0])
-  testUser.save();
+    //   const testUser = new User({
+    //   username: "BobbyTester",
+    //   password: "szechuansauce",
+    //   age: 15,
+    //   height: 64,
+    //   weight: 130,
+    //   activity: "medium",
+    //   goals: "5k",
+    //   achievement: 1 // "MortiestMorty"
+    // })
+    // testUser.workouts.push(workouts[0])
+    // testUser.save();
 
   // THIS works. Why?
   // If we do a .create, it runs the validations right away.
   // I might have to use a `push` because I have to send things up one at a time. 
   // So we have to push manually every single time! 
 
-
-    
-  }
+  } // there were workouts we want with this user
 }; 
 
 async function userResHandler(username, password, age, height, 
@@ -203,7 +204,19 @@ userResHandler(
   "low", 
   "5k", 
   1, // achievement
-  ["Introduction to Strength"] //, "Introduction to Cardio"]
+  ["Introduction to Strength", "Introduction to Cardio"]
+)
+
+userResHandler(
+  "BobbyTester", // username
+  "Password",  //password
+  27,    // age
+  69,   // height
+  160,  // weight
+  "low", 
+  "5k", 
+  1, // achievement
+  "Introduction to Strength" //, "Introduction to Cardio"]
 )
 
 
