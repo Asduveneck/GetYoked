@@ -13,11 +13,13 @@ const Workout = require("../models/Workout");
 
 // Helper method to return a promise to find a specific workout POJO
 async function workoutFindOneByName(entry) {
-  console.log(`We're in workoutFindOneByName with entry: ${entry}`);
+  console.log(`We're in workout FindOneByName with entry: ${entry}`);
   let workout = await Workout.find({ name: entry }, // )
     // .lean().exec( // returns `undefined` 
     // {new: true},  // returns the objectId's only...
     // {lean: true}, // returns objectID only
+
+
     function(err, data) {
     console.log(`Our entry in workoutFindOneByName: ${entry}`)
     // error handling
@@ -32,11 +34,9 @@ async function workoutFindOneByName(entry) {
     console.log(`Something found with type: ${typeof data} : \n ${data}`)
     return data;
   })
-  console.log("FIND ME!!");
-  console.log("FIND ME!!");
-  console.log("FIND ME!!");
+
   console.log(typeof workout);
-  return workout; // returns a string of a pojo
+  return workout; //
 };
 
 // Makes an array of workouts that wait until each workout is found 
@@ -49,31 +49,45 @@ async function workoutFindOneByName(entry) {
       return; // should learn to throw errors
     }
 
-    finalWorkoutArr = []
+    let finalWorkoutArr = []
 
     console.log(`In workoutArrayResMaker before looping through: ${workoutsArray}`);
 
     for(let i = 0; i < workoutsArray.length; i++) { // my iterating through elements was broken
-      console.log("In workoutArrayResMaker now. Looking for: ");
+      console.log(`Within workoutArrayResMaker's for loop part ${i}.`);
+      console.log("Looking for: ");
       console.log(workoutsArray[i]);
       let workout = await workoutFindOneByName(workoutsArray[i]);
-      // finalWorkoutArr.push(workout);  // Somehow nests everything as one giant array
 
-      // FINDME BUG RIGHT HERE!
-      // finalWorkoutArr += workout // converts to string
-      // finalWorkoutArr.push(workout); // nests an array too deep
-      console.log(`Within workoutArrayResMaker, workout after await workoutFind:`);
-      console.log(`${workout}`);
+      console.log(`Found after awaiting workoutFindOne:`);
+      console.log(workout);
       
-      finalWorkoutArr.concat(workout); // 
+      // FINDME BUG RIGHT HERE!
+      
+      // finalWorkoutArr.concat(workout);  // This concat returns a new array, so we never modify finalWorkoutArr in the first
+      // finalWorkoutArr += workout // converts to string. Is present in console.log(workout)
+      // finalWorkoutArr.push(workout); // nests an array too deep. Is present in console.log(workout)
+      finalWorkoutArr.push(workout[0]); // Will this work? //SOLUTION // 
+
+      console.log("workout after await workoutFind:");
+      console.log(`${workout}`);
 
       // workoutFindOneByName(workoutsArray[i])
       //   .then(workout => finalWorkoutArr.push(workout))
       //   .catch(() => "No workout found in workoutArrayResMaker");
       // workoutArray.push(workout) //Soft fail because worst case empty array
     }
-    console.log("still in workoutArrayResMaker");
-    console.log(`found: ${finalWorkoutArr}`);
+
+    console.log(`\n\n\n`);
+    console.log(`${"#".repeat(90)}`);
+    console.log(`\n\n\n`);
+
+    console.log("still within workoutArrayResMaker. Just finished loop"); // FINDME We hit the first case if we use a concat.
+    if (finalWorkoutArr.length === 0) {
+      console.log("Found nothing");
+    } else {
+      console.log(`Found: ${finalWorkoutArr}`);
+    }
     return await finalWorkoutArr; 
   };
 
@@ -81,24 +95,60 @@ async function workoutFindOneByName(entry) {
 const userCreate = (username, password, age, height, 
   weight, activity, goals, achievement, workouts = []) => {
 
-    if (workouts.length === 0) {
-      console.log("In userCreate function; no workouts were present")
-      User.create({
-        username, password, age, height, weight, activity, goals, achievement
-      }); 
-    } else { // create the following
-      console.log(`In userCreate function, and ${workouts.length} workouts were present: `)
-      console.log(workouts)
-      // right now each workout is nested in an array. Why?
-      User.create({username, password, age, height, weight, 
-        activity, goals, achievement, 
-        workouts: workouts //FINDME SWITCH TO the findONE AND UPDATE THINGAMIJIGGY
-        // https://www.wlaurance.com/2017/04/mongoose-tip-push/
-      })
-      
-      
-    }
-  }; 
+  console.log(`\n\n`);
+
+  if (workouts.length === 0) {
+    console.log(`\n\n`);
+    console.log(`${"#".repeat(90)}`);
+    console.log(`\n\n`);
+    console.log("In userCreate function; no workouts were present")
+    User.create({
+      username, password, age, height, weight, activity, goals, achievement
+    }); 
+  } else { // create the following
+    console.log(`\n\n`);
+    console.log(`${"#".repeat(90)}`);
+    console.log(`\n\n`);
+    console.log(`In user create function, and ${workouts.length} workouts were present:`);
+    console.log(`Is the workout an array? ${Array.isArray(workouts)}`)
+    console.log(`\n\n`);
+    console.log(typeof(workouts[0]))
+    console.log(`\n\n`);
+    // right now each workout is nested in an array. Why?
+
+
+  // WE ARE ABLE TO HIT THIS WHEN WE PASS IN A STRING AND IT ERRORS OUT HERE
+
+
+    // User.create({username, password, age, height, weight, 
+    //   activity, goals, achievement, 
+    //   workouts: workouts //FINDME SWITCH TO the findOneAndUpdate 
+    //   // https://www.wlaurance.com/2017/04/mongoose-tip-push/
+    // })
+    
+    //testing stuff
+    const testUser = new User({
+    username: "BobbyTester",
+    password: "szechuansauce",
+    age: 15,
+    height: 64,
+    weight: 130,
+    activity: "medium",
+    goals: "5k",
+    achievement: 1 // "MortiestMorty"
+  })
+  testUser.workouts.push(workouts[0])
+  testUser.save();
+
+  // THIS works. Why?
+  // If we do a .create, it runs the validations right away.
+  // I might have to use a `push` because I have to send things up one at a time. 
+  // So we have to push manually every single time! 
+
+
+    
+  }
+}; 
 
 async function userResHandler(username, password, age, height, 
   weight, activity, goals, achievement, workoutsArray = []){
@@ -116,21 +166,31 @@ async function userResHandler(username, password, age, height,
   }
   
   // Optimization step
-  let workouts = []; 
+  // let workouts = []; 
   if (screenedWorkouts.length !== 0) { // Only query DB if a workout exists
     console.log("querying database with: ");
     console.log(screenedWorkouts);
     console.log(" ");
-
-    workouts = await workoutArrayResMaker(screenedWorkouts); // RETURNS A STRING?!?
-    console.log(`finished querying database. \nWorkouts:`);
-    console.log(`typeof workouts: ${typeof workouts}`);
-    console.log(workouts);
-    userCreate(username, password, age, height, weight, activity, goals, 
-      achievement, workouts)
-
   };
 
+  await workoutArrayResMaker(screenedWorkouts)
+    .then(workouts => {
+      console.log(`finished querying database. \nWorkouts:`);
+      console.log(`typeof workouts: ${typeof workouts}`);
+      console.log(workouts);
+      userCreate(username, password, age, height, weight, activity, goals,
+        achievement, workouts) // has a safeguard to detect if a workout is present or not.
+    })
+    .catch(err => {
+      console.log("Something went wrong");
+    });
+
+  // workouts = await workoutArrayResMaker(screenedWorkouts); 
+  // console.log(`finished querying database. \nWorkouts:`);
+  // console.log(`typeof workouts: ${typeof workouts}`);
+  // console.log(workouts);
+  // userCreate(username, password, age, height, weight, activity, goals, 
+  //   achievement, workouts) // has a safeguard to detect if a workout is present or not.
 };
 
 
