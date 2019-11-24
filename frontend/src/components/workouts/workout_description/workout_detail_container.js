@@ -20,7 +20,7 @@ const mdp = dispatch => {
     return {
       fetchWorkout: id => dispatch(getOneWorkout(id)),
       fetchUser: id => dispatch(fetchUser(id)),
-      updateUserWorkouts: (user) => dispatch(patchUserWorkouts(user))
+      updateUserWorkouts: (id, workout) => dispatch(patchUserWorkouts(id, workout))
     };
 }
 

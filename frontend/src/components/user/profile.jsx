@@ -72,11 +72,14 @@ class Profile extends React.Component {
             }
             
         } else if (this.state.selectedTab === 2) {
+
             currentTab = (
                 // FIND ME how is workout info stored in state?
                 <UserWorkouts
                     user={this.props.user}
                     workouts={this.props.user.workouts}
+                    fetchUser={this.props.fetchUser}
+                    userId={this.props.match.params.id}
                 />
             )
         }

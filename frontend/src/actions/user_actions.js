@@ -12,6 +12,9 @@ export const receiveUser = user => {
 export const fetchUser = id => dispatch => {
     getUser(id)
         .then(user => {
+            console.log("user fetched");
+            console.log(user);
+            console.log(user.workouts);
             dispatch(receiveUser(user))})
         .catch(err => console.log(err))
 };

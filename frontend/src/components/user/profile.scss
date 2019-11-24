@@ -138,3 +138,41 @@ $hover: rgba(97, 94, 106, 0.064);
     // color: darkslategrey;
     font-family: 'Rubik', sans-serif;
 }
+
+.user-workouts-parent ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-workout-item {
+    display: flex;
+    flex-direction: row;
+    padding: .85em;
+}
+
+.user-workout-item div {
+    padding: .85em;
+    font-family: 'Nunito', sans-serif; 
+    color: gray;
+}
+
+.user-workouts-parent button {
+    position: absolute;
+    box-sizing: border-box;
+    padding: .85em;
+    bottom: 15%;
+    right: 15%;
+    height: 45px;
+    width: fit-content;
+    background: darkslategrey;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    font-family: 'Dosis', sans-serif;
+    font-size: 15px;
+}
+
+.user-workouts-parent button:hover {
+    cursor: pointer;
+}

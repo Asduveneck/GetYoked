@@ -119,7 +119,7 @@ router.patch('/:id', (req, res) => {
         return res.status(400).json(errors);
     }
     User.findById(req.params.id, (err, user) => {
-        console.log(user)
+
         if (req.body._id) {
             delete req.body._id;
         }
@@ -136,11 +136,11 @@ router.patch('/:id', (req, res) => {
 
 // add new workout
 router.patch('/adduserworkout/:id', (req, res, next) => {
-    console.log(req.body);
+
     User.findByIdAndUpdate(req.params.id, {
         $set: { workouts: req.body }
     }, { new: true }).then(user => {
-        console.log(user)
+
         res.json(user)})
         .catch(err => res.status(404).json({ nouserfound: "No user found" }));
 })

@@ -25,7 +25,7 @@ class WorkoutDetail extends React.Component {
     }
 
     handleClick() {
-      console.log(this.props)
+
       const workoutObject = {
         _workoutId: this.props.workoutId,
         date: Date(Date.now()),
@@ -34,7 +34,7 @@ class WorkoutDetail extends React.Component {
       }
       const userWorkouts = (this.props.currentUser.workouts).slice();
       userWorkouts.push(workoutObject);
-      console.log(userWorkouts);
+
 
       this.props.updateUserWorkouts(this.props.currentUserId, userWorkouts);
 
@@ -44,7 +44,7 @@ class WorkoutDetail extends React.Component {
 
     render() {
       if (this.props.workout === undefined) return null;
-      console.log(this.props)
+
         return (
           <div className="workout-detail-window">
             <div className="workout-detail-header">
