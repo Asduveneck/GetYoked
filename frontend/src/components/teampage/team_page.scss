@@ -1,0 +1,25 @@
+.team_page {
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
+  
+  .row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin: 2vh 0;
+    // maybe set a height?
+    .col {
+      border-color: black;
+      border-width: 1px;
+      border-style: solid;
+      width: 20vw;
+      text-align: center;
+      h1 {
+        background-color: magenta;
+      }
+    }
+  }
+} // ~15 minutes for skeleton

@@ -1,0 +1,38 @@
+.splash_page {
+  height: 100vh;
+  width: 100vw;
+  display: flex; 
+  flex-direction: column;
+
+  h1 {
+    color: blue;
+  }
+  h2 {
+    color: #FFFFFF;
+  }
+  .what_we_do {
+    background-color: lightblue;
+  }
+
+  .how_you_grow {
+    background-color: lightcoral;
+
+    .sp_hyg_3_cols {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      
+    }
+    .sp_hyg_col {
+      align-self: center; // aligns content to center?
+    }
+  };
+
+  .what_we_offer {
+  background-color: lightblue;
+  }
+
+  .join_us {
+    background-color: lightcoral;
+  }
+}

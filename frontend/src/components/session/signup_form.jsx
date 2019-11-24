@@ -22,7 +22,6 @@ class SignUp extends React.Component {
 
   update(field) {
     return e => {
-    console.log(e.currentTarget);
       this.setState({
         [field]: e.currentTarget.value
       });
@@ -35,8 +34,9 @@ class SignUp extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    const user = Object.assign({}, this.state);
-    this.props.processForm(user);
+    let user = Object.assign({}, this.state);
+    this.props.processForm(user)
+    setTimeout(()=> this.props.processLoginForm(user).then(() => this.props.history.push("/workoutnew")),2000);
   }
 
   renderErrors() {
@@ -138,7 +138,7 @@ class SignUp extends React.Component {
                 width="360"
                 height="480"
                 frameBorder="0"
-                class="giphy-embed"
+                className="giphy-embed"
                 allowFullScreen
               ></iframe>
               <p>

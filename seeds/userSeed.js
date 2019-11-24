@@ -1,8 +1,6 @@
 const mongoose = require("mongoose");
 const axios = require("axios");
-// const { port, db, secret } = require("../config/env");
-// mongoose.Promise = require("bluebird");
-// mongoose.connect(db);
+
 
 const User = require('../models/User')
 
@@ -326,7 +324,7 @@ User.insertMany([
     weight: 50,
     activity: "light",
     goals: "lose weight",
-    achievement: 0 // Zaid
+    achievement: 0 // Braeden
   },
   {
     username: "modanger3275",
