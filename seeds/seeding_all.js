@@ -9,5 +9,5 @@
 // Exercise.collection.drop();
 
 // require('./exerciseSeed');
-require('./workoutSeed');
+// require('./workoutSeed');
 require("./userSeed");

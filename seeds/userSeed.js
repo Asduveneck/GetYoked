@@ -9,7 +9,8 @@ const Workout = require("../models/Workout");
 
 // Helper method to return a promise to find a specific workout POJO. 
 async function workoutFindOneByName(name) {
-  let workout = await Workout.findOne({ name }, function(err, data) {
+  console.log(`Within workoutFindOneByName, looking for: ${name}`);
+  let workout = await Workout.findOne({ name }, function(err, data) { // Is this what fixed it?
     // error handling
     if (err) {
       return;
@@ -26,6 +27,8 @@ async function workoutFindOneByName(name) {
 
 // Makes an array of workouts that queries each entry (awaiting for each query)
 async function workoutArrayResMaker(workoutsArray) {
+  console.log("Within workoutArrayResMaker. We are looking for: \n\n")
+  console.log(workoutsArray);
   if(!Array.isArray(workoutsArray)) {
     return; //stops execution early
   }
@@ -33,18 +36,30 @@ async function workoutArrayResMaker(workoutsArray) {
   let finalWorkoutArr = [] // stores results from each query
   // For each name you'll query
   for(let i = 0; i < workoutsArray.length; i++) { 
+    console.log(`Within start of workoutArrayResMaker loop ${i}`);
+
     // SWITCH TO A .then if possible. Bottleneck here
     let workout = await workoutFindOneByName(workoutsArray[i]); // uses above helper method
-    if(workout) { finalWorkoutArr.push(workout[0]) } ; // add to our returned output
-  }
+    console.log('We Found:\n\n');
+    console.log(workout);
+    console.log('\n\n');
 
+    // if(workout) { finalWorkoutArr.push(workout[0]) } ; // add to our returned output 
+    if(workout) { finalWorkoutArr.push(workout) } ; // add to our returned output 
+    // WHY WAS EACH ONE IN AN ARRAY IN THE FIRST PLACE?!?
+    // FINDME! SOMETHING WEIRD. THIS MAY BREAK IF I RESEED WORKOUTS AND EACH ONE IS NO LONGER IN AN ARRAY
+  }
+  console.log("We are now returning:\n\n");
+  console.log(finalWorkoutArr);
   return finalWorkoutArr; 
 }; // Used in userResHandler (final step  to seed individual )
 
 // Helper Method to create a user based on whether workouts are present or not
 const userCreate = (username, password, age, height, 
   weight, activity, goals, achievement, workouts = []) => {
-
+    console.log("This user will have the following workouts:\n");
+    console.log(workouts);
+    console.log("\n\n");
   if (workouts.length === 0) { // If there are no workouts
     User.create({
       username, password, age, height, weight, activity, goals, achievement
@@ -77,7 +92,9 @@ async function userResHandler(username, password, age, height,
       screenedWorkouts = workoutsArray
     }
   }
-  
+  console.log(`At start, we cleared the following for workoutArrayResMaker: ${screenedWorkouts}`)
+
+  // Is this await necessary since I use a `.then` shortly afterwards
   await workoutArrayResMaker(screenedWorkouts) // Wait to see if we get an array of workouts
     .then(workouts => { // take the result (even if we get nothing), then
       userCreate(username, password, age, height, weight, activity, goals,
