@@ -6,192 +6,86 @@ const User = require('../models/User')
 
 User.collection.drop();
 const Workout = require("../models/Workout");
-// Following failed:
-// https://stackoverflow.com/questions/24035872/return-results-mongoose-in-find-query-to-a-variable
 
-// Helper method to return a promise to find a specific workout POJO
-async function workoutFindOneByName(entry) {
-  console.log(`We're in workout FindOneByName with entry: ${entry}`);
-  let workout = await Workout.find({ name: entry }, // )
-    // .lean().exec( // returns `undefined` 
-    // {new: true},  // returns the objectId's only...
-    // {lean: true}, // returns objectID only
-
-
+// Helper method to return a promise to find a specific workout POJO. 
+async function workoutFindOneByName(name) {
+  let workout = await Workout.find({ name }, 
     function(err, data) {
-    console.log(`Our entry in workoutFindOneByName: ${entry}`)
     // error handling
     if (err) {
-      console.log(err);
       return;
     }
     if (data === null || data.length == 0) {
-      console.log("No record found in workoutFindOneByName");
       return;
     }
-    console.log(`Something found with type: ${typeof data} : \n ${data}`)
+    // return an array of workouts
     return data;
   })
 
-  console.log(typeof workout);
-  return workout; //
-};
+  return workout;
+}; // Used in workoutArrayResMaker
 
-// Makes an array of workouts that wait until each workout is found 
-// (so we have a proper array of pojos that came from evaluated promises)
+// Makes an array of workouts that queries each entry (awaiting for each query)
+async function workoutArrayResMaker(workoutsArray) {
+  if(!Array.isArray(workoutsArray)) {
+    return; //stops execution early
+  }
 
-  async function workoutArrayResMaker(workoutsArray) {
-  // const workoutArrayResMaker = workoutsArray => {
-    if(!Array.isArray(workoutsArray)) {
-      console.log("workoutArrayResMaker received a string. We need to error out");
-      return; // should learn to throw errors
-    }
+  let finalWorkoutArr = [] // stores results from each query
+  // For each name you'll query
+  for(let i = 0; i < workoutsArray.length; i++) { 
+    let workout = await workoutFindOneByName(workoutsArray[i]); // uses above helper method
+    finalWorkoutArr.push(workout[0]); // add to our returned output
+  }
 
-    let finalWorkoutArr = []
+  return await finalWorkoutArr; 
+}; // Used in userResHandler (final step)
 
-    console.log(`In workoutArrayResMaker before looping through: ${workoutsArray}`);
-
-    for(let i = 0; i < workoutsArray.length; i++) { // my iterating through elements was broken
-      console.log(`Within workoutArrayResMaker's for loop part ${i}.`);
-      console.log("Looking for: ");
-      console.log(workoutsArray[i]);
-      let workout = await workoutFindOneByName(workoutsArray[i]);
-
-      console.log(`Found after awaiting workoutFindOne:`);
-      console.log(workout);
-      
-      // FINDME BUG RIGHT HERE!
-      
-      // finalWorkoutArr.concat(workout);  // This concat returns a new array, so we never modify finalWorkoutArr in the first
-      // finalWorkoutArr += workout // converts to string. Is present in console.log(workout)
-      // finalWorkoutArr.push(workout); // nests an array too deep. Is present in console.log(workout)
-      finalWorkoutArr.push(workout[0]); // Will this work? //SOLUTION // 
-
-      console.log("workout after await workoutFind:");
-      console.log(`${workout}`);
-
-      // workoutFindOneByName(workoutsArray[i])
-      //   .then(workout => finalWorkoutArr.push(workout))
-      //   .catch(() => "No workout found in workoutArrayResMaker");
-      // workoutArray.push(workout) //Soft fail because worst case empty array
-    }
-
-    console.log(`\n\n\n`);
-    console.log(`${"#".repeat(90)}`);
-    console.log(`\n\n\n`);
-
-    console.log("still within workoutArrayResMaker. Just finished loop"); // FINDME We hit the first case if we use a concat.
-    if (finalWorkoutArr.length === 0) {
-      console.log("Found nothing");
-    } else {
-      console.log(`Found: ${finalWorkoutArr}`);
-    }
-    return await finalWorkoutArr; 
-  };
-
-  // DARN IT achievements 0 is treated as a null...
+// Helper Method to create a user based on whether workouts are present or not
 const userCreate = (username, password, age, height, 
   weight, activity, goals, achievement, workouts = []) => {
 
-  console.log(`\n\n`);
-
-  if (workouts.length === 0) {
-    console.log(`\n\n`);
-    console.log(`${"#".repeat(90)}`);
-    console.log(`\n\n`);
-    console.log("In userCreate function; no workouts were present")
+  if (workouts.length === 0) { // If there are no workouts
     User.create({
       username, password, age, height, weight, activity, goals, achievement
     }); 
-  } else { // create the following
-    console.log(`\n\n`);
-    console.log(`${"#".repeat(90)}`);
-    console.log(`\n\n`);
-    console.log(`In user create function, and ${workouts.length} workouts were present:`);
-    console.log(`Is the workout an array? ${Array.isArray(workouts)}`)
-    console.log(`\n\n`);
-    console.log(workouts);
-    console.log(`\n\n`);
-
-    // User.create({username, password, age, height, weight, 
-    //   activity, goals, achievement, 
-    //   workouts: workouts //FINDME SWITCH TO the findOneAndUpdate 
-    //   // https://www.wlaurance.com/2017/04/mongoose-tip-push/
-    // })
-    
-
+  } else { // create a new user
     const newUser = new User({
       username, password, age, height, weight, activity, goals, achievement
     })
+    // Use mongoose push to add a workout to each new user
     for(let i = 0; i < workouts.length; i++) {
       newUser.workouts.push(workouts[i])
     }
+    // Save to mongoose DB:
     newUser.save();
-    //testing stuff
-    //   const testUser = new User({
-    //   username: "BobbyTester",
-    //   password: "szechuansauce",
-    //   age: 15,
-    //   height: 64,
-    //   weight: 130,
-    //   activity: "medium",
-    //   goals: "5k",
-    //   achievement: 1 // "MortiestMorty"
-    // })
-    // testUser.workouts.push(workouts[0])
-    // testUser.save();
-
-  // THIS works. Why?
-  // If we do a .create, it runs the validations right away.
-  // I might have to use a `push` because I have to send things up one at a time. 
-  // So we have to push manually every single time! 
-
-  } // there were workouts we want with this user
+  }
 }; 
-
+// Utilizes all the above helper methods to 
 async function userResHandler(username, password, age, height, 
   weight, activity, goals, achievement, workoutsArray = []){
 
-  // Screening workoutsArray to be an array or string.
-  let screenedWorkouts = []; // storing everything
-  if (workoutsArray.length !== 0) { // if we have something in our workoutsArray
-    if(typeof(workoutsArray) === "string") { // If I pass a string
-      console.log("you passed in a string");
-      screenedWorkouts.push(workoutsArray)  // make it an array.
-    } else if(Array.isArray(workoutsArray)) { // else, keep the array
-      console.log("you passed in an array object here")
+  let screenedWorkouts = []; // stores workouts that meet a criteria
+  
+  // if we have something in our workoutsArray
+  if (workoutsArray.length !== 0) { 
+    // If I pass in a string, convert to an array.
+    if(typeof(workoutsArray) === "string") { 
+      screenedWorkouts.push(workoutsArray)
+    } else if(Array.isArray(workoutsArray)) { // else, if it's an array, keep it
       screenedWorkouts = workoutsArray
     }
   }
   
-  // Optimization step
-  // let workouts = []; 
-  if (screenedWorkouts.length !== 0) { // Only query DB if a workout exists
-    console.log("querying database with: ");
-    console.log(screenedWorkouts);
-    console.log(" ");
-  };
-
-  await workoutArrayResMaker(screenedWorkouts)
-    .then(workouts => {
-      console.log(`finished querying database. \nWorkouts:`);
-      console.log(`typeof workouts: ${typeof workouts}`);
-      console.log(workouts);
+  await workoutArrayResMaker(screenedWorkouts) // Wait to see if we get an array of workouts
+    .then(workouts => { // take the result (even if we get nothing), then
       userCreate(username, password, age, height, weight, activity, goals,
         achievement, workouts) // has a safeguard to detect if a workout is present or not.
     })
     .catch(err => {
-      console.log("Something went wrong");
+      console.log("Something went wrong"); // throw an error here later
     });
-
-  // workouts = await workoutArrayResMaker(screenedWorkouts); 
-  // console.log(`finished querying database. \nWorkouts:`);
-  // console.log(`typeof workouts: ${typeof workouts}`);
-  // console.log(workouts);
-  // userCreate(username, password, age, height, weight, activity, goals, 
-  //   achievement, workouts) // has a safeguard to detect if a workout is present or not.
 };
-
 
 userResHandler(
   "PromisedNeverland2", // username
@@ -203,7 +97,7 @@ userResHandler(
   "5k", 
   1, // achievement
   ["Introduction to Strength", "Introduction to Cardio"]
-)
+);
 
 userResHandler(
   "BobbyTester", // username
@@ -215,31 +109,22 @@ userResHandler(
   "5k", 
   1, // achievement
   "Introduction to Strength" //, "Introduction to Cardio"]
-)
+);
 
-
-/*
-https://stackoverflow.com/questions/48255659/node-js-mongoose-find // WHAT A LIE
-https://www.robinwieruch.de/mongodb-express-setup-tutorial
-https://mongoosejs.com/docs/api.html#model_Model.insertMany
-*/
-
-
+userResHandler(
+  "Popo",
+  "Rule1OfPoposTraining",
+  149,
+  75,
+  200,
+  "high",
+  "5k",
+  1000,
+  "No Workout With This Name" // Null entry in workouts array. Potential problem?
+);
 
 
 User.insertMany([
-  //insertMany
-  // {
-  //   username: "realYoungJun",
-  //   password: "!password",
-  //   age: 27,
-  //   height: 69,
-  //   weight: 160,
-  //   activity: "low",
-  //   goals: "5k",
-  //   achievement: 0,
-  //   // workouts: [workoutFinder("Introduction to Strength")]
-  // },
   {
     username: "Super_Buff_Dude",
     password: "password",
