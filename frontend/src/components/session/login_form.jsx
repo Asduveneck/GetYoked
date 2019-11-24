@@ -11,8 +11,10 @@ class LoginForm extends React.Component {
       password: "",
       errors: {}
     };
+    
     this.handleSubmit = this.handleSubmit.bind(this);
     this.login = this.login.bind(this);
+    this.renderErrors = this.renderErrors.bind(this);
   }
 
   update(field) {
