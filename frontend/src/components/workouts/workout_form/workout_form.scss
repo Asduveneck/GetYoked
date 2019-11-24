@@ -30,6 +30,7 @@
     font-family: 'Nunito', sans-serif;
     color: rgba(128, 128, 128, 0.557);
     margin: .85rem;
+    text-align: center;
 }
 
 .username {
@@ -38,10 +39,10 @@
 
 .workout-buttons-container {
     position: absolute;
-    top: 50%;
+    top: 330px;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 100%;
+    width: fit-content;
     display: flex;
     justify-content: center;
 }
@@ -56,4 +57,9 @@
     font-size: 25px;
     padding: 10px;
     box-shadow: 3px 10px 15px 2px #888888;
+}
+
+.workout-buttons-container button:hover {
+    cursor: pointer;
+    transform: scale3d(1.2, 1.2, 1.2);
 }

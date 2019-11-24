@@ -2,6 +2,8 @@ import React from 'react'
 import UserInfo from './user_info'
 import UserEditForm from "./user_edit_form"
 import UserWorkouts from './user_workouts'
+import './profile.scss'
+import { withRouter} from 'react-router-dom'
 
 class Profile extends React.Component {
     constructor(props) {
@@ -40,13 +42,14 @@ class Profile extends React.Component {
 
     render() {
         let currentTab;
-
+        if (this.props.user === undefined) return null;
         if (this.state.selectedTab === 0) {
             currentTab = (
-                <div>
+                <div className="achievement-parent">
                     <h2>{this.props.user.username}'s Achievements</h2>
 
-                    <p>You're currently at Achievement level {this.props.user.achievement}</p>
+                    <p>You're currently at Achievement level {this.props.user.achievement}!</p>
+                    <p>Keep up the good work!</p>
                 </div>
             )
         } else if (this.state.selectedTab === 1) {
@@ -55,6 +58,7 @@ class Profile extends React.Component {
                     <UserEditForm
                         user={this.props.user}
                         cancelEdit={this.cancelEdit}
+                        patchUser={this.props.patchUser}
                     />
                 )
             } else {
@@ -68,25 +72,34 @@ class Profile extends React.Component {
             }
             
         } else if (this.state.selectedTab === 2) {
+
             currentTab = (
                 // FIND ME how is workout info stored in state?
-                <UserWorkouts />
+                <UserWorkouts
+                    user={this.props.user}
+                    workouts={this.props.user.workouts}
+                    fetchUser={this.props.fetchUser}
+                    userId={this.props.match.params.id}
+                />
             )
         }
 
         return (
-            <div className="user-profile">
-                <ul className="tab-container">
-                    <h2 onClick={this.selectTab(0)}>Achievements</h2>
-                    <h2 onClick={this.selectTab(1)}>User Info</h2>
-                    <h2 onClick={this.selectTab(2)}>Workout History</h2>
-                </ul>
+            <div className="profile-window">
+                <div className="user-profile">
+                    <div className="user-profile-greeting">Hi there, {this.props.user.username}</div>
+                    <ul className="tab-container">
+                        <h2 onClick={this.selectTab(0)}>Achievements</h2>
+                        <h2 onClick={this.selectTab(1)}>User Info</h2>
+                        <h2 onClick={this.selectTab(2)}>Workout History</h2>
+                    </ul>
 
-                <div>
-                    {currentTab}
+                    <div className="currentTab">
+                        {currentTab}
+                    </div>
+                    
                 </div>
-                
-            </div>
+            </div>    
         )
     }
 }

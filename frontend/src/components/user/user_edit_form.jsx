@@ -4,14 +4,17 @@ class UserEditForm extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            username: this.props.user.username,
+            _id: this.props.user._id,
+            username: this.props.user.username, 
             age: this.props.user.age,
             height: this.props.user.height,
             weight: this.props.user.weight,
             activity: this.props.user.activity,
             goals: this.props.user.goals,
+            achievement: this.props.user.achievement,
 
         }
+        this.handleSubmit = this.handleSubmit.bind(this)
     }
 
     handleChange(type) {
@@ -23,13 +26,14 @@ class UserEditForm extends React.Component {
     handleSubmit(e) {
         e.preventDefault();
         this.props.patchUser(this.state)
+        this.props.cancelEdit()
     }
 
     render() {
         return (
             <div>
                 <h1>Edit User Info</h1>
-                <form>
+                <form onSubmit={this.handleSubmit}>
                     <label>Username
                         <p>{this.state.username}</p>
                     </label>
@@ -66,7 +70,7 @@ class UserEditForm extends React.Component {
                         </select>
                     </label>
 
-                    <button type="submit">Update Info</button>
+                    <input type="submit" value="Update Info"/>
                 </form>
             </div>
         )

@@ -22,7 +22,6 @@ class SignUp extends React.Component {
 
   update(field) {
     return e => {
-    console.log(e.currentTarget);
       this.setState({
         [field]: e.currentTarget.value
       });

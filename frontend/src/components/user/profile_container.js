@@ -4,10 +4,11 @@ import Profile from "./profile";
 
 let _defaultState = {}
 
-const mapSTP = (state = _defaultState, ownProps) => ({
-    user: state.users[ownProps.match.params.id],
-
-});
+const mapSTP = (state = _defaultState, ownProps) => {
+    return {
+        user: state.entities.users[ownProps.match.params.id],
+    }
+};
 
 const mapDTP = (dispatch) => ({
     fetchUser: (userId) => dispatch(fetchUser(userId)),

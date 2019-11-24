@@ -13,7 +13,6 @@ const validateUpdateUserInput = require('../../validations/update_user')
 // ROUTES: register
 
 router.post('/register', (req, res) => {
-    console.log(req.body)
     const { errors, isValid } = validateRegisterInput(req.body);
 
     if (!isValid) {
@@ -103,7 +102,6 @@ router.post('/login', (req, res) => {
 
 //ROUTES: user show
 router.get('/:id', (req, res) => {
-    console.log(req.body)
     User.findById(req.params.id)
         .then(user => res.json(user))
         .catch(err =>
@@ -120,8 +118,8 @@ router.patch('/:id', (req, res) => {
     if (!isValid) {
         return res.status(400).json(errors);
     }
-
     User.findById(req.params.id, (err, user) => {
+
         if (req.body._id) {
             delete req.body._id;
         }
@@ -131,9 +129,19 @@ router.patch('/:id', (req, res) => {
         user.save();
         res.json(user);
     })
-        .then(user => res.json(user))
-        .catch(err => res.status(404).json({ nouserfound: "No user found" }))
+        // .then(user => res.json(user))
+        // .catch(err => res.status(404).json({ nouserfound: "No user found" }))
         
 })
 
+// add new workout
+router.patch('/adduserworkout/:id', (req, res, next) => {
+
+    User.findByIdAndUpdate(req.params.id, {
+        $set: { workouts: req.body }
+    }, { new: true }).then(user => {
+
+        res.json(user)})
+        .catch(err => res.status(404).json({ nouserfound: "No user found" }));
+})
 module.exports = router;

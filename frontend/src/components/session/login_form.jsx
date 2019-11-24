@@ -1,6 +1,6 @@
 import React from "react";
 
-import { Link, withRouter, Redirect } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import "../../stylesheets/components/login_page.css";
 
 class LoginForm extends React.Component {
@@ -30,7 +30,6 @@ class LoginForm extends React.Component {
       username: this.state.username,
       password: this.state.password
     }
-    console.log(user);
     this.props.processForm(user)
       .then(() => this.props.history.push("/workoutnew"));
   }

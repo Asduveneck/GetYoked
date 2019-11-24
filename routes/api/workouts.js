@@ -26,6 +26,16 @@ router.get('/:id', (req, res) => { // Is this what we wanted
     );
 });
 
+// Get workout by type and intensity
+router.get('/workout/find', (req, res) => {
+  Workout.find({ 'type': req.query.type, 'intensity': req.query.intensity })
+    .then(workouts => {
+      const workout = workouts[Math.floor(Math.random()*workouts.length)];
+      return res.json(workout)
+    })
+    .catch(err =>
+      res.status(418).json({ noworkoutfound: "No workout found"}))
+})
 // Workouts for a user //BROKEN
 // router.get('/user/:user_id', (req, res) => { // We want the workouts to be on the users page, right?
 //   let workoutIds = UserWorkout.find({user: req.params.user_id}).workout_id // returns an array or something of workout IDs.
