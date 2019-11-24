@@ -1,0 +1,107 @@
+.navRight{
+    display: flex;
+    align-content: flex-end;
+}
+
+.actualMainNav {
+    display:flex;
+    justify-content: space-between;
+    height: 20px;
+    background-color: transparent;
+    position: fixed;
+    flex-direction: row;
+    top: 0;
+    width: 100%;
+    z-index: 2;
+    
+}
+
+.navItem {
+  font-weight: bold;
+   -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif
+}
+
+.navList{
+  display: flex;
+  /* margin-top: 25px; */
+  align-content: flex-start;  
+}
+
+ .actualNav {
+     display: flex;
+     flex-direction: row;
+   
+ 
+} 
+
+.actualSignIn {
+    /* padding: 10px; */
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+    color: black;
+     color: whitesmoke;
+     font-family: sans-serif;
+         text-decoration: none;
+}
+
+.dropbtn {
+background-color: transparent;
+  padding: 0px;
+  color: white;
+  font-size: 16px;
+  border: none;
+  margin-top: 25px;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  font-family: sans-serif;
+
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {   background-color:floralwhite;
+    -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+  -webkit-text-stroke-width: .3px;
+  -webkit-text-stroke-color: black;}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {display: block;}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {background-color: black;
+}
+
+
