@@ -62,34 +62,32 @@ class WorkoutDetail extends React.Component {
               </Link>
               <div className="workout-detail-description-parent">
                 <div className="wo-detail-name">{this.props.workout.name}</div>
+                <div className="workout-detail-item-exercise">
+                  <div className="workout-description">
+                    {this.props.workout.description}
+                  </div>
+                  <div>
+                    <div>{this.props.workout.type}</div>
+                    <div className="intensity">
+                      INTENSITY: {this.props.workout.intensity}
+                    </div>
                 <div className="wo-detail-item">
                   <div className="workout-detail-item-pic">
                     <img src="/images/ripped_ginger.png" />
                   </div>
-
-                  <div className="workout-detail-item-exercise">
-                    <div className="workout-description">
-                      {this.props.workout.description}
-                    </div>
-                    <div>
-                      <div>{this.props.workout.type}</div>
-                      <div className="intensity">
-                        INTENSITY: {this.props.workout.intensity}
-                      </div>
-                        <ul>
-                          {
-                            this.props.workout.exercises.map((exercise, i) => {
-                              return <ExerciseItem workout={this.props.workout} exercise={exercise} key={i} />
-                            })
-                          }
-                        </ul>
+                      <ul>
+                        {
+                          this.props.workout.exercises.map((exercise, i) => {
+                            return <ExerciseItem workout={this.props.workout} exercise={exercise} key={i} />
+                          })
+                        }
+                        <button onClick={this.handleClick} className="wo-detail-finished-button">
+                          I finished this workout!
+                        </button>
+                      </ul>
                     </div>
                   </div>
                 </div>
-
-                <button onClick={this.handleClick} className="wo-detail-finished-button">
-                  I finished this workout!
-                </button>
               </div>
             </div>
           </div>
