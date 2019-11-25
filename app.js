@@ -26,7 +26,7 @@ mongoose
 
 require('./seeds/seeding_all'); // SEEDS
 
-// heroku prep
+// heroku prep round 2
 
 app.get("/", (req, res) => res.send("Hello World"));
 app.use("/api/users", users);
