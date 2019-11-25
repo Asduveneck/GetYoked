@@ -7,6 +7,12 @@ import "../../stylesheets/components/navbar/mainnav.css";
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
+    this.state = this.props
+    console.log(this.state)
+  }
+
+  componentDidMount(){
+    this.props.fetchUser(this.props.match.params.id)
   }
 
   render() {
@@ -16,15 +22,17 @@ class Greeting extends React.Component {
           <Link className="" to={"/login"}>Sign In</Link>
       </div>
       )  
-    }; 
-    if (this.props.location.pathname === '/workoutnew') {
+    } if (this.props.location.pathname === '/login')  { 
+      return null;
+    } else {
       return (
         <div>
           <div className="navRight">
             <div className="dropdown" >
               <button className="dropbtn"><img src="ballon.png" height="60px" alt="" /></button>
               <div className="dropdown-content">
-                <a href="#">Manage Profiles</a>
+                {/* <Link to={`/users/${this.props.match.params.id}`} onClick={this.state.fetchUser}>Manage Profiles</Link> */}
+                
                 <a href="/#/login" onClick={this.props.logout} >Sign Out</a>
               </div>
             </div>
