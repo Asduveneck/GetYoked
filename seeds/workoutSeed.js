@@ -93,3 +93,9 @@ workoutResHandler(
  "An introduction to flexibility",
  ["Stretch!", "Hip circles", "Scorpion"]
 );
+workoutResHandler(	"Intro to Strength: Chest Abs Legs"	,	"strength"	,	1	,	"A light set to work out your core, chest, and legs"	,	[	"Stretch!", "Push Ups (Basic)", "Assisted Squats", "Flat knee raises"	]);
+workoutResHandler(	"Intro to Cardio 2"	,	"cardio"	,	1	,	"A light set to work out your core, chest, and legs"	,	[	"Stretch!", "Arm circles", "Air bikes"	]);
+workoutResHandler(	"Intro to Strength 2: Chest abs legs"	,	"strength"	,	2	,	"A light set to work out your core, chest, and legs"	,	[	"Stretch!", "Push Ups (Diamond)", "Bulgarian split squats", "Flat straight leg raises"	]);
+workoutResHandler(	"Intro to strength 2.1"	,	"strength"	,	2	,	"A light set to work out your core, chest, and legs"	,	[	"Stretch!", "Push Ups (arm by side)", "Beginner Shrimp Squats", "Forearm bent leg raise"	]);
+workoutResHandler(	"Intro to Strength 1.0"	,	"strength"	,	1	,	"A light set to work out your core, chest, and legs"	,	[	"Stretch!", "Push Ups (Basic)", "Deep assisted squats", "Flat bent leg raises"	]);
+workoutResHandler(	"Intro to Strength 1.1"	,	"strength"	,	3	,	"A light set to work out your core, chest, and legs"	,	[	"Stretch!", "Push ups (arm by side)", "Renegade pistol squats", "Hanging bent leg raise"	]);
