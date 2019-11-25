@@ -3,19 +3,33 @@
   width: 100vw;
   display: flex; 
   flex-direction: column;
+  background: linear-gradient(50deg, rgba(229,244,250,1) 0%, rgba(247,238,253,1) 100%);
+
 
   h1 {
-    color: blue;
+    // color: blue;
+    margin-top: 65px;
+    font-size: 55px;
   }
   h2 {
-    color: #FFFFFF;
-  }
-  .what_we_do {
-    background-color: lightblue;
+    font-size: 40px;
+    margin: 5vh 0 5vh;
   }
 
+  h3 {
+    font-size: 30px;
+    text-align: center;
+  }
+  p {
+    font-size: 25px;
+  }
+
+  // .what_we_do {
+  //   // background-color: lightblue;
+  // }
+
   .how_you_grow {
-    background-color: lightcoral;
+    // background-color: lightcoral;
 
     .sp_hyg_3_cols {
       display: flex;
@@ -26,13 +40,16 @@
     .sp_hyg_col {
       align-self: center; // aligns content to center?
     }
-  };
-
-  .what_we_offer {
-  background-color: lightblue;
   }
 
+//   .what_we_offer {
+//   // background-color: lightblue;
+//   }
+
   .join_us {
-    background-color: lightcoral;
+    a {
+      text-decoration: none;
+      color: #000000;
+    }
   }
 }

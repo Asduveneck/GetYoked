@@ -23,7 +23,7 @@ const App = () => (
       <AuthRoute path="/signup" component={SignUpFormContainer} />
       {/* routes for workouts */}
       <Route exact path = "/developers" component={TeamMembers} />
-      <Route exact path = "/splash" component={Splash} />
+      <AuthRoute exact path = "/" component={Splash} />
 
     </Switch>
     {/* footer? */}
