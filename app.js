@@ -28,6 +28,7 @@ mongoose
 // require('./seeds/exerciseSeed');
 // require('./seeds/workoutSeed');
 // require('./seeds/userSeed');
+// require('./seeds/seeding_all');
 
 // heroku prep
 

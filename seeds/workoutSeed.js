@@ -1,66 +1,95 @@
 const mongoose = require("mongoose");
-// const axios = require("axios");
-// const { port, db, secret } = require("../config/env");
-// mongoose.Promise = require("bluebird");
-// mongoose.connect(db);
+const axios = require("axios");
 
-const Workout = require("../models/Workout");
-const Exercise = require("../models/Exercise");
-
+const Workout = require('../models/Workout');
 Workout.collection.drop();
 
-let exercises = Exercise.collection
+const Exercise = require("../models/Exercise");
 
-Workout.insertMany([
-  {
-    name: "Introduction to Cardio", 
-    type: "cardio",
-    intensity: 1,
-    description: "An introduction to cardio"
-  },
-  {
-    name: "Introduction to Strength", 
-    type: "strength",
-    intensity: 1,
-    description: "An introduction to cardio",
-  },
-  {
-    name: "Introduction to Flexibility", 
-    type: "flexibility",
-    intensity: 1,
-    description: "An introduction to cardio",
-  },
-]); // Creates a collection of workouts with the following
+async function exerciseFindOneByName(name) {
+  let exercise = await Exercise.findOne({ name}, function(err, data) { // May work?
+    if (err) {
+      return;
+    }
+    if (data === null || data.length == 0) {
+      return;
+    }
+    return data;
+  })
+  return exercise;
+} // Works. returns null if I pass in nothing...
 
-Workout.collection.findOneAndUpdate(
-  {name: "Introduction to Cardio"},
-  { $push: {exercises: { 
-    $each: [
-      exercises.findOne({name: "Stretch!"  }),
-      exercises.findOne({name: "Walk-outs"  }),
-      exercises.findOne({name: "Arm circles" }) 
-    ]
-  } } }
+async function exerciseArrayResMaker(exercisesArray) {
+    if (!Array.isArray(exercisesArray)) {
+      return; //stops execution early
+    }
+
+    let finalExerciseArr = [];
+    // for each name I'll query
+    for(let i = 0; i < exercisesArray.length; i++) {
+      let exercise = await exerciseFindOneByName(exercisesArray[i]); // Switch to a .then
+      if (exercise) {finalExerciseArr.push( exercise) } // For some reason, this isn't nested within an array...
+    }
+
+    return finalExerciseArr
+};
+
+const workoutCreate = (name, type, intensity, description, exercises = []) => {
+  if (exercises.length === 0) {
+    Workout.create({ name, type, intensity, description });
+  } else {
+    const newWorkout = new Workout({ name, type, intensity, description });
+
+    for(let i = 0; i < exercises.length; i++) {
+      newWorkout.exercises.push(exercises[i])
+    }
+    newWorkout.save();
+  }
+};
+
+async function workoutResHandler (name, type, intensity, description, exercisesArray = []) {
+
+  let screenedExercises = [];
+
+  if (exercisesArray.length !== 0) {
+    // If when creating a workout we pass in a string of an exercise...
+    if(typeof(exercisesArray) === "string") { 
+      screenedExercises.push(exercisesArray) 
+    } else if(Array.isArray(exercisesArray)) {
+      screenedExercises = exercisesArray
+    }
+  }
+
+  await exerciseArrayResMaker(screenedExercises)
+    .then(exercises => {
+      workoutCreate(name, type, intensity, description, exercises)
+    })
+    .catch(err => {
+      console.log("Something went wrong in Workout Seeds");
+      console.log(err); // SEE IF WE GET THIS STILL
+    })
+} 
+
+workoutResHandler(
+"Introduction to Cardio",
+ "cardio",
+ 1,
+ "An introduction to cardio",
+ ["Stretch!", "Walk-outs", "Arm circles"]
 );
 
-Workout.collection.findOneAndUpdate(
-  {name: "Introduction to Strength"},
-  { $push: {exercises: { 
-    $each: [
-      exercises.findOne({name: "Stretch!"  }),
-      exercises.findOne({name: "Lunge twist"  }),
-      exercises.findOne({name: "Squats" }) 
-    ]
-  } } }
+workoutResHandler(
+"Introduction to Strength",
+ "strength",
+ 1,
+ "An introduction to strength",
+ ["Stretch!", "Lunge twist", "Squats"]
 );
 
-Workout.collection.findOneAndUpdate(
-  {name: "Introduction to Flexibility"},
-  { $push: {exercises: { 
-    $each: [
-      exercises.findOne({name: "Stretch!"  }),
-      exercises.findOne({name: "Hip circles"  }),
-      exercises.findOne({name: "Scorpion" }) 
-    ]
-  } } }
+workoutResHandler(
+"Introduction to Flexibility",
+ "flexibility",
+ 1,
+ "An introduction to flexibility",
+ ["Stretch!", "Hip circles", "Scorpion"]
 );
