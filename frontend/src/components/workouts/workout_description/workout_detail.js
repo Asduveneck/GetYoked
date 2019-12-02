@@ -14,6 +14,8 @@ class WorkoutDetail extends React.Component {
     componentDidMount() {
       this.props.fetchWorkout(this.props.workoutId);
       this.props.fetchUser(this.props.currentUserId);
+      console.log("workout detail, mounting component")
+      console.log(this.props);
     }
 
     componentDidUpdate(prevProps) {
