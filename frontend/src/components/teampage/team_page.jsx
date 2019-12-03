@@ -28,7 +28,7 @@ class TeamPage extends React.Component {
                     <img src="LinkedIn.png" alt="LinkedIn" />
                   </a>
                 </div>
-                <p className="dev-bio"></p>
+                      <p className="dev-bio">Data Science | Biotechnology | Healthcare | R | React Redux HTML CSS JS | Ruby Rails | SQL MongoDB |</p>
               </nav>
             </div> 
         </div>
@@ -83,7 +83,7 @@ class TeamPage extends React.Component {
                     <img src="LinkedIn.png" alt="LinkedIn" />
                   </a>
                 </div>
-                <p className="dev-bio"></p>
+                      <p className="dev-bio">Software Engineer | JavaScript Rails PostgreSQL MongoDB Express Node React Redux HTML5 CSS3</p>
               </nav>
             </div>
        
@@ -112,7 +112,7 @@ class TeamPage extends React.Component {
                     <img src="LinkedIn.png" alt="LinkedIn" />
                   </a>
                 </div>
-                <p className="dev-bio"></p>
+                      <p className="dev-bio">Full Stack Engineer | React Redux, Ruby Rails, Node, SQL & JS | Former Head of Operations & Recruitment at nCent Labs</p>
               </nav>
             </div>
           </div>
