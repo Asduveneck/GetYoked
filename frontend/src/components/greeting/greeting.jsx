@@ -44,8 +44,6 @@ class Greeting extends React.Component {
             {links}
           </div>
         </div>
-
-
       </div>
     )
   };
