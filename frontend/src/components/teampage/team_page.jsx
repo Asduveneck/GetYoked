@@ -28,7 +28,7 @@ class TeamPage extends React.Component {
                     <img src="LinkedIn.png" alt="LinkedIn" />
                   </a>
                 </div>
-                      <p className="dev-bio">Data Science | Biotechnology | Healthcare | R | React Redux HTML CSS JS | Ruby Rails | SQL MongoDB |</p>
+                      <p className="dev-bio">Full Stack Software Engineer experienced in Ruby, Rails, MongoDB, Javascript, Express, React / Redux. Former biologist and snowboarding instructor.</p>
               </nav>
             </div> 
         </div>
