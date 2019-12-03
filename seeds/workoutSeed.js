@@ -70,46 +70,26 @@ async function workoutResHandler (name, type, intensity, description, exercisesA
     })
 } 
 
-workoutResHandler(
-"Introduction to Cardio",
- "cardio",
- 1,
- "An introduction to cardio",
- ["Stretch!", "Walk-outs", "Arm circles"]
-);
-
-workoutResHandler(
-"Introduction to Strength",
- "strength",
- 1,
- "An introduction to strength",
- ["Stretch!", "Lunge twist", "Squats"]
-);
-
-workoutResHandler(
-"Introduction to Flexibility",
- "flexibility",
- 1,
- "An introduction to flexibility",
- ["Stretch!", "Hip circles", "Scorpion"]
-);
-workoutResHandler(	"Intro to Strength: Chest Abs Legs"	,	"strength"	,	1	,	"A light set to work out your core, chest, and legs"	,	[	"Stretch!", "Push Ups (Basic)", "Assisted Squats", "Flat knee raises"	]);
-workoutResHandler(	"Intro to Cardio 2"	,	"cardio"	,	1	,	"A light set to work out your core, chest, and legs"	,	[	"Stretch!", "Arm circles", "Air bikes"	]);
-workoutResHandler(	"Intro to Strength 2: Chest abs legs"	,	"strength"	,	2	,	"A light set to work out your core, chest, and legs"	,	[	"Stretch!", "Push Ups (Diamond)", "Bulgarian split squats", "Flat straight leg raises"	]);
-workoutResHandler(	"Intro to strength 2.1"	,	"strength"	,	2	,	"A light set to work out your core, chest, and legs"	,	[	"Stretch!", "Push Ups (arm by side)", "Beginner Shrimp Squats", "Forearm bent leg raise"	]);
-workoutResHandler(	"Intro to Strength 1.0"	,	"strength"	,	1	,	"A light set to work out your core, chest, and legs"	,	[	"Stretch!", "Push Ups (Basic)", "Deep assisted squats", "Flat bent leg raises"	]);
-workoutResHandler(	"Intro to Strength 1.1"	,	"strength"	,	3	,	"A light set to work out your core, chest, and legs"	,	[	"Stretch!", "Push ups (arm by side)", "Renegade pistol squats", "Hanging bent leg raise"	]);
+workoutResHandler("Introduction to Cardio", "cardio", 1, "An introduction to cardio", ["Stretch!", "Walk-outs", "Arm circles"]);
+workoutResHandler("Introduction to Strength", "strength", 1, "An introduction to strength", ["Stretch!", "Lunge twist", "Squats"]);
+workoutResHandler("Introduction to Flexibility", "flexibility", 1, "An introduction to flexibility", ["Stretch!", "Hip circles", "Scorpion"]);
+workoutResHandler("Intro to Strength: Chest Abs Legs",	"strength",	1,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push Ups (Basic)", "Assisted Squats", "Flat knee raises"]);
+workoutResHandler("Intro to Cardio 2",	"cardio",	1,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Arm circles", "Air bikes"]);
+workoutResHandler("Intro to Strength 2: Chest abs legs",	"strength",	2,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push Ups (Diamond)", "Bulgarian split squats", "Flat straight leg raises"]);
+workoutResHandler("Intro to strength 2.1",	"strength",	2,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push Ups (arm by side)", "Beginner Shrimp Squats", "Forearm bent leg raise"]);
+workoutResHandler("Intro to Strength 1.0",	"strength",	1,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push Ups (Basic)", "Deep assisted squats", "Flat bent leg raises"]);
+workoutResHandler("Intro to Strength 1.1",	"strength",	3,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push ups (arm by side)", "Renegade pistol squats", "Hanging bent leg raise"]);
 // Zaid Weight Lifting Workouts
 
 // Alex Flexibility:
-workoutResHandler(	"Intro to Yoga: Crescent Lunge"	,	"flexibility"	,	1	,	"An introduction to breathing and a classic introductory yoga pose"	,	[	Deep Breaths, "Crescent Lunge/Utthita Ashwa Sanchalanasana"	]);
-workoutResHandler(	"Intro to Yoga: Dancers Pose"	,	"flexibility"	,	1	,	"An introduction to breathing and a classic introductory yoga pose"	,	[	Deep Breaths, "Dancers Pose/Natarajasana"	]);
-workoutResHandler(	"Intro to Yoga: Mountain Pose"	,	"flexibility"	,	1	,	"An introduction to breathing and a classic introductory yoga pose"	,	[	Deep Breaths, "Mountain Pose/Tadasana", "Warrior II/Virabhadrasana II"	]);
-workoutResHandler(	"Intro to Yoga: Seated Forward Fold"	,	"flexibility"	,	1	,	"An introduction to breathing and a classic introductory yoga pose"	,	[	Deep Breaths, "Seated Forward Fold/Paschimottanasana"	]);
-workoutResHandler(	"Intro to Yoga II: On the Floor"	,	"flexibility"	,	2	,	"Connecting introductory yoga poses together"	,	[	Deep Breaths, "Seated Forward Fold/Paschimottanasana", "Downward-Facing Dog/Adho Mukha Svanasana", "Half Pigeon Pose/Ardha Kapotasana"	]);
-workoutResHandler(	"Intro to Yoga II: Standing Tall"	,	"flexibility"	,	2	,	"Connecting introductory yoga poses together"	,	[	Deep Breaths, "Dancers Pose/Natarajasana", "Mountain Pose/Tadasana", "Tree/Vrksasana"	]);
-workoutResHandler(	"Intro to Yoga II: Lunges"	,	"flexibility"	,	2	,	"Connecting introductory yoga poses together"	,	[	Deep Breaths, "Crescent Lunge/Utthita Ashwa Sanchalanasana", "Warrior II/Virabhadrasana II", "Triangle/Trikonasana"	]);
-workoutResHandler(	"Intro to Yoga II: Planks"	,	"flexibility"	,	2	,	"Connecting introductory yoga poses together"	,	[	Deep Breaths, "Plank Pose/Kumbhakasana", "Low Plank/Chaturanga Dandasana", "Upward-Facing Dog/Urdhva Mukha Svanasana"	]);
-workoutResHandler(	"Intro to Yoga III: On the Floor 2.0"	,	"flexibility"	,	3	,	"Chaining introductory yoga poses to stretch multiple parts of your body"	,	[	Deep Breaths, "Seated Forward Fold/Paschimottanasana", "Downward-Facing Dog/Adho Mukha Svanasana", "Half Pigeon Pose/Ardha Kapotasana","Plank Pose/Kumbhakasana", "Low Plank/Chaturanga Dandasana", "Upward-Facing Dog/Urdhva Mukha Svanasana"	]);
-workoutResHandler(	"Intro to Yoga III: Stand and Lunge"	,	"flexibility"	,	3	,	"Chaining introductory yoga poses to stretch multiple parts of your body"	,	[	Deep Breaths, "Dancers Pose/Natarajasana", "Mountain Pose/Tadasana", "Tree/Vrksasana", "Crescent Lunge/Utthita Ashwa Sanchalanasana", "Warrior II/Virabhadrasana II", "Triangle/Trikonasana"	]);
-workoutResHandler(	"Intro to Yoga III: Lunge and Plank"	,	"flexibility"	,	3	,	"Chaining introductory yoga poses to stretch multiple parts of your body"	,	[	Deep Breaths, "Crescent Lunge/Utthita Ashwa Sanchalanasana", "Warrior II/Virabhadrasana II", "Triangle/Trikonasana", "Plank Pose/Kumbhakasana", "Low Plank/Chaturanga Dandasana", "Upward-Facing Dog/Urdhva Mukha Svanasana"	]);
+workoutResHandler("Intro to Yoga: Crescent Lunge",	"flexibility",	1,	"An introduction to breathing and a classic introductory yoga pose",	[	"Deep Breaths", "Crescent Lunge/Utthita Ashwa Sanchalanasana"]);
+workoutResHandler("Intro to Yoga: Dancers Pose",	"flexibility",	1,	"An introduction to breathing and a classic introductory yoga pose",	[	"Deep Breaths", "Dancers Pose/Natarajasana"]);
+workoutResHandler("Intro to Yoga: Mountain Pose",	"flexibility",	1,	"An introduction to breathing and a classic introductory yoga pose",	[	"Deep Breaths", "Mountain Pose/Tadasana", "Warrior II/Virabhadrasana II"]);
+workoutResHandler("Intro to Yoga: Seated Forward Fold",	"flexibility",	1,	"An introduction to breathing and a classic introductory yoga pose",	[	"Deep Breaths", "Seated Forward Fold/Paschimottanasana"]);
+workoutResHandler("Intro to Yoga II: On the Floor",	"flexibility",	2,	"Connecting introductory yoga poses together",	[	"Deep Breaths", "Seated Forward Fold/Paschimottanasana", "Downward-Facing Dog/Adho Mukha Svanasana", "Half Pigeon Pose/Ardha Kapotasana"]);
+workoutResHandler("Intro to Yoga II: Standing Tall",	"flexibility",	2,	"Connecting introductory yoga poses together",	[	"Deep Breaths", "Dancers Pose/Natarajasana", "Mountain Pose/Tadasana", "Tree/Vrksasana"]);
+workoutResHandler("Intro to Yoga II: Lunges",	"flexibility",	2,	"Connecting introductory yoga poses together",	[	"Deep Breaths", "Crescent Lunge/Utthita Ashwa Sanchalanasana", "Warrior II/Virabhadrasana II", "Triangle/Trikonasana"]);
+workoutResHandler("Intro to Yoga II: Planks",	"flexibility",	2,	"Connecting introductory yoga poses together",	[	"Deep Breaths", "Plank Pose/Kumbhakasana", "Low Plank/Chaturanga Dandasana", "Upward-Facing Dog/Urdhva Mukha Svanasana"]);
+workoutResHandler("Intro to Yoga III: On the Floor 2.0",	"flexibility",	3,	"Chaining introductory yoga poses to stretch multiple parts of your body",	[	"Deep Breaths", "Seated Forward Fold/Paschimottanasana", "Downward-Facing Dog/Adho Mukha Svanasana", "Half Pigeon Pose/Ardha Kapotasana","Plank Pose/Kumbhakasana", "Low Plank/Chaturanga Dandasana", "Upward-Facing Dog/Urdhva Mukha Svanasana"]);
+workoutResHandler("Intro to Yoga III: Stand and Lunge",	"flexibility",	3,	"Chaining introductory yoga poses to stretch multiple parts of your body",	[	"Deep Breaths", "Dancers Pose/Natarajasana", "Mountain Pose/Tadasana", "Tree/Vrksasana", "Crescent Lunge/Utthita Ashwa Sanchalanasana", "Warrior II/Virabhadrasana II", "Triangle/Trikonasana"]);
+workoutResHandler("Intro to Yoga III: Lunge and Plank",	"flexibility",	3,	"Chaining introductory yoga poses to stretch multiple parts of your body",	[	"Deep Breaths", "Crescent Lunge/Utthita Ashwa Sanchalanasana", "Warrior II/Virabhadrasana II", "Triangle/Trikonasana", "Plank Pose/Kumbhakasana", "Low Plank/Chaturanga Dandasana", "Upward-Facing Dog/Urdhva Mukha Svanasana"]);
