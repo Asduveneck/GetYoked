@@ -56,41 +56,60 @@
 
 /* Style the back side */
 .flip-card-back {
-  background-color: dodgerblue;
+  background-color: black;
   color: white;
   transform: rotateY(180deg);
 }  
 
 
-  .row {
-     display: flex;
-  
-  
-    flex-wrap: wrap;
-
- } 
-
-  .row1{
-    display: flex;
-    margin-top: 40vh;
- 
-    flex-wrap: wrap;
-
- }
-
- .row2{
+.row {
   display: flex;
-  margin-top: 5vh;
   
   flex-wrap: wrap;
 
- } 
- 
- .col {
+} 
+
+.row1{
+  display: flex;
+  margin-top: 40vh;
+
+  flex-wrap: wrap;
+
+}
+
+.row2{
+  display: flex;
+  margin-top: 5vh;
+
+  flex-wrap: wrap;
+
+} 
+
+.col {
   border: none;
   margin-top: 2em;
   font-size: 25px;
   width: 300px;
   text-align: center;
   font-family: 'Open Sans', sans-serif;
- }
+}
+/* Styling for Github and LinkedIn Images */
+.dev-bio-container {
+  display: flex;
+  box-sizing: border-box;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 100%;
+}
+
+.dev-bio-links {
+  padding: 20px;
+}
+.dev-bio-links a {
+  padding: 20px;
+}
+
+.dev-bio {
+  padding: 20px;
+}

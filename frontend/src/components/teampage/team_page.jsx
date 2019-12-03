@@ -19,8 +19,17 @@ class TeamPage extends React.Component {
                     <img src="AD.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
             </div>
             <div className="flip-card-back">
-              <p> Bio </p>
-              <nav>Links</nav>
+              <nav className="dev-bio-container">
+                <div className="dev-bio-links">
+                  <a href="https://github.com/Asduveneck" target="_blank" className="github-link">
+                    <img src="GitHub.png" alt="GitHub" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/alex-duveneck-848b118a/" target="_blank" className="github-link">
+                    <img src="LinkedIn.png" alt="LinkedIn" />
+                  </a>
+                </div>
+                <p className="dev-bio"></p>
+              </nav>
             </div> 
         </div>
       </div>
@@ -37,10 +46,19 @@ class TeamPage extends React.Component {
                     <img src="BA.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
             </div>
             <div className="flip-card-back">
-              <p> Bio </p>
-              <nav>Links</nav>
+              <nav className="dev-bio-container">
+                <div className="dev-bio-links">
+                  <a href="https://github.com/baustgen" target="_blank" className="github-link">
+                    <img src="GitHub.png" alt="GitHub" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/braeden-austgen-a96b52148/" target="_blank" className="github-link">
+                    <img src="LinkedIn.png" alt="LinkedIn" />
+                  </a>
+                </div>
+                      <p className="dev-bio">Full Stack Software Engineer with experience in Ruby, Rails, Javascript, and React / Redux. Softball player. Chicago Cubs fan</p>
+              </nav>
             </div>
-            </div>
+          </div>
         </div>
       </div>
             <h1 className="col" >Braeden Austgen</h1>
@@ -56,9 +74,17 @@ class TeamPage extends React.Component {
               <img className="circle" src="Maureen_Durnin.jpg" alt="Avatar" width="300px" height="300px" />
             </div>
             <div className="flip-card-back">
-           
-              <p> Bio </p>
-              <nav>Links</nav>
+              <nav className="dev-bio-container">
+                <div className="dev-bio-links">
+                  <a href="https://github.com/mmdurnin" target="_blank" className="github-link">
+                    <img src="GitHub.png" alt="GitHub" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/maureen-durnin-19b73a198/" target="_blank" className="github-link">
+                    <img src="LinkedIn.png" alt="LinkedIn" />
+                  </a>
+                </div>
+                <p className="dev-bio"></p>
+              </nav>
             </div>
        
         </div>
@@ -77,9 +103,17 @@ class TeamPage extends React.Component {
                     <img src="zaid.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
             </div>
             <div className="flip-card-back">
-              
-              <p> Bio </p>
-              <nav>Links</nav>
+              <nav className="dev-bio-container">
+                <div className="dev-bio-links">
+                  <a href="https://github.com/OnePunchManz" target="_blank" className="github-link">
+                    <img src="GitHub.png" alt="GitHub" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/zaid-pasha-6310ba72/" target="_blank" className="github-link">
+                    <img src="LinkedIn.png" alt="LinkedIn" />
+                  </a>
+                </div>
+                <p className="dev-bio"></p>
+              </nav>
             </div>
           </div>
         </div>
