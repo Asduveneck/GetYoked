@@ -16,7 +16,7 @@ class TeamPage extends React.Component {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-                    <img src="AD.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
+              <img src="AD.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
             </div>
             <div className="flip-card-back">
               <nav className="dev-bio-container">
@@ -27,6 +27,9 @@ class TeamPage extends React.Component {
                   <a href="https://www.linkedin.com/in/alex-duveneck-848b118a/" target="_blank" className="github-link">
                     <img src="LinkedIn.png" alt="LinkedIn" />
                   </a>
+                  <a href="https://angel.co/alexander-duveneck" target="_blank" className="github-link">
+                    <img src="AngelList.png" alt="AngelList" height="32px"/>
+                  </a>
                 </div>
                       <p className="dev-bio">Full Stack Software Engineer experienced in Ruby, Rails, MongoDB, Javascript, Express, React / Redux. Former biologist and snowboarding instructor.</p>
               </nav>
@@ -34,7 +37,7 @@ class TeamPage extends React.Component {
         </div>
       </div>
     </div>
-              <h1 className="col">Alex Duveneck</h1>
+      <h1 className="col">Alex Duveneck</h1>
     </div>
         <div className="row2">
         <div className="row"> {/* row1 */}
@@ -43,7 +46,7 @@ class TeamPage extends React.Component {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-                    <img src="BA.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
+              <img src="BA.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
             </div>
             <div className="flip-card-back">
               <nav className="dev-bio-container">
@@ -54,8 +57,11 @@ class TeamPage extends React.Component {
                   <a href="https://www.linkedin.com/in/braeden-austgen-a96b52148/" target="_blank" className="github-link">
                     <img src="LinkedIn.png" alt="LinkedIn" />
                   </a>
+                  <a href="https://angel.co/braeden-austgen" target="_blank" className="github-link">
+                    <img src="AngelList.png" alt="AngelList" height="32px" />
+                  </a>
                 </div>
-                      <p className="dev-bio">Full Stack Software Engineer with experience in Ruby, Rails, Javascript, and React / Redux. Softball player. Chicago Cubs fan</p>
+                <p className="dev-bio">Full Stack Software Engineer with experience in Ruby, Rails, Javascript, and React / Redux. Softball player. Chicago Cubs fan</p>
               </nav>
             </div>
           </div>
@@ -82,8 +88,12 @@ class TeamPage extends React.Component {
                   <a href="https://www.linkedin.com/in/maureen-durnin-19b73a198/" target="_blank" className="github-link">
                     <img src="LinkedIn.png" alt="LinkedIn" />
                   </a>
+                  <a href="https://angel.co/https://angel.co/maureen-durnin" target="_blank" className="github-link">
+                    <img src="AngelList.png" alt="AngelList" height="32px" />
+                  </a>
+                  <a href="https://mmdurnin.github.io/">Portfolio</a>
                 </div>
-                      <p className="dev-bio">Software Engineer | JavaScript Rails PostgreSQL MongoDB Express Node React Redux HTML5 CSS3</p>
+                <p className="dev-bio">Software Engineer | JavaScript Rails PostgreSQL MongoDB Express Node React Redux HTML5 CSS3</p>
               </nav>
             </div>
        
@@ -100,7 +110,7 @@ class TeamPage extends React.Component {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-                    <img src="zaid.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
+              <img src="zaid.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
             </div>
             <div className="flip-card-back">
               <nav className="dev-bio-container">
@@ -111,8 +121,11 @@ class TeamPage extends React.Component {
                   <a href="https://www.linkedin.com/in/zaid-pasha-6310ba72/" target="_blank" className="github-link">
                     <img src="LinkedIn.png" alt="LinkedIn" />
                   </a>
+                  <a href="https://angel.co/https://angel.co/zaid-pasha-2" target="_blank" className="github-link">
+                    <img src="AngelList.png" alt="AngelList" height="32px" />
+                  </a>
                 </div>
-                      <p className="dev-bio">Full Stack Engineer | React Redux, Ruby Rails, Node, SQL & JS | Former Head of Operations & Recruitment at nCent Labs</p>
+                <p className="dev-bio">Full Stack Engineer | React Redux, Ruby Rails, Node, SQL & JS | Former Head of Operations & Recruitment at nCent Labs</p>
               </nav>
             </div>
           </div>
