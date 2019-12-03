@@ -1,9 +1,16 @@
+/* // font-family: 'Nunito', sans-serif; --> angular, subtext of Rubik
+// font-family: 'Open Sans', sans-serif; --> basic, content
+// font-family: 'Rubik', sans-serif; --> angular, basic, mainttext/ titles
+// font-family: 'Dosis', sans-serif; --> cute small notes, the 0s have dots in them
+// font-family: 'Poiret One', cursive; --> cute big notes, priority not main */
+
 .team_page {
    display: flex;
    flex-direction: row;
     align-content: center;
    justify-content: space-between; 
     height: 300px;
+    padding: .85em;
 } 
 
 .circle {
@@ -14,7 +21,7 @@
   background-color: transparent;
   width: 300px;
   height: 300px;
-  border: 1px solid #f1f1f1;
+  border: none;
   perspective: 1000px; /* Remove this if you don't want the 3D effect */
 
  }  
@@ -65,24 +72,25 @@
 
   .row1{
     display: flex;
-    margin-top: 100px;
+    margin-top: 40vh;
  
     flex-wrap: wrap;
 
  }
 
  .row2{
-    display: flex;
- 
-   
-    flex-wrap: wrap;
+  display: flex;
+  margin-top: 5vh;
+  
+  flex-wrap: wrap;
 
  } 
  
  .col {
-       border-color: black;
-       border-width: 1px;
-       border-style: solid;
-       width: 300px;
-      text-align: center;
+  border: none;
+  margin-top: 2em;
+  font-size: 25px;
+  width: 300px;
+  text-align: center;
+  font-family: 'Open Sans', sans-serif;
  }
