@@ -7,23 +7,31 @@ import "../../stylesheets/components/navbar/mainnav.css";
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props
-    console.log(this.state)
+    // this.state = this.props
+    // console.log(this.state)
   }
 
   componentDidMount(){
-    this.props.fetchUser(this.props.match.params.id)
+    this.props.fetchUser(this.props.user.id)
   }
 
   render() {
-    if (this.props.location.pathname === '/signup') {
+    debugger;
+    if (!this.props.user) {
       return (
-      <div>
-          <Link className="" to={"/login"}>Sign In</Link>
-      </div>
-      )  
-    } if (this.props.location.pathname === '/login')  { 
-      return null;
+        <div>
+          <div className="navRight">
+            <div className="dropdown" >
+              <button className="dropbtn"><img src="ballon.png" height="60px" alt="" /></button>
+              <div className="dropdown-content">
+                
+                <Link to={"/login"}>Sign In</Link>
+                <Link to={"/signup"}>Sign Up</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+      )
     } else {
       return (
         <div>
@@ -31,9 +39,8 @@ class Greeting extends React.Component {
             <div className="dropdown" >
               <button className="dropbtn"><img src="ballon.png" height="60px" alt="" /></button>
               <div className="dropdown-content">
-                {/* <Link to={`/users/${this.props.match.params.id}`} onClick={this.state.fetchUser}>Manage Profiles</Link> */}
-                
                 <a href="/#/login" onClick={this.props.logout} >Sign Out</a>
+                <Link to={'/users/' + this.props.user.id}>Profile</Link>
               </div>
             </div>
           </div>
@@ -42,7 +49,6 @@ class Greeting extends React.Component {
         </div>
       )
     };
-  return (null)
   };
 }
 

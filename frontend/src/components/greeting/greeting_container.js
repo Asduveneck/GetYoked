@@ -9,7 +9,7 @@ let _defaultState = {};
 
 const mapStateToProps = (state = _defaultState, ownProps) => {
   return {
-    user: state.entities.users[ownProps.match.params.id],
+    user: state.session.user,
   }
 };
 
