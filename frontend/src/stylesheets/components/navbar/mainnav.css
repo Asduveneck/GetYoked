@@ -1,9 +1,4 @@
-.navRight{
-    display: flex;
-    align-content: flex-end;
-    position: fixed;
-    z-index: 2;
-}
+
 
 .actualMainNav {
     display:flex;
@@ -44,10 +39,9 @@
     display: flex;
     align-items: center;
     font-size: 18px;
-    color: black;
-     color: whitesmoke;
-     font-family: sans-serif;
-         text-decoration: none;
+    color: whitesmoke;
+    font-family: sans-serif;
+    text-decoration: none;
 }
 
 .dropbtn {
@@ -68,6 +62,7 @@ background-color: transparent;
 .dropdown-content {
   display: none;
   position: absolute;
+  right: 0;
   background-color: #f1f1f1;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
@@ -93,16 +88,41 @@ background-color: transparent;
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {   background-color:floralwhite;
-    -webkit-text-fill-color: black; /* Will override color (regardless of order) */
+.dropdown-content a:hover {   
+  background-color:floralwhite;
+  -webkit-text-fill-color: black; /* Will override color (regardless of order) */
   -webkit-text-stroke-width: .3px;
-  -webkit-text-stroke-color: black;}
-
-/* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {display: block;}
-
-/* Change the background color of the dropdown button when the dropdown content is shown */
-.dropdown:hover .dropbtn {background-color: black;
+  -webkit-text-stroke-color: black;
 }
 
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.nav-bar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 10px;
+  background: linear-gradient(50deg, rgba(228,220,255,1) 0%, rgba(215,222,235,1) 100%);
+}
+
+.nav-bar h1 {
+  font-family: 'Satisfy', cursive;
+  font-size: 48px;
+
+}
+
+.nav-bar a:hover {
+  cursor: pointer;
+}
+
+a:-webkit-any-link {
+  text-decoration-line: none;
+  color: inherit;
+}
 
