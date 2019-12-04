@@ -12,8 +12,8 @@
     top: 4px;
     height: 100%;
     width: 100%;
-    background: rgb(194,206,255);
-    background: linear-gradient(50deg, rgba(194,206,255,1) 0%, rgba(238,253,241,1) 100%);
+    // background: rgb(194,206,255);
+    // background: linear-gradient(50deg, rgba(194,206,255,1) 0%, rgba(238,253,241,1) 100%);
 
     position: absolute;
     text-align: center;
@@ -23,11 +23,11 @@
 .workout-detail-pic-cartoon {
     width: 100%;
     text-align: center;
-    margin-top: 30px;
+    margin-top: 100px;
     background-color: white;
-    position: fixed;
+    position: absolute;
     top: 0;
-    z-index: -1;
+    z-index: 1;
 }
 
 .workout-detail-pic-cartoon > img {
@@ -43,15 +43,15 @@
     margin: 0;
     padding: 0;
     width: 100%;
-    position: absolute;
+    position: relative;
 }
 
 .screen {
     height: 200px;
     z-index: 3;
-    background-color: rgba(44, 37, 113, 0.12);
+    background: linear-gradient(50deg, rgba(194,206,255,1) 0%, rgba(238,253,241,1) 100%);
     
-    margin-top: 30px;
+    // margin-top: 30px;
     padding-bottom: 60px;
     width: 100%;
     height: 450px;

@@ -23,7 +23,7 @@ class Greeting extends React.Component {
         <div className="dropdown-content">
           <Link to={"/login"}>Sign In</Link>
           <Link to={"/signup"}>Sign Up</Link>
-          
+          <Link to={'/developers'}>Developers</Link>
         </div>
       )
     } else {
@@ -36,15 +36,20 @@ class Greeting extends React.Component {
       )
     };
     return (
-      <div>
-        <div className="navRight">
+      <div className="nav-bar">
+        <div className="nav-left">
+          <Link to="/workoutnew">
+            <img className="logo" src="ballon.png" alt="egg-logo" height="60px"/>
+          </Link>
+        </div>
+
+        <h1><Link to="/workoutnew">GetYoked</Link></h1>
+        <div className="nav-right">
           <div className="dropdown" >
-            <button className="dropbtn"><img src="ballon.png" height="60px" alt="" /></button>
+            <button className="dropbtn"><img src="hamburger.png" height="48px" alt="dropdown hamburger" /></button>
             {links}
           </div>
         </div>
-
-
       </div>
     )
   };
