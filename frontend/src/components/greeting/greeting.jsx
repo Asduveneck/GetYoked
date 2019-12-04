@@ -7,42 +7,51 @@ import "../../stylesheets/components/navbar/mainnav.css";
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
-    this.state = this.props
-    console.log(this.state)
+    // this.state = this.props
+    // console.log(this.state)
   }
 
   componentDidMount(){
-    this.props.fetchUser(this.props.match.params.id)
+    this.props.fetchUser(this.props.user.id)
   }
 
   render() {
-    if (this.props.location.pathname === '/signup') {
-      return (
-      <div>
-          <Link className="" to={"/login"}>Sign In</Link>
-      </div>
-      )  
-    } if (this.props.location.pathname === '/login')  { 
-      return null;
+    let links;
+
+    if (!this.props.user) {
+      links = (
+        <div className="dropdown-content">
+          <Link to={"/login"}>Sign In</Link>
+          <Link to={"/signup"}>Sign Up</Link>
+          <Link to={'/developers'}>Developers</Link>
+        </div>
+      )
     } else {
-      return (
-        <div>
-          <div className="navRight">
-            <div className="dropdown" >
-              <button className="dropbtn"><img src="ballon.png" height="60px" alt="" /></button>
-              <div className="dropdown-content">
-                {/* <Link to={`/users/${this.props.match.params.id}`} onClick={this.state.fetchUser}>Manage Profiles</Link> */}
-                
-                <a href="/#/login" onClick={this.props.logout} >Sign Out</a>
-              </div>
-            </div>
-          </div>
-  
-       
+      links = (
+        <div className="dropdown-content">
+          <a href="/#/login" onClick={this.props.logout} >Sign Out</a>
+          <Link to={'/users/' + this.props.user.id}>Profile</Link>
+          <Link to={'/developers'}>Developers</Link>
         </div>
       )
     };
-  return (null)
+    return (
+      <div className="nav-bar">
+        <div className="nav-left">
+          <Link to="/workoutnew">
+            <img className="logo" src="ballon.png" alt="egg-logo" height="60px"/>
+          </Link>
+        </div>
+
+        <h1><Link to="/workoutnew">GetYoked</Link></h1>
+        <div className="nav-right">
+          <div className="dropdown" >
+            <button className="dropbtn"><img src="hamburger.png" height="48px" alt="dropdown hamburger" /></button>
+            {links}
+          </div>
+        </div>
+      </div>
+    )
   };
 }
 

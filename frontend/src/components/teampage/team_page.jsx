@@ -16,16 +16,28 @@ class TeamPage extends React.Component {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-                    <img src="AD.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
+              <img src="AD.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
             </div>
             <div className="flip-card-back">
-              <p> Bio </p>
-              <nav>Links</nav>
+              <nav className="dev-bio-container">
+                <div className="dev-bio-links">
+                  <a href="https://github.com/Asduveneck" target="_blank">
+                    <img src="GitHub.png" alt="GitHub" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/alex-duveneck-848b118a/" target="_blank">
+                    <img src="LinkedIn.png" alt="LinkedIn" />
+                  </a>
+                  <a href="https://angel.co/alexander-duveneck" target="_blank">
+                    <img src="AngelList.png" alt="AngelList" height="32px"/>
+                  </a>
+                </div>
+                <p className="dev-bio">Data Science | Biotechnology | Healthcare | R | React Redux HTML CSS JS | Ruby Rails | SQL MongoDB |</p>
+              </nav>
             </div> 
         </div>
       </div>
     </div>
-              <h1 className="col">Alex Duveneck</h1>
+      <h1 className="col">Alex Duveneck</h1>
     </div>
         <div className="row2">
         <div className="row"> {/* row1 */}
@@ -34,13 +46,25 @@ class TeamPage extends React.Component {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-                    <img src="BA.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
+              <img src="BA.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
             </div>
             <div className="flip-card-back">
-              <p> Bio </p>
-              <nav>Links</nav>
+              <nav className="dev-bio-container">
+                <div className="dev-bio-links">
+                  <a href="https://github.com/baustgen" target="_blank">
+                    <img src="GitHub.png" alt="GitHub" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/braeden-austgen-a96b52148/" target="_blank">
+                    <img src="LinkedIn.png" alt="LinkedIn" />
+                  </a>
+                  <a href="https://angel.co/braeden-austgen" target="_blank">
+                    <img src="AngelList.png" alt="AngelList" height="32px" />
+                  </a>
+                </div>
+                <p className="dev-bio">Full Stack Software Engineer with experience in Ruby, Rails, Javascript, and React / Redux. Softball player. Chicago Cubs fan</p>
+              </nav>
             </div>
-            </div>
+          </div>
         </div>
       </div>
             <h1 className="col" >Braeden Austgen</h1>
@@ -56,9 +80,21 @@ class TeamPage extends React.Component {
               <img className="circle" src="Maureen_Durnin.jpg" alt="Avatar" width="300px" height="300px" />
             </div>
             <div className="flip-card-back">
-           
-              <p> Bio </p>
-              <nav>Links</nav>
+              <nav className="dev-bio-container">
+                <div className="dev-bio-links">
+                  <a href="https://github.com/mmdurnin" target="_blank">
+                    <img src="GitHub.png" alt="GitHub" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/maureen-durnin-19b73a198/" target="_blank">
+                    <img src="LinkedIn.png" alt="LinkedIn" />
+                  </a>
+                  <a href="https://angel.co/https://angel.co/maureen-durnin" target="_blank">
+                    <img src="AngelList.png" alt="AngelList" height="32px" />
+                  </a>
+                  <a href="https://mmdurnin.github.io/" className="portfolio-link">Portfolio</a>
+                </div>
+                <p className="dev-bio">Software Engineer | JavaScript Rails PostgreSQL MongoDB Express Node React Redux HTML5 CSS3</p>
+              </nav>
             </div>
        
         </div>
@@ -74,12 +110,23 @@ class TeamPage extends React.Component {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-                    <img src="zaid.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
+              <img src="zaid.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
             </div>
             <div className="flip-card-back">
-              
-              <p> Bio </p>
-              <nav>Links</nav>
+              <nav className="dev-bio-container">
+                <div className="dev-bio-links">
+                  <a href="https://github.com/OnePunchManz" target="_blank">
+                    <img src="GitHub.png" alt="GitHub" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/zaid-pasha-6310ba72/" target="_blank">
+                    <img src="LinkedIn.png" alt="LinkedIn" />
+                  </a>
+                  <a href="https://angel.co/https://angel.co/zaid-pasha-2" target="_blank">
+                    <img src="AngelList.png" alt="AngelList" height="32px" />
+                  </a>
+                </div>
+                <p className="dev-bio">Full Stack Engineer | React Redux, Ruby Rails, Node, SQL & JS | Former Head of Operations & Recruitment at nCent Labs</p>
+              </nav>
             </div>
           </div>
         </div>
