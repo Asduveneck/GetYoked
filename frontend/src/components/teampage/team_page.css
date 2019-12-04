@@ -110,7 +110,7 @@
   padding: 10px 20px;
   text-decoration: none;
   display: inline-block;
-  font-size: 20px;
+  font-size: 24px;
 }
 .dev-bio-links a:visited {
   padding: 20px;
@@ -120,4 +120,8 @@
 
 .dev-bio {
   padding: 20px;
+}
+
+.portfolio-link {
+  font-family: 'Satisfy', cursive;
 }
