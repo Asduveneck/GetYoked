@@ -49,14 +49,13 @@ class WorkoutDetail extends React.Component {
 
         return (
           <div className="workout-detail-window">
-            <div className="workout-detail-header">
-              <div className="workout-detail-pic-cartoon">
-                <img src="/images/exercise_cartoons.jpg" />
-              </div>
-            </div>
+              
 
             <div className="workout-detail-scroll">
               <div className="screen">Your workout today</div>
+              <div className="workout-detail-pic-cartoon">
+                <img src="/images/exercise_cartoons.jpg" />
+              </div>
               <Link to="/workoutnew">
                 <button className="back-button">
                   Select a different type of workout

@@ -12,20 +12,19 @@ $navy2: rgb(39,38,69);
 $divider: 1px solid rgba(97, 94, 106, 0.064);
 $hover: rgba(97, 94, 106, 0.064);
 
-.profile-window {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(121, 117, 133, 0.927);
-    background: $gradient;
-}
+// .profile-window {
+//     height: 100vh;
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     background: rgba(121, 117, 133, 0.927);
+//     background: $gradient;
+// }
 
 .user-profile {
     width: 100vw;
-    height: 100vh;
-    margin-top: 100px;
+    height: 100%;
     background: $main-background;
     display: flex;
     flex-direction: column;
@@ -36,10 +35,9 @@ $hover: rgba(97, 94, 106, 0.064);
 
 .user-profile-greeting {
     font-family: 'Rubik', sans-serif;
-    position: absolute;
+    position: relative;
     display: inline block;
     font-size: 30px;
-    left: 35vw;
     top: 25px;
     background: white;
     padding: .5em;
@@ -80,7 +78,7 @@ $hover: rgba(97, 94, 106, 0.064);
     background-color: white;
     margin-top: 0px;
     padding-top: 0px;
-    height: 80vh;
+    height: 75vh;
     border-radius: 3px;
     overflow: scroll;
 }

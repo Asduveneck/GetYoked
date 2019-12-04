@@ -21,13 +21,13 @@ class TeamPage extends React.Component {
             <div className="flip-card-back">
               <nav className="dev-bio-container">
                 <div className="dev-bio-links">
-                  <a href="https://github.com/Asduveneck" target="_blank" className="github-link">
+                  <a href="https://github.com/Asduveneck" target="_blank">
                     <img src="GitHub.png" alt="GitHub" />
                   </a>
-                  <a href="https://www.linkedin.com/in/alex-duveneck-848b118a/" target="_blank" className="github-link">
+                  <a href="https://www.linkedin.com/in/alex-duveneck-848b118a/" target="_blank">
                     <img src="LinkedIn.png" alt="LinkedIn" />
                   </a>
-                  <a href="https://angel.co/alexander-duveneck" target="_blank" className="github-link">
+                  <a href="https://angel.co/alexander-duveneck" target="_blank">
                     <img src="AngelList.png" alt="AngelList" height="32px"/>
                   </a>
                 </div>
@@ -51,13 +51,13 @@ class TeamPage extends React.Component {
             <div className="flip-card-back">
               <nav className="dev-bio-container">
                 <div className="dev-bio-links">
-                  <a href="https://github.com/baustgen" target="_blank" className="github-link">
+                  <a href="https://github.com/baustgen" target="_blank">
                     <img src="GitHub.png" alt="GitHub" />
                   </a>
-                  <a href="https://www.linkedin.com/in/braeden-austgen-a96b52148/" target="_blank" className="github-link">
+                  <a href="https://www.linkedin.com/in/braeden-austgen-a96b52148/" target="_blank">
                     <img src="LinkedIn.png" alt="LinkedIn" />
                   </a>
-                  <a href="https://angel.co/braeden-austgen" target="_blank" className="github-link">
+                  <a href="https://angel.co/braeden-austgen" target="_blank">
                     <img src="AngelList.png" alt="AngelList" height="32px" />
                   </a>
                 </div>
@@ -82,16 +82,16 @@ class TeamPage extends React.Component {
             <div className="flip-card-back">
               <nav className="dev-bio-container">
                 <div className="dev-bio-links">
-                  <a href="https://github.com/mmdurnin" target="_blank" className="github-link">
+                  <a href="https://github.com/mmdurnin" target="_blank">
                     <img src="GitHub.png" alt="GitHub" />
                   </a>
-                  <a href="https://www.linkedin.com/in/maureen-durnin-19b73a198/" target="_blank" className="github-link">
+                  <a href="https://www.linkedin.com/in/maureen-durnin-19b73a198/" target="_blank">
                     <img src="LinkedIn.png" alt="LinkedIn" />
                   </a>
-                  <a href="https://angel.co/https://angel.co/maureen-durnin" target="_blank" className="github-link">
+                  <a href="https://angel.co/https://angel.co/maureen-durnin" target="_blank">
                     <img src="AngelList.png" alt="AngelList" height="32px" />
                   </a>
-                  <a href="https://mmdurnin.github.io/">Portfolio</a>
+                  <a href="https://mmdurnin.github.io/" className="portfolio-link">Portfolio</a>
                 </div>
                 <p className="dev-bio">Software Engineer | JavaScript Rails PostgreSQL MongoDB Express Node React Redux HTML5 CSS3</p>
               </nav>
@@ -115,13 +115,13 @@ class TeamPage extends React.Component {
             <div className="flip-card-back">
               <nav className="dev-bio-container">
                 <div className="dev-bio-links">
-                  <a href="https://github.com/OnePunchManz" target="_blank" className="github-link">
+                  <a href="https://github.com/OnePunchManz" target="_blank">
                     <img src="GitHub.png" alt="GitHub" />
                   </a>
-                  <a href="https://www.linkedin.com/in/zaid-pasha-6310ba72/" target="_blank" className="github-link">
+                  <a href="https://www.linkedin.com/in/zaid-pasha-6310ba72/" target="_blank">
                     <img src="LinkedIn.png" alt="LinkedIn" />
                   </a>
-                  <a href="https://angel.co/https://angel.co/zaid-pasha-2" target="_blank" className="github-link">
+                  <a href="https://angel.co/https://angel.co/zaid-pasha-2" target="_blank">
                     <img src="AngelList.png" alt="AngelList" height="32px" />
                   </a>
                 </div>
