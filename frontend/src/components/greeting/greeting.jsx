@@ -16,7 +16,6 @@ class Greeting extends React.Component {
   }
 
   render() {
-    debugger;
     let links;
 
     if (!this.props.user) {
