@@ -12,20 +12,19 @@ $navy2: rgb(39,38,69);
 $divider: 1px solid rgba(97, 94, 106, 0.064);
 $hover: rgba(97, 94, 106, 0.064);
 
-.profile-window {
-    height: 100vh;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: rgba(121, 117, 133, 0.927);
-    background: $gradient;
-}
+// .profile-window {
+//     height: 100vh;
+//     width: 100%;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     background: rgba(121, 117, 133, 0.927);
+//     background: $gradient;
+// }
 
 .user-profile {
     width: 100vw;
     height: 100vh;
-    margin-top: 100px;
     background: $main-background;
     display: flex;
     flex-direction: column;
