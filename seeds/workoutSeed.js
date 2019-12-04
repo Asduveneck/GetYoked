@@ -81,6 +81,8 @@ workoutResHandler("Intro to Strength 1.0",	"strength",	1,	"A light set to work o
 workoutResHandler("Intro to Strength 1.1",	"strength",	3,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push ups (arm by side)", "Renegade pistol squats", "Hanging bent leg raise"]);
 // Zaid Weight Lifting Workouts
 
+//Zaid Cardio Workouts
+
 // Alex Flexibility:
 workoutResHandler("Intro to Yoga: Crescent Lunge",	"flexibility",	1,	"An introduction to breathing and a classic introductory yoga pose",	[	"Deep Breaths", "Crescent Lunge/Utthita Ashwa Sanchalanasana"]);
 workoutResHandler("Intro to Yoga: Dancers Pose",	"flexibility",	1,	"An introduction to breathing and a classic introductory yoga pose",	[	"Deep Breaths", "Dancers Pose/Natarajasana"]);
