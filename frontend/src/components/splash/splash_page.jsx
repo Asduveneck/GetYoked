@@ -7,10 +7,11 @@ class SplashPage extends React.Component {
     return (
       <div className="splash_page">
 
+        <h1>Join the fastest growing techy fitness community</h1>
+
         <div className="what_we_do">
-          <h1>Join the fastest growing techy fitness community</h1>
-          <h2> Feel motivated as you unlock rewards and achievements</h2>
-          <ul>
+          <h2 className="feel_motivated"> Feel motivated as you unlock rewards and achievements</h2>
+          <ul className="spaced_frames">
             <li>Screenshot of achievements page</li>
             <li>Screenshot of potential character design?</li>
           </ul>
@@ -40,9 +41,9 @@ class SplashPage extends React.Component {
         </div>
 
         <div className="what_we_offer"> 
-            <h2>Lots of pics Row with screenshots</h2>
+            <h2 className="screenshots">Lots of pics Row with screenshots</h2>
             {/* Fake screenshots of our app with made up features */}
-            <ul>
+            <ul className="spaced_frames">
               <li>Well thought-out progressions</li>
               <li>Easy to use interface</li>
               <li>Record your performance with a single click</li>
