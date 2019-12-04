@@ -1,27 +1,41 @@
+$font-main: 'Open Sans', sans-serif;
+$font-h1: 'Rubik', sans-serif;
+$font-h2: 'Nunito', sans-serif;
+$font-funky-small: 'Dosis', sans-serif; //cute small notes, the 0s have dots in them
+$font-funky-main: 'Poiret One', cursive; //cute bigger notes
+
 .splash_page {
-  height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
+  padding: 1rem;
   display: flex; 
   flex-direction: column;
   background: linear-gradient(50deg, rgba(229,244,250,1) 0%, rgba(247,238,253,1) 100%);
-
+  padding-bottom: 5rem;
 
   h1 {
     // color: blue;
-    margin-top: 65px;
+    padding-top: 65px;
     font-size: 55px;
+    font-family: $font-h1;
+
+    
   }
   h2 {
     font-size: 40px;
     margin: 5vh 0 5vh;
+    font-family: $font-main;
+    padding: 0 2rem;
   }
 
   h3 {
-    font-size: 30px;
+    font-size: 40px;
     text-align: center;
+    font-family: $font-h2;
   }
   p {
-    font-size: 25px;
+    font-size: 22px;
+    font-family: $font-main;
   }
 
   // .what_we_do {
@@ -34,11 +48,17 @@
     .sp_hyg_3_cols {
       display: flex;
       flex-direction: row;
-      justify-content: space-between;
-      
+      justify-content: space-evenly;
     }
     .sp_hyg_col {
-      align-self: center; // aligns content to center?
+      box-sizing: border-box;
+      width: 90%;
+      padding: .85em 1em;
+      margin: 1em;
+      text-align: center;
+      background-color: rgba(255, 255, 255, 0.303);
+      // border-left: 1px solid rgba(154, 157, 159, 0.488);
+      // border-right: 1px solid rgba(154, 157, 159, 0.488);
     }
   }
 
@@ -50,6 +70,18 @@
     a {
       text-decoration: none;
       color: #000000;
+      font-family: $font-funky-main;
+      box-shadow: 0px 0px 9px 0px #888888;
+      border: 4px solid rgba(255, 255, 255, 0.303);
+      border-radius: 3px;
+      background-color: rgba(255, 255, 255, 0.5);
     }
+    h3:hover {
+      transform: scale(1.1);
+    }
+  }
+
+  .feel_motivated {
+    text-align: right;
   }
 }
