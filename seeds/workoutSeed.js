@@ -93,6 +93,8 @@ workoutResHandler("Triceps over Biceps everyday",	"strength",	2,	"Build up your 
 workoutResHandler("The Johhny Bravo",	"strength",	2,	"Wait... what's leg day again?",	[	"Stretch!", "Concentration Curls",  "Dumbell Benchpress", "Zottman Curls" ]);
 
 
+//Zaid Cardio Workouts
+
 // Alex Flexibility:
 workoutResHandler("Intro to Yoga: Crescent Lunge",	"flexibility",	1,	"An introduction to breathing and a classic introductory yoga pose",	[	"Deep Breaths", "Crescent Lunge/Utthita Ashwa Sanchalanasana"]);
 workoutResHandler("Intro to Yoga: Dancers Pose",	"flexibility",	1,	"An introduction to breathing and a classic introductory yoga pose",	[	"Deep Breaths", "Dancers Pose/Natarajasana"]);
