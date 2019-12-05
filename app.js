@@ -24,7 +24,7 @@ mongoose
     .then(() => console.log("Connected to MongoDB successfully"))
     .catch(err => console.log(err));
 
-require('./seeds/seeding_all'); // SEEDS
+// require('./seeds/seeding_all'); // SEEDS
 
 // heroku prep round 2
 

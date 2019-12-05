@@ -131,11 +131,11 @@ userResHandler(
 );
 
 userResHandler(
-  "zaidclone",
+  "YokedUser",
   "$2a$10$2G9p/.xZwFLETGPc0Jjb/ulyznev4tCRQiDnBe5cDy4w6an9Cqa36",
-  69,
-  69,
-  69,
+  23,
+  70,
+  188,
   "light",
   "Michelle Obama arms",
   1,
