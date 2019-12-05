@@ -1,4 +1,4 @@
-# [GetYoked](https://get-yoked.herokuapp.com/#/login)
+# [GetYoked](https://get-yoked.herokuapp.com/#/)
 
 GetYoked is a fitness app to help you with your physical wellbeing. 
 
