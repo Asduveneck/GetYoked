@@ -38,13 +38,10 @@
 }
 
 .workout-buttons-container {
-    position: absolute;
     top: 350px;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: fit-content;
     display: flex;
     justify-content: center;
+    flex-wrap: wrap;
 }
 
 .workout-buttons-container button {
@@ -52,8 +49,8 @@
     border: none;
     border-radius: 5px;
     margin: 30px;
-    height: 20vh;
-    width: 20vw;
+    height: 100px;
+    width: 250px;
     font-size: 25px;
     padding: 10px;
     box-shadow: 3px 10px 15px 2px #888888;
