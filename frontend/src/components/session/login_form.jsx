@@ -37,7 +37,7 @@ class LoginForm extends React.Component {
   login(e) {
     e.preventDefault();
     const user = {
-      username: "zaidclone",
+      username: "YokedUser",
       password: "password"
     };
     this.setState(user);
