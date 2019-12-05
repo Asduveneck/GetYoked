@@ -35,7 +35,7 @@ router.post('/register', (req, res) => {
                     weight: req.body.weight,
                     activity: req.body.activity,
                     goals: req.body.goals,
-                    achievement: 0
+                    achievement: 1
                 });
 
                 bcrypt.genSalt(10, (err, salt) => {

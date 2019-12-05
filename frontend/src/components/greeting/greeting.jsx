@@ -17,7 +17,7 @@ class Greeting extends React.Component {
 
   render() {
     let links;
-
+    console.log(this.props)
     if (!this.props.user.id) {
       links = (
         <div className="dropdown-content">
