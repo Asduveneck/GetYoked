@@ -58,6 +58,11 @@
   cursor: pointer;
 }
 
+.custom-select>select:hover, .custom-select>select:focus {
+    cursor: pointer;
+}
+
+
 .signup-session-submit {
     background: blue;
     color: white;
