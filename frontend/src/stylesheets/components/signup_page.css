@@ -58,8 +58,15 @@
   cursor: pointer;
 }
 
+.custom-select>select {
+    width: 300px;
+    height: 30px;
+    font-size: 10px;
+}
+
 .custom-select>select:hover, .custom-select>select:focus {
     cursor: pointer;
+    font-size: 15px;
 }
 
 
