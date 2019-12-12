@@ -65,16 +65,17 @@
     color: white;
     height: 50px;
     width: 300px;
-  
     border-radius: 5px;
     font-weight: normal;
     font-size: 17px;
     margin-bottom: 15px;
     font-family: sans-serif;
     font-weight: bold;
-   
-
 }
+
+.session-submit:hover, .session-submit:focus {
+    cursor: pointer;
+} 
 
 .signInMessage {
     display: flex;
@@ -94,7 +95,15 @@
     color: white;
     margin-bottom: 30px;
     font-family: sans-serif;
+    transition: ease-in-out, width .35s ease-in-out;
+    font-size: 10px;
 }
+
+
+.login-input:focus {
+    font-size: 15px;
+}
+
 
 .signupLink {
     text-decoration: none;
