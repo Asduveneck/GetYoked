@@ -1,11 +1,27 @@
+.signup-form-container {
+    background: rgb(229,244,250);
+    background: linear-gradient(50deg, rgba(229,244,250,1) 0%, rgba(247,238,253,1) 100%);
+}
+
+.signup-input-user, .signup-input-password {
+    /* height: 570px; */
+    padding: 5px;
+    font-family: sans-serif;
+}
+
 .signup-input{
   background-color:blue;
   height: 40px;
-    width: 250px;
+    width: 284px;
     border-radius: 5px;
     padding: 8px;
-    color: white;;
-  
+    color: white;
+    font-size: 10px;
+    transition: ease-in-out, font-size .35s ease-in-out;
+}
+
+.signup-input:focus {
+  font-size: 15px;
 }
 
 .signup-form-box {
@@ -45,7 +61,7 @@
     background: blue;
     color: white;
     height: 50px;
-    width: 350px;
+    width: 300px;
     padding: 10px;
     border-radius: 5px;
     font-weight: normal;
@@ -53,16 +69,6 @@
     text-align: center;
     font-family: sans-serif;
 
-}
-
-.signup-input-user {
-   padding: 5px;
-   font-family: sans-serif;
-}
-
-.signup-input-password {
-   padding: 5px;
-   font-family: sans-serif;
 }
 
 .signInMessage {
