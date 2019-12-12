@@ -90,13 +90,14 @@
 .login-input {
     background-color: dimgray;
     border-radius: 5px;
-    width: 300px;
+    padding: 0 5%;
+    width: 65%;
     height: 50px;
     color: white;
     margin-bottom: 30px;
     font-family: sans-serif;
-    transition: ease-in-out, width .35s ease-in-out;
     font-size: 10px;
+    transition: ease-in-out, font-size .35s ease-in-out;
 }
 
 
@@ -115,7 +116,6 @@
 }
 
 .sessionError {
-    
     z-index: 2;
     color:white;
     /* height: 50vh; */
