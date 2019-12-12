@@ -23,7 +23,7 @@ class Greeting extends React.Component {
         <div className="dropdown-content">
           <Link to={"/login"}>Sign In</Link>
           <Link to={"/signup"}>Sign Up</Link>
-          <Link to={'/developers'}>Developers</Link>
+          <Link to={'/developers'}>About</Link>
         </div>
       )
     } else {
@@ -31,7 +31,7 @@ class Greeting extends React.Component {
         <div className="dropdown-content">
           <a href="/#/login" onClick={this.props.logout} >Sign Out</a>
           <Link to={'/users/' + this.props.user.id}>Profile</Link>
-          <Link to={'/developers'}>Developers</Link>
+          <Link to={'/developers'}>About</Link>
         </div>
       )
     };
