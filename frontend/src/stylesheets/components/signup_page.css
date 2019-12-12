@@ -20,8 +20,9 @@
     transition: ease-in-out, font-size .35s ease-in-out;
 }
 
-.signup-input:focus {
+.signup-input:focus, .signup-input:hover {
   font-size: 15px;
+  cursor: pointer;
 }
 
 .signup-form-box {
@@ -68,7 +69,7 @@
     font-size: 17px;
     text-align: center;
     font-family: sans-serif;
-
+    margin: 10px 0 15px;
 }
 
 .signInMessage {
