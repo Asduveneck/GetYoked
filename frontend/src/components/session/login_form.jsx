@@ -34,8 +34,9 @@ class LoginForm extends React.Component {
       .then(() => this.props.history.push("/workoutnew"));
   }
 
-  login(e) {
+  demoUser(e) {
     e.preventDefault();
+    // Using setTimeout with setState to add letters to user one at a time.
     const user = {
       username: "YokedUser",
       password: "password"
@@ -84,7 +85,7 @@ class LoginForm extends React.Component {
               className="session-submit"
               type="submit"
               value="Sign In as Guest"
-              onClick={this.login}
+              onClick={this.demoUser}
             />
             <div className="loginErrors">{this.renderErrors()}</div>
             <Link className="signupLink" to={"/signup"}>
