@@ -47,7 +47,9 @@ class LoginForm extends React.Component {
         setTimeout(resolve.bind(null, val), ms)
       })
     );
-
+    /* TODO: Refactor these for loops into a helper function. Tricky part is
+      the `this.setState({}). eval it?
+    */ 
     for (let i = 0; i < demoUsrnm.length; i++) {
       delayPrms(120*i).then( () => {
         let char = demoUsrnm[i]
