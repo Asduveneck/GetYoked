@@ -37,38 +37,44 @@ class LoginForm extends React.Component {
   demoUser(e) {
     e.preventDefault();
     // Using setTimeout with setState to add each letter for demoing
+
     let demoUsrnm = "YokedUser"; // probably need a forLoop with a setState on each one.
     let demoPswrd = "password";
     let blnkDmUsrnm = ""
     let blnkDmPswrd = ""
-    const delayPrms = (ms, val) => {
+    const delayPrms = (ms, val) => ( // Trying a delay with a promise for future mod: promise chaining.
       new Promise(function(resolve) {
         setTimeout(resolve.bind(null, val), ms)
-      });
-    }
-    // for (let char of demoUsrnm) {
-    //   setTimeout( () => {
-    //     blnkDmUsrnm += char;
-    //   }, 300).then( () => {
-    //     console.log(char);
-    //     console.log(blnkDmUsrnm);
-    //     this.setState({ username: blnkDmUsrnm });
-    //   })
-    // }
-    // setTimeout( () => { // username
-    //   // Defaults for demo: 
-    //   let demoUsrnm = "YokedUser"; // probably need a forLoop with a setState on each one.
-    //   let demoPswrd = "password";
+      })
+    );
 
-    // }, 120); // probably do a .then after for password, then another one to 
-    // const user = {
-    //   username: "YokedUser",
-    //   password: "password"
-    // };
-    // this.setState(user);
-    // this.props.processForm(user).then(() => {
-    //   this.props.history.push("/workoutnew");
-    // });
+    for (let i = 0; i < demoUsrnm.length; i++) {
+      delayPrms(120*i).then( () => {
+        let char = demoUsrnm[i]
+        blnkDmUsrnm += char;
+        this.setState({ username: blnkDmUsrnm });
+      })
+    }
+    // Hack to delay based on demo username length. 
+    // Ideally we use a helper for loop that returns a promise, then 
+    // we can invoke the loop per string, then chain on promises...
+    setTimeout( () => {
+      for (let i = 0; i < demoPswrd.length; i++) {
+        delayPrms(120 * i).then(() => {
+          let char = demoPswrd[i]
+          blnkDmPswrd += char;
+          this.setState({ password: blnkDmPswrd });
+        })
+      }
+    }, (demoUsrnm.length + 3)*120) // delay it even more
+
+    // Another hack timer length
+    setTimeout( () => {
+      this.props.processForm(this.state).then( () => {
+        this.props.history.push("/workoutnew");
+      })
+    }, (demoUsrnm.length + demoPswrd.length + 3) * 120 )
+
   }
 
   renderErrors() {
