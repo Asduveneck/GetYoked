@@ -36,15 +36,39 @@ class LoginForm extends React.Component {
 
   demoUser(e) {
     e.preventDefault();
-    // Using setTimeout with setState to add letters to user one at a time.
-    const user = {
-      username: "YokedUser",
-      password: "password"
-    };
-    this.setState(user);
-    this.props.processForm(user).then(() => {
-      this.props.history.push("/workoutnew");
-    });
+    // Using setTimeout with setState to add each letter for demoing
+    let demoUsrnm = "YokedUser"; // probably need a forLoop with a setState on each one.
+    let demoPswrd = "password";
+    let blnkDmUsrnm = ""
+    let blnkDmPswrd = ""
+    const delayPrms = (ms, val) => {
+      new Promise(function(resolve) {
+        setTimeout(resolve.bind(null, val), ms)
+      });
+    }
+    // for (let char of demoUsrnm) {
+    //   setTimeout( () => {
+    //     blnkDmUsrnm += char;
+    //   }, 300).then( () => {
+    //     console.log(char);
+    //     console.log(blnkDmUsrnm);
+    //     this.setState({ username: blnkDmUsrnm });
+    //   })
+    // }
+    // setTimeout( () => { // username
+    //   // Defaults for demo: 
+    //   let demoUsrnm = "YokedUser"; // probably need a forLoop with a setState on each one.
+    //   let demoPswrd = "password";
+
+    // }, 120); // probably do a .then after for password, then another one to 
+    // const user = {
+    //   username: "YokedUser",
+    //   password: "password"
+    // };
+    // this.setState(user);
+    // this.props.processForm(user).then(() => {
+    //   this.props.history.push("/workoutnew");
+    // });
   }
 
   renderErrors() {
