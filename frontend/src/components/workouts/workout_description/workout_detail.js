@@ -41,7 +41,6 @@ class WorkoutDetail extends React.Component {
       this.props.updateUserWorkouts(this.props.currentUserId, userWorkouts);
 
       this.props.history.push(`/users/${this.props.currentUserId}`)
-      //logic to append workout to their workout history
     }
 
     render() {
