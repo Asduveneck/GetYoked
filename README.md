@@ -3,6 +3,16 @@
 
 GetYoked is a fitness app to help you get exercise daily. Select a workout category and GetYoked will suggest a workout for you; you don't have to do any of the planning yourself!  
 
+## Table of Contents
+- [Technology Stack](##Technology-Stack)
+- [How to Use](##How-to-Use)
+- [Features](##Features)
+  * [Fresh Workouts](###Randomized-workout-generation,-specific-to-user-activity-level-and-preferred-workout-type)
+  * [Custom Error Handling](###Custom-Error-Handling)
+  * [User Workout History](###User-Workout-History)
+- [Future Features](##Future-Features)
+
+
 ## Technology Stack
 
   Get Yoked is built using Full Stack JavaScript.
@@ -59,7 +69,7 @@ componentDidUpdate(prevProps) {
     }
 ```
 
-### Custom error handling
+### Custom Error Handling
 
 New users are required to provide several pieces of information in order to create a GetYoked account. To ensure valid inputs, (e.g., passwords over 6 characters), validations targeting each each specific input field were put into place. For instance:
 
@@ -76,7 +86,7 @@ if (validPositiveNumber(data.weight) === false) {
 ```
 In above example, "validPositiveNumber" checks that the input field is of JavaScript type "number" and that the user provided a number above 0. If these conditions are not met, the returned error message reminds the user that they must provide this piece of information and that it must be in pounds.
 
-### User workout history
+### User Workout History
 
 Because MongoDB is not a relational database, each user record includes an array of its completed workouts, rather than a reference to each completed workout from the workout model.
 
@@ -125,7 +135,7 @@ router.patch('/adduserworkout/:id', (req, res, next) => {
 
 
 
-## To-dos and Future Features
+## Future Features
 
   1. Images to accompany workouts
   2. Social features allowing users to interact with others (facilitating more of a community).
