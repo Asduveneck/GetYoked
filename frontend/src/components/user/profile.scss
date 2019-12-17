@@ -55,6 +55,8 @@ $hover: rgba(97, 94, 106, 0.064);
     border-radius: 3px;
     width: 60%;
     height: 40px;
+    font-size: 20px;
+    color: darkslategrey;
     border-bottom: $divider
 }
 
@@ -71,6 +73,7 @@ $hover: rgba(97, 94, 106, 0.064);
 .tab-container > *:hover {
     cursor: pointer;
     background-color: $hover;
+    color: black;
 }
 
 .currentTab {
@@ -79,6 +82,7 @@ $hover: rgba(97, 94, 106, 0.064);
     background-color: white;
     margin-top: 0px;
     padding-top: 0px;
+    margin-bottom: 40px;
     height: 75vh;
     border-radius: 3px;
     overflow: scroll;
@@ -106,38 +110,35 @@ $hover: rgba(97, 94, 106, 0.064);
     color: darkslategrey;
 }
 
-.user-info-parent h2 {
-    color: gray;
-    font-family: 'Poiret One', cursive;
-    padding: .85em;
-    font-size: 30px;
-    text-decoration: underline;
-}
-
-.user-info-parent li {
-    display: flex;
-    flex-direction: row;
-
-    padding: .85em;
-
-}
-
-.user-info-parent * {
+.user-info-parent {
     list-style: none;
-}
-
-.user-info-parent li h4 {
-    font-size: 20px;
-    padding-left: .85em;
-    padding-right: 1em;
-    font-family: 'Nunito', sans-serif;
-    color: darkslategrey;
-}
-
-.user-info-parent li p {
-    font-size: 15px;
-    // color: darkslategrey;
-    font-family: 'Rubik', sans-serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    h2 {
+        color: gray;
+        font-family: 'Poiret One', cursive;
+        padding: .85em;
+        font-size: 30px;
+        text-decoration: underline;
+    }
+    li {
+        // align-self: center; // TODO: failed attempt to center
+        display: flex;
+        flex-direction: row;
+        font-family: 'Rubik', sans-serif;
+        padding: .85em;
+        // width: 35vw;
+        // text-align: center;
+        // background-color: aqua;
+    }
+    h4, p {
+        font-size: 20px;
+        font-family: 'Nunito', sans-serif;
+        color: darkslategrey;
+        width: 17.5vw;
+    }
 }
 
 .user-workouts-parent ul {
@@ -162,7 +163,7 @@ $hover: rgba(97, 94, 106, 0.064);
     position: absolute;
     box-sizing: border-box;
     padding: .85em;
-    bottom: 15%;
+    top: 15%;
     right: 15%;
     height: 45px;
     width: fit-content;

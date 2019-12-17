@@ -1,11 +1,6 @@
-.signup-input{
-  background-color:blue;
-  height: 40px;
-    width: 250px;
-    border-radius: 5px;
-    padding: 8px;
-    color: white;;
-  
+.signup-form-container {
+    background: rgb(229,244,250);
+    background: linear-gradient(50deg, rgba(229,244,250,1) 0%, rgba(247,238,253,1) 100%);
 }
 
 .signup-form-box {
@@ -41,28 +36,52 @@
     margin-top: 15px;
 }
 
+.signup-input-user, .signup-input-password {
+    /* height: 570px; */
+    padding: 5px;
+    font-family: sans-serif;
+}
+
+.signup-input{
+  background-color:blue;
+  height: 40px;
+    width: 284px;
+    border-radius: 5px;
+    padding: 8px;
+    color: white;
+    font-size: 10px;
+    transition: ease-in-out, font-size .35s ease-in-out;
+}
+
+.signup-input:focus, .signup-input:hover {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.custom-select>select {
+    width: 300px;
+    height: 30px;
+    font-size: 10px;
+}
+
+.custom-select>select:hover, .custom-select>select:focus {
+    cursor: pointer;
+    font-size: 15px;
+}
+
+
 .signup-session-submit {
     background: blue;
     color: white;
     height: 50px;
-    width: 350px;
+    width: 300px;
     padding: 10px;
     border-radius: 5px;
     font-weight: normal;
     font-size: 17px;
     text-align: center;
     font-family: sans-serif;
-
-}
-
-.signup-input-user {
-   padding: 5px;
-   font-family: sans-serif;
-}
-
-.signup-input-password {
-   padding: 5px;
-   font-family: sans-serif;
+    margin: 10px 0 15px;
 }
 
 .signInMessage {
