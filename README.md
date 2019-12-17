@@ -19,6 +19,9 @@ Once you've signed up or logged in, select one of the buttons to choose a `worko
 
 ### Randomized workout generation, specific to user activity level and preferred workout type
 
+<img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/choose_workout.gif" width="95%" align="center" > 
+
+
 After logging in, a user is presented with a set of workout options: "Cardio", "Strength & Weights", "Balance & Flexibility". The generated workout must be specific to this preferred workout type. Furthermore, workouts progress over time and as such, each generated workout must be specific to the user's activity level. This was achieved with the following Express routing method:
 
 ```javascript
@@ -71,9 +74,54 @@ if (validPositiveNumber(data.weight) === false) {
         errors.weight = 'Please provide a valid weight in pounds';
 }
 ```
-In above example, "validPositiveNumber" checks that the input field is of JavaScript type "number" and that the user provided a number above 0. If these conditions are not met, the error message returned reminds the user that they must provide this piece of information and that it must be in pounds.
+In above example, "validPositiveNumber" checks that the input field is of JavaScript type "number" and that the user provided a number above 0. If these conditions are not met, the returned error message reminds the user that they must provide this piece of information and that it must be in pounds.
 
 ### User workout history
+
+Because MongoDB is not a relational database, each user record includes an array of its completed workouts, rather than a reference to each completed workout from the workout model.
+
+When a user clicks "I finished this workout", the user's workout history is updated. 
+
+The user clicks "I finished this workout":
+```javascript
+handleClick() {
+
+      const workoutObject = {
+        _workoutId: this.props.workoutId,
+        date: Date(Date.now()),
+        name: this.props.workout.name,
+        intensity: this.props.workout.intensity
+      }
+      const userWorkouts = (this.props.currentUser.workouts).slice();
+      userWorkouts.push(workoutObject);
+
+
+      this.props.updateUserWorkouts(this.props.currentUserId, userWorkouts);
+
+      this.props.history.push(`/users/${this.props.currentUserId}`)
+}
+```
+
+This dispatches the updateUserWorkouts action which triggers an axios call to update the user record:
+```javascript
+export const updateUserWorkouts = (userId, workout) => {
+    return axios.patch(`/api/users/adduserworkout/${userId}`, workout)
+}
+```
+
+The express route appends the workout to the user record:
+```javascript
+router.patch('/adduserworkout/:id', (req, res, next) => {
+
+    User.findByIdAndUpdate(req.params.id, {
+        $set: { workouts: req.body }
+    }, { new: true }).then(user => {
+
+        res.json(user)})
+        .catch(err => res.status(404).json({ nouserfound: "No user found" }));
+})
+```
+
 
 
 
