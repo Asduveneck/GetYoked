@@ -2,23 +2,7 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 const Workout = require('./Workout');
 const WorkoutSchema = Workout.Schema;
-// const WorkoutSchema = new Schema({
-//     _workoutId: {
-//         type: Schema.Types.ObjectId,
-//         required: true
-//     },
-//     date: {
-//         type: Date,
-//         default: Date.now
-//     },
-//     name: {
-//         type: String,
-//         required: true
-//     },
-//     intensity: {
-//         type: Number
-//     }
-// })
+
 
 const UserSchema = new Schema({
     username: {
@@ -59,10 +43,14 @@ const UserSchema = new Schema({
     },
     workouts: {
         type: [WorkoutSchema]
-        // type: mongoose.Schema.Types.ObjectId, // returns a reference to the ID
-        // ref: 'Workout'
     }
 })
 
 
 module.exports = User = mongoose.model('users', UserSchema);
+
+// workouts: {
+//     type: [WorkoutSchema]
+//     // type: mongoose.Schema.Types.ObjectId, // returns a reference to the ID
+//     // ref: 'Workout'
+// }

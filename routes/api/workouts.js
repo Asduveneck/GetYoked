@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
 });
 
 // Specific Workout Show
-router.get('/:id', (req, res) => { // Is this what we wanted
+router.get('/:id', (req, res) => { 
   Workout.findById(req.params.id)
     .sort({ date: -1 })
     .then(workouts => res.json(workouts))

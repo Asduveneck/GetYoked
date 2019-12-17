@@ -28,7 +28,7 @@ module.exports = function validateUpdateUserInput(data) {
     }
 
     if (validPositiveNumber(data.weight) === false) {
-        errors.weight = 'Please provide a valid weight in pound';
+        errors.weight = 'Please provide a valid weight in pounds';
     }
 
     if (Validator.isEmpty(data.username)) {
