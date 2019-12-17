@@ -107,6 +107,7 @@ $hover: rgba(97, 94, 106, 0.064);
 }
 
 .user-info-parent {
+    list-style: none;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -133,9 +134,6 @@ $hover: rgba(97, 94, 106, 0.064);
 
 }
 
-.user-info-parent * {
-    list-style: none;
-}
 
 .user-info-parent li h4 {
     font-size: 20px;
