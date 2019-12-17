@@ -7,7 +7,7 @@ GetYoked is a fitness app to help you get exercise daily. Select a workout categ
 - [Technology Stack](#Technology-Stack)
 - [How to Use](#How-to-Use)
 - [Features](#Features)
-  * [Fresh Workouts](##Randomized-workout-generation,-specific-to-user-activity-level-and-preferred-workout-type)
+  * [Fresh Workouts](#Randomized-workout-generation,-specific-to-user-activity-level-and-preferred-workout-type)
   * [Custom Error Handling](#Custom-Error-Handling)
   * [User Workout History](#User-Workout-History)
 - [Future Features](#Future-Features)
