@@ -55,6 +55,8 @@ $hover: rgba(97, 94, 106, 0.064);
     border-radius: 3px;
     width: 60%;
     height: 40px;
+    font-size: 20px;
+    color: darkslategrey;
     border-bottom: $divider
 }
 
@@ -71,6 +73,7 @@ $hover: rgba(97, 94, 106, 0.064);
 .tab-container > *:hover {
     cursor: pointer;
     background-color: $hover;
+    color: black;
 }
 
 .currentTab {
@@ -120,29 +123,28 @@ $hover: rgba(97, 94, 106, 0.064);
         text-decoration: underline;
     }
     li {
+        // align-self: center; // TODO: failed attempt to center
         display: flex;
         flex-direction: row;
-        align-items: baseline;
         font-family: 'Rubik', sans-serif;
-        margin: .85em;
+        padding: .85em;
+        // width: 35vw;
         // text-align: center;
-        background-color: aqua;
+        // background-color: aqua;
     }
-    h4 {
+    h4, p {
         font-size: 20px;
-        padding-left: .85em;
-        padding-right: 1em;
         font-family: 'Nunito', sans-serif;
         color: darkslategrey;
-    }
-    li p {
-        font-size: 15px;
-        // color: darkslategrey;
-        font-family: 'Rubik', sans-serif;
+        width: 17.5vw;
     }
 }
 
-
+.user-workouts-parent ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 .user-workout-item {
     display: flex;
