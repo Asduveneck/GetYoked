@@ -112,48 +112,37 @@ $hover: rgba(97, 94, 106, 0.064);
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    h2 {
+        color: gray;
+        font-family: 'Poiret One', cursive;
+        padding: .85em;
+        font-size: 30px;
+        text-decoration: underline;
+    }
+    li {
+        display: flex;
+        flex-direction: row;
+        align-items: baseline;
+        font-family: 'Rubik', sans-serif;
+        margin: .85em;
+        // text-align: center;
+        background-color: aqua;
+    }
+    h4 {
+        font-size: 20px;
+        padding-left: .85em;
+        padding-right: 1em;
+        font-family: 'Nunito', sans-serif;
+        color: darkslategrey;
+    }
+    li p {
+        font-size: 15px;
+        // color: darkslategrey;
+        font-family: 'Rubik', sans-serif;
+    }
 }
 
-.user-info-parent h2 {
-    color: gray;
-    font-family: 'Poiret One', cursive;
-    padding: .85em;
-    font-size: 30px;
-    text-decoration: underline;
-}
 
-.user-info-parent li {
-    display: flex;
-    flex-direction: row;
-    align-items: baseline;
-    font-family: 'Rubik', sans-serif;
-    margin: .85em;
-    // text-align: center;
-    background-color: aqua;
-
-
-}
-
-
-.user-info-parent li h4 {
-    font-size: 20px;
-    padding-left: .85em;
-    padding-right: 1em;
-    font-family: 'Nunito', sans-serif;
-    color: darkslategrey;
-}
-
-.user-info-parent li p {
-    font-size: 15px;
-    // color: darkslategrey;
-    font-family: 'Rubik', sans-serif;
-}
-
-.user-workouts-parent ul {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
 
 .user-workout-item {
     display: flex;
