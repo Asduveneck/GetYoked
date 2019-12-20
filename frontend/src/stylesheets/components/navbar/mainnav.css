@@ -113,6 +113,12 @@ background-color: transparent;
   align-items: center;
   padding: 5px 10px;
   background: linear-gradient(50deg, rgba(228,220,255,1) 0%, rgba(215,222,235,1) 100%);
+  box-shadow: 0 2px 5px -2px rgba(0,0,0,0.5);
+  /* transform: translateY(-100%); */ /* silly attempt to hide nav for now */
+}
+
+.nav-bar:hover {
+  transform:translateY(0);
 }
 
 .nav-bar h1 {
