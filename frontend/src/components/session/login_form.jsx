@@ -102,14 +102,14 @@ class LoginForm extends React.Component {
               type="text"
               value={this.state.username}
               onChange={this.update("username")}
-              className="login-input"
+              className="sesh-input"
               placeholder="Username"
             />
             <input
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
-              className="login-input"
+              className="sesh-input"
               placeholder="Password"
             />
             <input className="session-submit" type="submit" value="Sign In" />

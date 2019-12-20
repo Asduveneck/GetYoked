@@ -1,7 +1,8 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
 // import GreetingContainer from "../greeting/greeting_container";
-import '../../stylesheets/components/signup_page.css'
+import '../../stylesheets/components/signup_page.css';
+import '../../stylesheets/components/login_page.css'
 
 class SignUp extends React.Component {
   constructor(props) {
@@ -53,7 +54,7 @@ class SignUp extends React.Component {
     return (
       <div className="">
         <p></p>
-        <div className="signup-form-container">
+        <div className="background">
           <form onSubmit={this.handleSubmit} className="signup-form-box">
             <div className="form">
               <div className="stepTitle">Sign up</div>
@@ -63,7 +64,6 @@ class SignUp extends React.Component {
             </div>
 
             <div className="signup-form">
-              <div className="signup-input-user">
                 <input
                   type="text"
                   value={this.state.username}
@@ -71,8 +71,6 @@ class SignUp extends React.Component {
                   className="signup-input"
                   placeholder="Username"
                 />
-              </div>
-              <div className="signup-input-password">
                 <input
                   type="password"
                   value={this.state.password}
@@ -80,9 +78,7 @@ class SignUp extends React.Component {
                   className="signup-input"
                   placeholder="Password"
                 />
-              </div>
 
-              <div className="signup-input-password">
                 <input
                   type="text"
                   value={this.state.age}
@@ -90,8 +86,6 @@ class SignUp extends React.Component {
                   className="signup-input"
                   placeholder="Age"
                 />
-              </div>
-              <div className="signup-input-password">
                 <input
                   type="text"
                   value={this.state.height}
@@ -99,8 +93,6 @@ class SignUp extends React.Component {
                   className="signup-input"
                   placeholder="Height"
                 />
-              </div>
-              <div className="signup-input-password">
                 <input
                   type="text"
                   value={this.state.weight}
@@ -108,8 +100,6 @@ class SignUp extends React.Component {
                   className="signup-input"
                   placeholder="Weight"
                 />
-              </div>
-              <div className="signup-input-password">
                 <div className="custom-select">
                   <select onChange={this.update("activity")}>
                     <option>Select Activity Level:</option>
@@ -118,8 +108,6 @@ class SignUp extends React.Component {
                     <option value="hard">Spartan</option>
                   </select>
                 </div>
-              </div>
-              <div className="signup-input-password">
                 <div className="custom-select">
                   <select onChange={this.update("goals")}>
                     <option>Select Goal:</option>
@@ -130,7 +118,6 @@ class SignUp extends React.Component {
                     </option>
                   </select>
                 </div>
-              </div>
             </div>
             <div className="gif">
               <iframe
