@@ -95,7 +95,7 @@ class LoginForm extends React.Component {
         <div className="background">
           
           <form onSubmit={this.handleSubmit} className="login-form-box">
-            <div className="signInMessage">Sign In</div>
+            <div className="session-Message">Sign In</div>
             <ul className="sessionError"></ul>
 
             <input

@@ -57,13 +57,12 @@ class SignUp extends React.Component {
         <div className="background">
           <form onSubmit={this.handleSubmit} className="login-form-box">
             <div className="form">
-              <div className="stepTitle">Sign up</div>
-
+              <div className="session-Message">Sign up</div>
               <div className="regFormTitle">Create your account.</div>
               <div className="signupErrors">{this.renderErrors()}</div>
             </div>
 
-            <div className="signup-form">
+            {/* <div className="signup-form"> */}
               <input
                 type="text"
                 value={this.state.username}
@@ -118,7 +117,7 @@ class SignUp extends React.Component {
                   </option>
                 </select>
               </div>
-            </div>
+            {/* </div> */}
             <div className="submitDiv">
               <input
                 className="signup-session-submit"

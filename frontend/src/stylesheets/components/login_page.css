@@ -79,7 +79,7 @@
     cursor: pointer;
 } 
 
-.signInMessage {
+.session-Message {
     display: flex;
     color: whitesmoke;
     font-size: 35px;
