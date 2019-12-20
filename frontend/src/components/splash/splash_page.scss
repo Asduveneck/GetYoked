@@ -7,21 +7,33 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
 .splash_page {
   height: 100%;
   width: 100%;
-  // padding: 1rem;
   display: flex; 
   flex-direction: column;
-  // background: linear-gradient(50deg, rgba(229,244,250,1) 0%, rgba(247,238,253,1) 100%);
-  background-color: rgb(242,240,250);
   padding-bottom: 5rem;
 
-  h1 {
-    // color: blue;
-    padding: 65px .85em;
-    font-size: 55px;
-    font-family: $font-h1;
-    // background: linear-gradient(50deg, #c2ceff 0%, #eefdf1 100%);
-    
+  h1:nth-of-type(1) {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 100px;
+    height: 40vh;
+    width: 300px;
+    background-color: white;
+    display: inline-block;
+    box-sizing: border-box;
+    margin-left: .85em;
+    border: 6px solid rgb(216,222,236);
+    font-size: 6vh;
+    padding: .85em;
   }
+
+  h1 {
+    // padding: 65px .85em;
+    // font-size: 55px;
+    font-family: $font-h1;
+  }
+
   h2 {
     box-sizing: border-box;
     padding: 2em 1em;
@@ -52,8 +64,23 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
     
   // }
 
+  .image-container {
+    width: 100%;
+    height: 50vh;
+    img {
+      position: absolute;
+      height: inherit;
+      width: inherit;
+      text-align: center;
+      padding: 0px;
+      border: none;
+      background: #fff;
+      object-fit: cover;
+    }
+  }
+
   .feel_motivated {
-    text-align: right;
+    text-align: center;
   }
 
   .how_you_grow {

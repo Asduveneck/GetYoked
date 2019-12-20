@@ -6,8 +6,8 @@ class SplashPage extends React.Component {
   render(){
     return (
       <div className="splash_page">
-
-        <h1>Join the fastest growing techy fitness community</h1>
+        <div className="image-container"><img src="/images/community_2.jpg" /></div>
+        <h1>Join the fastest growing fitness community</h1>
 
         <div className="what_we_do">
           <h2 className="feel_motivated"> Feel motivated as you unlock rewards and achievements</h2>
