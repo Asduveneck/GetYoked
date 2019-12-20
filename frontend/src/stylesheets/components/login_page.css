@@ -39,6 +39,7 @@
 }
 
 .login-form-box {
+     /* Just a black box that does nothing */
     margin-top: 50px;
      margin-left: auto;
     margin-right: auto;
@@ -102,7 +103,7 @@
 }
 
 
-.sesh-input:focus {
+.sesh-input:focus, .sesh-input:hover {
     font-size: 15px;
 }
 
