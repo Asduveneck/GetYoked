@@ -26,9 +26,9 @@ class SplashPage extends React.Component {
               </div>
             </ScrollAnimation>
 
-            <ScrollAnimation className="center" animateIn="pulse" duration="2">
-              <div className="square-image-container acheivements-screenshot">
-                <img src="/images/acheivement_screenshot.png" />
+            <ScrollAnimation animateIn="pulse" duration="2">
+              <div className="circle-image-container">
+                <img src="/images/potential_3.jpg" />
               </div>
             </ScrollAnimation>
 
@@ -46,6 +46,13 @@ class SplashPage extends React.Component {
           <div className="sp_hyg_3_cols">
             <div className="sp_hyg_col">
               {" "}
+              {/* column 2*/}
+              {/* corresponding image to */}
+              <h3>Enhance your Cardiovascular Health</h3>
+              <p>We'll help you become the you that you want to be.</p>
+            </div>
+            <div className="sp_hyg_col">
+              {" "}
               {/* column 1*/}
               {/* corresponding image to */}
               <h3>Build your Strength</h3>
@@ -53,17 +60,6 @@ class SplashPage extends React.Component {
                 {" "}
                 Start small, but slowly and steadily build your strength as you
                 progress through our exercise program.
-              </p>
-            </div>
-            <div className="sp_hyg_col">
-              {" "}
-              {/* column 2*/}
-              {/* corresponding image to */}
-              <h3>Enhance your Cardiovascular Health</h3>
-              <p>
-                Want to run a marathon? Bike 50 miles within a day? Complete an
-                iron-man competition? We'll help you become the you you want to
-                be.
               </p>
             </div>
             <div className="sp_hyg_col">
@@ -79,22 +75,20 @@ class SplashPage extends React.Component {
           </div>
         </div>
 
-        <div className="what_we_offer">
-          <h2 className="screenshots">Lots of pics Row with screenshots</h2>
+        {/* <div className="what_we_offer">
+          <h2 className="screenshots">Lots of pics Row with screenshots</h2> */}
           {/* Fake screenshots of our app with made up features */}
-          <ul className="spaced_frames">
+          {/* <ul className="spaced_frames">
             <li>Well thought-out progressions</li>
             <li>Easy to use interface</li>
             <li>Record your performance with a single click</li>
           </ul>
-        </div>
+        </div> */}
 
         <div className="join_us">
           <h2>What are you waiting for?</h2>
           <h3>
-            <Link to={"/signup"}>
-              Join Us Now!
-            </Link>
+            <Link to={"/signup"}>Join Us Now!</Link>
           </h3>
         </div>
       </div> // End of splashPage

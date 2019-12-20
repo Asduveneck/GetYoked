@@ -28,6 +28,7 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
     padding: .85em;
     margin-left: .85em;
     border: 6px solid rgb(216,222,236);
+    border-radius: 10%;
 
     display: flex;
     justify-content: center;
@@ -39,6 +40,7 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
 
   h1 {
     font-family: $font-h1;
+    border-bottom: 1px solid rgba(97, 97, 97, 0.44);
   }
 
   h2 {
@@ -46,8 +48,11 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
     padding: 1em 1em;
     margin: 2em 0;
     width: 100%;
+    padding: 1em;
+    // border: 6px solid rgb(216,222,236);
+    // background-color: rgb(216,222,236);
 
-    background-color: white;
+    // background-color: white;
     // background: linear-gradient(50deg, #c2ceff 0%, #eefdf1 100%);
     font-size: 40px;
     font-family: $font-h2;
@@ -115,7 +120,8 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
       border: none;
       background: white;
       object-fit: cover;
-      border-radius: 50%;
+      border-radius: 10%;
+      border: 8px solid rgb(216,222,236);
     }
   }
 
@@ -129,20 +135,39 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
   }
 
   .how_you_grow {
-    // background-color: lightcoral;
+    // background-color: rgb(216,222,236);
+    background: linear-gradient(50deg, rgba(194,206,255,1) 0%, rgba(238,253,241,1) 100%);
+    margin-top: 11em;
+    h2 {
+      text-align: center;
+      padding: 0px;
+      // border-top: 15px solid rgb(216,222,236);
+      // border-bottom: 15px solid rgb(216,222,236);
+    }
 
     .sp_hyg_3_cols {
+      padding-bottom: 2em;
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
     }
     .sp_hyg_col {
       box-sizing: border-box;
-      width: 90%;
-      padding: .85em 1em;
+      width: 60%;
+
+      padding: 1em;
       margin: 1.5em;
       text-align: center;
-      background-color: rgba(255, 255, 255, 0.543);
+      border-radius: 10px;
+      background-color: white;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      h3 {
+        font-size: 2vw;
+        color: rgb(213, 163, 0);
+      }
     }
   }
 
@@ -158,6 +183,7 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
   .join_us {
     h2 {
       text-align: center;
+      padding: 2em;
     }
     a {
       text-decoration: none;
@@ -167,6 +193,7 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
       border-radius: 3px;
       background-color: white;
       padding: .5em;
+      border-radius: 10px;
     }
 
     h3:hover {
