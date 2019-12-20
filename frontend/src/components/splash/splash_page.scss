@@ -49,11 +49,7 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
     margin: 2em 0;
     width: 100%;
     padding: 1em;
-    // border: 6px solid rgb(216,222,236);
-    // background-color: rgb(216,222,236);
 
-    // background-color: white;
-    // background: linear-gradient(50deg, #c2ceff 0%, #eefdf1 100%);
     font-size: 40px;
     font-family: $font-h2;
     // color: rgb(228,146,77);
@@ -71,10 +67,6 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
     font-family: $font-main;
     padding: .35em 0;
   }
-
-  // .what_we_do {
-    
-  // }
 
   .head-image-container {
     width: 100%;
@@ -121,7 +113,7 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
       background: white;
       object-fit: cover;
       border-radius: 10%;
-      border: 8px solid rgb(216,222,236);
+      // border: 8px solid rgb(216,222,236);
     }
   }
 
@@ -170,10 +162,6 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
       }
     }
   }
-
-//   .what_we_offer {
-//   // background-color: lightblue;
-//   }
 
 
   .screenshots {
