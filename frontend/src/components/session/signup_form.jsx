@@ -119,7 +119,14 @@ class SignUp extends React.Component {
                 </select>
               </div>
             </div>
-            <div className="gif">
+            <div className="submitDiv">
+              <input
+                className="signup-session-submit"
+                type="submit"
+                value={this.props.formType}
+              />
+            </div>
+            {/* <div className="gif">
               <iframe
                 src="https://giphy.com/embed/l2JhB4Sp6hz37lU1W"
                 width="360"
@@ -128,15 +135,7 @@ class SignUp extends React.Component {
                 className="giphy-embed"
                 allowFullScreen
               ></iframe>
-              <p></p>
-              <div className="submitDiv">
-                <input
-                  className="signup-session-submit"
-                  type="submit"
-                  value={this.props.formType}
-                />
-              </div>
-            </div>
+            </div> */}
           </form>
         </div>
       </div>
