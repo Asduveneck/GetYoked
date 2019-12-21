@@ -40,7 +40,8 @@
      margin-left: auto;
     margin-right: auto;
     width: 400px;
-    background: black;
+    /* background: black; */
+    color: black;
     opacity: .9;
     display: flex;
     flex-direction: column;
@@ -54,7 +55,7 @@
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
-  color: white;
+  color: black;
   /* opacity: 2; Firefox */
 }
 
@@ -77,7 +78,6 @@
 
 .session-Message {
     display: flex;
-    color: whitesmoke;
     font-size: 35px;
     margin-bottom: 40px;
     margin-top: 30px;
@@ -86,12 +86,13 @@
 }
 
 .sesh-input {
-    background-color: dimgray;
+    background-color: white;
+    color: black;
     border-radius: 5px;
     padding: 0 5%;
     width: 65%;
     height: 50px;
-    color: white;
+    /* color: white; */
     margin-bottom: 30px;
     font-family: sans-serif;
     font-size: 10px;
