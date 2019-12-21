@@ -120,7 +120,7 @@ class SignUp extends React.Component {
             {/* </div> */}
             <div className="submitDiv">
               <input
-                className="signup-session-submit"
+                className="session-submit"
                 type="submit"
                 value={this.props.formType}
               />

@@ -12,8 +12,7 @@
 }
 
 .login-form {
-    
-    align-items: center;
+    /* align-items: center;
     justify-content: center;
     box-sizing: border-box;
     margin: 1px;
@@ -25,13 +24,10 @@
     opacity: .9;
     font-size: 16px;
     direction: ltr;
+    border-radius: 4px; */
     /* color: white; */
-    border-radius: 4px;
     /* float: center; */
-    font-family: sans-serif;
-   
-    
-   
+    /* font-family: sans-serif; */
 }
 
 .giphy {
@@ -39,7 +35,7 @@
 }
 
 .login-form-box {
-     /* Just a black box that does nothing */
+     /* Just a black box that centers */
     margin-top: 50px;
      margin-left: auto;
     margin-right: auto;
@@ -100,6 +96,10 @@
     font-family: sans-serif;
     font-size: 10px;
     transition: ease-in-out, font-size .35s ease-in-out;
+}
+
+.custom-select {
+    padding: 5px;
 }
 
 
