@@ -1,7 +1,13 @@
 .sesh_screen {
     display: flex;
 }
-
+/*
+I'll probably want to have a div centered on 1/3, and another on 2/3. 
+Margins will be like:
+  1/6 + 1/3 + 1/3 + 1/6 
+On left div I do the diagonal slash with svg.
+On right div I center the form.
+*/
 .left_2thirds {
     width: 66.66vw;
     background-color: magenta;
@@ -10,7 +16,7 @@
 
 .right_1third {
     width: 33.34vw;
-    background-color: aqua;
+    /* background-color: aqua; */
     height: 100vh;
 }
 
