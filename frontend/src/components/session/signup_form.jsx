@@ -52,71 +52,70 @@ class SignUp extends React.Component {
 
   render() {
     return (
-      <div className="">
-        <p></p>
+      <div className="sesh_screen">
+        <div className="left_2thirds">{/* Placeholder for colors */}</div>
+        <div className="right_1third">
         <div className="background">
           <form onSubmit={this.handleSubmit} className="session-form">
-              <div className="session-Message">Sign up</div>
+            <div className="session-Message">Sign up</div>
             <div className="form">
               {/* <div className="regFormTitle">Create your account.</div> */}
               <div className="signupErrors">{this.renderErrors()}</div>
             </div>
 
             {/* <div className="signup-form"> */}
-              <input
-                type="text"
-                value={this.state.username}
-                onChange={this.update("username")}
-                className="sesh-input"
-                placeholder="Username"
-              />
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.update("password")}
-                className="sesh-input"
-                placeholder="Password"
-              />
+            <input
+              type="text"
+              value={this.state.username}
+              onChange={this.update("username")}
+              className="sesh-input"
+              placeholder="Username"
+            />
+            <input
+              type="password"
+              value={this.state.password}
+              onChange={this.update("password")}
+              className="sesh-input"
+              placeholder="Password"
+            />
 
-              <input
-                type="text"
-                value={this.state.age}
-                onChange={this.update("age")}
-                className="sesh-input"
-                placeholder="Age"
-              />
-              <input
-                type="text"
-                value={this.state.height}
-                onChange={this.update("height")}
-                className="sesh-input"
-                placeholder="Height"
-              />
-              <input
-                type="text"
-                value={this.state.weight}
-                onChange={this.update("weight")}
-                className="sesh-input"
-                placeholder="Weight"
-              />
-              <div className="custom-select">
-                <select onChange={this.update("activity")}>
-                  <option>Select Activity Level:</option>
-                  <option value="light">House Cat</option>
-                  <option value="medium">Average Human Level</option>
-                  <option value="hard">Spartan</option>
-                </select>
-              </div>
-              <div className="custom-select">
-                <select onChange={this.update("goals")}>
-                  <option>Select Goal:</option>
-                  <option value="5k">5k</option>
-                  <option value="lose weight">Lose Weight</option>
-                  <option value="Michelle Obama arms">
-                    Michelle Obama Arms
-                  </option>
-                </select>
-              </div>
+            <input
+              type="text"
+              value={this.state.age}
+              onChange={this.update("age")}
+              className="sesh-input"
+              placeholder="Age"
+            />
+            <input
+              type="text"
+              value={this.state.height}
+              onChange={this.update("height")}
+              className="sesh-input"
+              placeholder="Height"
+            />
+            <input
+              type="text"
+              value={this.state.weight}
+              onChange={this.update("weight")}
+              className="sesh-input"
+              placeholder="Weight"
+            />
+            <div className="custom-select">
+              <select onChange={this.update("activity")}>
+                <option>Select Activity Level:</option>
+                <option value="light">House Cat</option>
+                <option value="medium">Average Human Level</option>
+                <option value="hard">Spartan</option>
+              </select>
+            </div>
+            <div className="custom-select">
+              <select onChange={this.update("goals")}>
+                <option>Select Goal:</option>
+                <option value="5k">5k</option>
+                <option value="lose weight">Lose Weight</option>
+                <option value="Michelle Obama arms">Michelle Obama Arms</option>
+              </select>
+            </div>
             {/* </div> */}
             <div className="submitDiv">
               <input
@@ -136,6 +135,7 @@ class SignUp extends React.Component {
               ></iframe>
             </div> */}
           </form>
+        </div>
         </div>
       </div>
     );

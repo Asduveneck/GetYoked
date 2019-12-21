@@ -7,15 +7,20 @@ Margins will be like:
   1/6 + 1/3 + 1/3 + 1/6 
 On left div I do the diagonal slash with svg.
 On right div I center the form.
+Touch up a little bit more before doing the svg
 */
 .left_2thirds {
     width: 66.66vw;
+    /* width: 33.33vw;
+    padding-left: 16.67vw; */
     background-color: magenta;
     height: 100vh;
 };
 
 .right_1third {
     width: 33.34vw;
+    /* width: 33.33vw;
+    padding-right: 16.67vw; */
     /* background-color: aqua; */
     height: 100vh;
 }
