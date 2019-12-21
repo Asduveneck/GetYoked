@@ -44,7 +44,7 @@
     opacity: .9;
     display: flex;
     flex-direction: column;
-    height: 570px;
+    height: 900px; /* Stupid height for now. Just to show styling is safe */
     /* margin: auto; */
     padding: 30px;
     border-radius: 4px;
@@ -102,6 +102,17 @@
     padding: 5px;
 }
 
+
+.custom-select>select {
+    width: 300px;
+    height: 30px;
+    font-size: 10px;
+}
+
+.custom-select>select:hover, .custom-select>select:focus {
+    cursor: pointer;
+    font-size: 15px;
+}
 
 .sesh-input:focus, .sesh-input:hover {
     font-size: 15px;
