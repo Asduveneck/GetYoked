@@ -1,3 +1,18 @@
+.sesh_screen {
+    display: flex;
+}
+
+.left_2thirds {
+    width: 66.66vw;
+    background-color: magenta;
+    height: 100vh;
+};
+
+.right_1third {
+    width: 33.34vw;
+    background-color: aqua;
+    height: 100vh;
+}
 
 .background {
     flex-direction: column;
@@ -5,8 +20,10 @@
     /* background-color: #833ab4; */
   /* background: linear-gradient(50deg, rgba(228,220,255,1) 0%, rgba(215,222,235,1) 100%); */
     background-color:  rgb(222,221,246);
-    width: 100vw;
-    height: 120vh;
+    /* background-color: maroon; */
+    width: 33.34vw; /* something else not working*/
+    /* width: 100vw; */
+    /* height: 120vh; */
     font-family: sans-serif;
     
 }
@@ -15,7 +32,7 @@
     display: flex;
 } */
 
-.login-form-box {
+.session-form {
      /* Just a black box that centers */
     margin-top: 50px;
      margin-left: auto;
@@ -28,7 +45,7 @@
     flex-direction: column;
     height: 900px; /* Stupid height for now. Just to show styling is safe */
     /* margin: auto; */
-    padding: 30px;
+    /* padding: 30px; */
     border-radius: 4px;
     margin-bottom: 50px;
     font-family: sans-serif;

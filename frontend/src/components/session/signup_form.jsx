@@ -55,7 +55,7 @@ class SignUp extends React.Component {
       <div className="">
         <p></p>
         <div className="background">
-          <form onSubmit={this.handleSubmit} className="login-form-box">
+          <form onSubmit={this.handleSubmit} className="session-form">
               <div className="session-Message">Sign up</div>
             <div className="form">
               {/* <div className="regFormTitle">Create your account.</div> */}

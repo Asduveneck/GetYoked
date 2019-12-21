@@ -91,10 +91,13 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="background">
-          
-          <form onSubmit={this.handleSubmit} className="login-form-box">
+      <div className="sesh_screen">
+          <div className="left_2thirds">
+            {/* Placeholder for colors */}
+          </div>
+          <div className="right_1third">
+           <div className="background">
+          <form onSubmit={this.handleSubmit} className="session-form">
             <div className="session-Message">Sign In</div>
             <ul className="sessionError"></ul>
 
@@ -124,6 +127,7 @@ class LoginForm extends React.Component {
               SIGNUP
             </Link>
           </form>
+          </div>
         </div>
       </div>
     );
