@@ -14,7 +14,7 @@ Touch up a little bit more before doing the svg
     /* width: 33.33vw;
     padding-left: 16.67vw; */
     /* background-color: magenta; */
-    background: linear-gradient(-45deg, blue 0%, blue 27%, transparent 27%), linear-gradient(45deg, blue 0%, blue 26%, red 26%);
+    /* background: linear-gradient(-45deg, blue 0%, blue 27%, transparent 27%), linear-gradient(45deg, blue 0%, blue 26%, red 26%); */
 
     height: 100vh;
 

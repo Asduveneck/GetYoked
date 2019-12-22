@@ -2,6 +2,8 @@ import React from "react";
 
 import { Link, withRouter } from "react-router-dom";
 import "../../stylesheets/components/login_page.css";
+import {SVG} from "./sesh_svg";
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -93,7 +95,8 @@ class LoginForm extends React.Component {
     return (
       <div className="sesh_screen">
           <div className="left_2thirds">
-            {/* Placeholder for colors */}
+            {/* Placeholder for colors Not working: */}
+            <SVG width="100%" height="100%" fill="maroon"/>
           </div>
           <div className="right_1third">
            <div className="background">
