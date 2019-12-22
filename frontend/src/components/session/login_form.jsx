@@ -118,11 +118,11 @@ class LoginForm extends React.Component {
               className="sesh-input"
               placeholder="Password"
             />
-            <input className="session-submit" type="submit" value="Sign In" />
+            <input className="session-submit" type="submit" value="Log In" />
             <input
               className="session-submit"
               type="submit"
-              value="Sign In as Guest"
+              value="Guest Log In"
               onClick={this.demoUser}
             />
             <div className="loginErrors">{this.renderErrors()}</div>
