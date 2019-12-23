@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Link, withRouter } from "react-router-dom";
-import "../../stylesheets/components/login_page.css";
+import "../../stylesheets/components/auth/login_page.css";
 import {SVG} from "./sesh_svg";
 
 
