@@ -96,7 +96,7 @@ class LoginForm extends React.Component {
       <div className="sesh_screen">
           <div className="left_2thirds">
             {/* Placeholder for colors Not working: */}
-            <SVG width="100%" height="100%" fill="maroon"/>
+            <SVG width="100%" height="100%"/>
           </div>
           <div className="right_1third">
            <div className="background">

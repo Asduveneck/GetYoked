@@ -16,7 +16,7 @@ Touch up a little bit more before doing the svg
     /* background-color: magenta; */
     /* background: linear-gradient(-45deg, blue 0%, blue 27%, transparent 27%), linear-gradient(45deg, blue 0%, blue 26%, red 26%); */
 
-    height: 100vh;
+    /* height: 100vh; */
 
 };
 
@@ -57,7 +57,7 @@ Touch up a little bit more before doing the svg
     opacity: .9;
     display: flex;
     flex-direction: column;
-    height: 900px; /* Stupid height for now. Just to show styling is safe */
+    /* height: 900px; Stupid height for now. Just to show styling is safe */
     /* margin: auto; */
     /* padding: 30px; */
     border-radius: 4px;
