@@ -122,7 +122,7 @@ class LoginForm extends React.Component {
               type="submit"
               value="Guest Log In"
               onClick={this.demoUser}
-            />
+          />
             <div className="loginErrors">{this.renderErrors()}</div>
             <Link className="signupLink" to={"/signup"}>
               SIGNUP

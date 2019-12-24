@@ -25,10 +25,9 @@ Touch up a little bit more before doing the svg
 
 .right_1third {
     width: 33.34vw;
-    /* width: 33.33vw;
-    padding-right: 16.67vw; */
-    /* background-color: aqua; */
-    height: 100vh;
+    /* height: 100vh; */
+    height: 785px;
+    display: flex;
 }
 
 .background {
@@ -50,10 +49,10 @@ Touch up a little bit more before doing the svg
 } */
 
 .session-form {
-     /* Just a black box that centers */
     margin-top: 50px;
-     margin-left: auto;
+    margin-left: auto;
     margin-right: auto;
+    margin-bottom: 50px;
     width: 400px;
     /* background: black; */
     color: black;
@@ -64,7 +63,6 @@ Touch up a little bit more before doing the svg
     /* margin: auto; */
     /* padding: 30px; */
     border-radius: 4px;
-    margin-bottom: 50px;
     font-family: sans-serif;
     align-items: center;
 }
@@ -75,16 +73,24 @@ Touch up a little bit more before doing the svg
 }
 
 .session-submit {
-    background: blue;
-    color: white;
+    background: linear-gradient(50deg, rgba(238, 163, 146, 1) 0%, rgba(233, 146, 123, 1) 100%); 
+    align-self: flex-end;
     height: 50px;
-    width: 300px;
-    border-radius: 5px;
+    width: auto;
+    padding: 0 30px;
+    border-radius: 15%;
     font-weight: normal;
     font-size: 17px;
     margin: 15px 0;
+    margin-right: 10%;
     font-family: sans-serif;
     font-weight: bold;
+}
+
+.signupButton {
+    background: linear-gradient(10deg, rgba(192, 119, 47, 1) 0%, rgba(235, 195, 93, 1) 30%, rgba(235, 195, 93, 1) 70%, rgba(192, 119, 47, 1) 100%); 
+    align-self: flex-end;
+    margin-right: 10%;
 }
 
 .session-submit:hover, .session-submit:focus {
