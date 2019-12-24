@@ -1,7 +1,8 @@
 import React from "react";
 
 import { Link, withRouter } from "react-router-dom";
-import "../../stylesheets/components/login_page.css";
+import "../../stylesheets/components/auth/login_page.css";
+import {SVG} from "./sesh_svg";
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -91,39 +92,43 @@ class LoginForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <div className="background">
-          
-          <form onSubmit={this.handleSubmit} className="login-form-box">
-            <div className="signInMessage">Sign In</div>
+      <div className="sesh_screen">
+        <div className="left_2thirds" style={{ backgroundImage: 'url("/static/media/badlands.fa7e2f06.svg")'} } >
+            {/* Why didn't the literal link work? */}
+          </div>
+          <div className="right_1third">
+           <div className="background">
+          <form onSubmit={this.handleSubmit} className="session-form">
+            <div className="session-Message">Sign In</div>
             <ul className="sessionError"></ul>
 
             <input
               type="text"
               value={this.state.username}
               onChange={this.update("username")}
-              className="login-input"
+              className="sesh-input"
               placeholder="Username"
             />
             <input
               type="password"
               value={this.state.password}
               onChange={this.update("password")}
-              className="login-input"
+              className="sesh-input"
               placeholder="Password"
             />
-            <input className="session-submit" type="submit" value="Sign In" />
+            <input className="session-submit" type="submit" value="Log In" />
             <input
               className="session-submit"
               type="submit"
-              value="Sign In as Guest"
+              value="Guest Log In"
               onClick={this.demoUser}
-            />
+          />
             <div className="loginErrors">{this.renderErrors()}</div>
             <Link className="signupLink" to={"/signup"}>
               SIGNUP
             </Link>
           </form>
+          </div>
         </div>
       </div>
     );
