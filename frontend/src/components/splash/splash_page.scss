@@ -166,6 +166,11 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
         font-size: 2vw;
         color: rgb(213, 163, 0);
       }
+      transition-duration: 0.3s;
+      transition-property: transform;
+      &:hover {
+        transform: translateY(-19px);
+      }
     }
   }
 
