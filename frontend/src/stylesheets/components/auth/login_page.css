@@ -18,7 +18,7 @@ Touch up a little bit more before doing the svg
     /* background: linear-gradient(-45deg, blue 0%, blue 27%, transparent 27%), linear-gradient(45deg, blue 0%, blue 26%, red 26%); */
 
     /* height: 100vh; */
-    background-image: url("../../../assets/background_images/badlands.svg");
+    background-image: url("../../../assets/background_images/mountain_rams.svg");
     background-repeat: no-repeat;
     clip-path: polygon(0 0, 81% 0, 68% 100%, 0% 100%);
 };

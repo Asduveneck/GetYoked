@@ -93,9 +93,8 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="sesh_screen">
-        <div className="left_2thirds" style={ {backgroundImage: 'url(../../../assets/background_images/badlands.svg)'} } >
-            {/* Placeholder for colors Not working: */}
-            {/* <SVG width="100%" height="100%"/> */}
+        <div className="left_2thirds" style={{ backgroundImage: 'url("/static/media/badlands.fa7e2f06.svg")'} } >
+            {/* Why didn't the literal link work? */}
           </div>
           <div className="right_1third">
            <div className="background">
