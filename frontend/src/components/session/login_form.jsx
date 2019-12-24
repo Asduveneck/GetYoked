@@ -4,7 +4,6 @@ import { Link, withRouter } from "react-router-dom";
 import "../../stylesheets/components/auth/login_page.css";
 import {SVG} from "./sesh_svg";
 
-
 class LoginForm extends React.Component {
   constructor(props) {
     super(props);
@@ -94,9 +93,9 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="sesh_screen">
-          <div className="left_2thirds">
+        <div className="left_2thirds" style={ {backgroundImage: 'url(../../../assets/background_images/badlands.svg)'} } >
             {/* Placeholder for colors Not working: */}
-            <SVG width="100%" height="100%"/>
+            {/* <SVG width="100%" height="100%"/> */}
           </div>
           <div className="right_1third">
            <div className="background">

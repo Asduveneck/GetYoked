@@ -1,5 +1,6 @@
 .sesh_screen {
     display: flex;
+    background-color: rgb(222,221,246);
 }
 /*
 I'll probably want to have a div centered on 1/3, and another on 2/3. 
@@ -17,7 +18,9 @@ Touch up a little bit more before doing the svg
     /* background: linear-gradient(-45deg, blue 0%, blue 27%, transparent 27%), linear-gradient(45deg, blue 0%, blue 26%, red 26%); */
 
     /* height: 100vh; */
-
+    background-image: url("../../../assets/background_images/badlands.svg");
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 81% 0, 68% 100%, 0% 100%);
 };
 
 .right_1third {
@@ -79,7 +82,7 @@ Touch up a little bit more before doing the svg
     border-radius: 5px;
     font-weight: normal;
     font-size: 17px;
-    margin-bottom: 15px;
+    margin: 15px 0;
     font-family: sans-serif;
     font-weight: bold;
 }

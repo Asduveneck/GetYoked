@@ -49,10 +49,12 @@ class SignUp extends React.Component {
     );
   }
 
+ 
+
   render() {
     return (
       <div className="sesh_screen">
-        <div className="left_2thirds">{/* Placeholder for colors */}</div>
+        <div className="left_2thirds" >{/* Placeholder for colors */}</div>
         <div className="right_1third">
         <div className="background">
           <form onSubmit={this.handleSubmit} className="session-form">
