@@ -19,11 +19,11 @@ export const fetchUser = id => dispatch => {
         .catch(err => console.log(err))
 };
 
-export const patchUser = user => dispatch => (
-    updateUser(user)
+export const patchUser = user => dispatch => {
+    updateUser(user) // TODO: This updateUser is broken here. Switched to brackets to match
         .then(user => dispatch(receiveUser(user)))
         .catch(err => console.log(err))
-);
+};
 
 export const patchUserWorkouts = (userId, workout) => dispatch => {
     updateUserWorkouts(userId, workout)
