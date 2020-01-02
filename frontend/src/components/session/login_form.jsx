@@ -97,7 +97,7 @@ class LoginForm extends React.Component {
             {/* Why didn't the literal link work? */}
           {/* </div> */}
           <div className="login-left">
-            <img src="/login_background_2.jpg" />
+            <img src="/login_background_4.png" />
           </div>
           <div className="login-right">
            <div className="background">

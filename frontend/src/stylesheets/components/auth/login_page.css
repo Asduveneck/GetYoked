@@ -16,6 +16,7 @@ Touch up a little bit more before doing the svg
 .login-left {
     width: 50vw;
     height: 100vh;
+    background: linear-gradient(266deg, rgba(169,207,218,1) 0%, rgba(255,237,197,1) 100%);
 
     position: relative;
 }
@@ -28,7 +29,6 @@ Touch up a little bit more before doing the svg
     text-align: center;
     padding: 0px;
     border: none;
-    background: white;
 }
 
 .login-right {
