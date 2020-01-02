@@ -87,7 +87,7 @@ class UserEditForm extends React.Component {
                 </select>
               </label>
 
-              <input type="submit" value="Update Info" />
+              <input className="edit-button submit" type="submit" value="Update Info" />
             </form>
           </div>
         );
