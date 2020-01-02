@@ -96,7 +96,10 @@ class LoginForm extends React.Component {
           {/* <div className="left_2thirds" style={{ backgroundImage: 'url("/static/media/badlands.fa7e2f06.svg")'} } > */}
             {/* Why didn't the literal link work? */}
           {/* </div> */}
-          <div className="right_1third">
+          <div className="login-left">
+            <img src="/login_background_3.jpg" />
+          </div>
+          <div className="login-right">
            <div className="background">
           <form onSubmit={this.handleSubmit} className="session-form">
             <div className="session-Message">Sign In</div>
