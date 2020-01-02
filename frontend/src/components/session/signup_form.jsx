@@ -1,8 +1,9 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
 // import GreetingContainer from "../greeting/greeting_container";
-// import '../../stylesheets/components/signup_page.css';
-import "../../stylesheets/components/auth/login_page.css";
+// import "../../stylesheets/components/auth/login_page.css";
+import "../../stylesheets/components/auth/signup_page.css";
+
 class SignUp extends React.Component {
   constructor(props) {
     super(props);

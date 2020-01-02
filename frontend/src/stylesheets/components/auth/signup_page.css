@@ -4,6 +4,19 @@
     background: linear-gradient(50deg, rgba(229,244,250,1) 0%, rgba(247,238,253,1) 100%);
 }
 
+.left_2thirds {
+    width: 66.66vw;
+    /* width: 33.33vw;
+    padding-left: 16.67vw; */
+    /* background-color: magenta; */
+    /* background: linear-gradient(-45deg, blue 0%, blue 27%, transparent 27%), linear-gradient(45deg, blue 0%, blue 26%, red 26%); */
+
+    /* height: 100vh; */
+    background-image: url("../../../assets/background_images/mountain_rams.svg");
+    background-repeat: no-repeat;
+    clip-path: polygon(0 0, 81% 0, 68% 100%, 0% 100%);
+};
+
 .signup-form-box {
     display: flex;
     justify-content: center;

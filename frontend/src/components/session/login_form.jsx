@@ -93,9 +93,9 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="sesh_screen">
-        <div className="left_2thirds" style={{ backgroundImage: 'url("/static/media/badlands.fa7e2f06.svg")'} } >
+          {/* <div className="left_2thirds" style={{ backgroundImage: 'url("/static/media/badlands.fa7e2f06.svg")'} } > */}
             {/* Why didn't the literal link work? */}
-          </div>
+          {/* </div> */}
           <div className="right_1third">
            <div className="background">
           <form onSubmit={this.handleSubmit} className="session-form">
