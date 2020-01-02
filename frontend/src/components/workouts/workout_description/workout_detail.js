@@ -2,7 +2,7 @@ import React from 'react';
 import './workout-detail.scss';
 import { Link } from 'react-router-dom';
 import queryString from "query-string";
-import ExerciseItem from './exercise_item.js'
+import ExerciseItem from './exercise_item'
 
 class WorkoutDetail extends React.Component {
     constructor(props) {
@@ -72,8 +72,10 @@ class WorkoutDetail extends React.Component {
                       INTENSITY: {this.props.workout.intensity}
                     </div>
                 <div className="wo-detail-item">
-                  <div className="workout-detail-item-pic">
-                    <img src="/images/ripped_ginger.png" />
+                  <div className="workout-detail-left">
+                    <div className="workout-detail-item-pic">
+                      <img src="/images/ripped_ginger.png" />
+                    </div>
                   </div>
                       <ul>
                         {
@@ -81,10 +83,10 @@ class WorkoutDetail extends React.Component {
                             return <ExerciseItem workout={this.props.workout} exercise={exercise} key={i} />
                           })
                         }
-                        <button onClick={this.handleClick} className="wo-detail-finished-button">
-                          I finished this workout!
-                        </button>
                       </ul>
+                      <button onClick={this.handleClick} className="wo-detail-finished-button">
+                        I finished this workout!
+                      </button>
                     </div>
                   </div>
                 </div>

@@ -93,7 +93,6 @@
 
 .workout-detail-description-parent {
     width: 100%;
-    height: 1000px;
     box-sizing: border-box;
     // padding: 3em;
     background-color: white;
@@ -102,6 +101,7 @@
     flex-direction: column;
     align-items: stretch;
     text-align: center;
+    height: 100vh;
 }
 
 .wo-detail-name {
@@ -137,7 +137,7 @@
 
 .workout-detail-item-pic {
     box-sizing: border-box;
-    height: 300px;
+    height: 250px;
     width: 300px;
     // border: 3px solid black;
 }
@@ -160,16 +160,22 @@
 .wo-detail-finished-button {
     background-color: rgb(213,69,77);
     color: white;
-    font-size: 30px;
+    font-size: 20px;
     font-family: 'Nunito', sans-serif;
     font-weight: 700;
-    margin: .85em;
+    margin: .35em;
     border: none;
     border-radius: 3px;
     box-shadow: 3px 10px 15px 2px #888888;
     width: fit-content;
     padding: .85em;
     height: fit-content;
+
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+
 }
 
 .exercise-item-container {
@@ -188,11 +194,13 @@
 }
 
 .exercise-name {
-    width: 200px;
+    max-width: 200px;
+    min-width: 200px;
     height: 100%;
     font-family: 'Nunito', sans-serif;
     color: darkslategrey;
     font-size: 20px;
+    text-align: start;
     padding-right: 1em;
 }
 
