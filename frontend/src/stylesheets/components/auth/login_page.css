@@ -61,7 +61,8 @@ Touch up a little bit more before doing the svg
     border-radius: 5px;
     /* background-color: #665c84; */
     /* background-color: #fcf9ed; */
-    width: 30vw; /* something else not working*/
+    width: 30vw; 
+    min-width: 380px;
     height: fit-content;
     /* width: 100vw; */
     /* height: 120vh; */
@@ -212,4 +213,29 @@ a:-webkit-any-link.signupLink {
     0 10px 10px rgba(0,0,0,.2), 
     0 20px 20px rgba(0,0,0,.15); */
 
+}
+
+@media only screen and (max-width: 1000px) {
+    .login-left {
+        display: none;
+    }
+
+    .diagonal {
+        display: none;
+    }
+
+    .login-right {
+        width: 100vw;
+        background-color: #464159;
+        /* background-color: transparent; */
+    }
+
+    .background {
+        width: 300px;
+    }
+
+    .session-Message {
+        background-color: white;
+        color: black;
+    }
 }
