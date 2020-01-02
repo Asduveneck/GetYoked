@@ -14,7 +14,7 @@ export const fetchUser = id => dispatch => {
         .then(user => {
             console.log("user fetched");
             console.log(user);
-            console.log(user.workouts);
+            // console.log(user.data.workouts);
             dispatch(receiveUser(user))})
         .catch(err => console.log(err))
 };
@@ -22,7 +22,7 @@ export const fetchUser = id => dispatch => {
 export const patchUser = user => dispatch => {
     updateUser(user) // TODO: This updateUser is broken here. Switched to brackets to match
         .then(user => dispatch(receiveUser(user)))
-        .catch(err => console.log(err))
+        .catch(err => console.log(`Errored out in user_actions:\n ${err}`))
 };
 
 export const patchUserWorkouts = (userId, workout) => dispatch => {
