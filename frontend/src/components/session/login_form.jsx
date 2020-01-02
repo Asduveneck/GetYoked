@@ -96,6 +96,7 @@ class LoginForm extends React.Component {
           {/* <div className="left_2thirds" style={{ backgroundImage: 'url("/static/media/badlands.fa7e2f06.svg")'} } > */}
             {/* Why didn't the literal link work? */}
           {/* </div> */}
+          <div className="square-practice"></div>
           <div className="login-left">
             <img src="/login_background_4.png" />
           </div>
@@ -128,7 +129,7 @@ class LoginForm extends React.Component {
           />
             <div className="loginErrors">{this.renderErrors()}</div>
               <Link className="signupLink" to={"/signup"}>
-                SIGNUP
+                SIGN UP INSTEAD
               </Link>
           </form>
           </div>
