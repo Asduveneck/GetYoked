@@ -86,10 +86,16 @@ class SplashPage extends React.Component {
         </div> */}
 
         <div className="join_us">
-          <h2>What are you waiting for?</h2>
-          <h3>
-            <Link to={"/signup"}>Join Us Now!</Link>
-          </h3>
+          <div className="row-splash join-content">
+            <div className="row-column join-sub-content">
+              <h2>What are you waiting for?</h2>
+              <img src="/login_background_4.png" />
+            </div>
+            <h3>
+              <Link to={"/signup"}>Join Us Now!</Link>
+            </h3>
+          </div>
+          <div className="diagonal-splash"></div>
         </div>
       </div> // End of splashPage
     );
