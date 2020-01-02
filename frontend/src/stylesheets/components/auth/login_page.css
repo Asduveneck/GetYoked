@@ -1,7 +1,16 @@
+.diagonal {
+    position: fixed;
+    bottom: 0;
+    height: 0px;
+    border-top: 100vh solid #464159;
+
+    width: 40vw;
+    border-right: 20vh solid transparent;
+}
+
 .sesh_screen {
     display: flex;
     flex-direction: row;
-    background-color: rgb(222,221,246);
     font-family: 'Nunito', sans-serif;
 }
 /*
@@ -16,19 +25,19 @@ Touch up a little bit more before doing the svg
 .login-left {
     width: 50vw;
     height: 100vh;
-    background: linear-gradient(266deg, rgba(169,207,218,1) 0%, rgba(255,237,197,1) 100%);
 
     position: relative;
 }
 
 .login-left img {
     position: absolute;
-    object-fit: cover;
-    height: inherit;
-    width: inherit;
+    object-fit: contain;
+    height: 80%;
+    width: 110%;
     text-align: center;
     padding: 0px;
     border: none;
+    z-index: 5;
 }
 
 .login-right {
@@ -50,7 +59,7 @@ Touch up a little bit more before doing the svg
   /* background: linear-gradient(50deg, rgba(228,220,255,1) 0%, rgba(215,222,235,1) 100%); */
     background-color:  white;
     /* border: 4px solid #156B6B; */
-    border: 2px solid lightgray;
+    border: 4px solid #464159;
     border-radius: 5px;
     /* background-color: #665c84; */
     /* background-color: #fcf9ed; */
@@ -171,12 +180,12 @@ Touch up a little bit more before doing the svg
 .signupLink {
     text-decoration: none;
     align-self: flex-start;
-    color: white;
+    color: #DCD2EB;
     padding: 2rem;
 }
 
 a:-webkit-any-link.signupLink {
-    color: gray;
+    color: #DCD2EB;
 }
 
 .sessionError {
