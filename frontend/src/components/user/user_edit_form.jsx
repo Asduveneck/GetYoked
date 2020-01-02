@@ -35,11 +35,11 @@ class UserEditForm extends React.Component {
             <h2>Edit User Info</h2>
             <form onSubmit={this.handleSubmit}>
               <label>
-                Username
+                <h4>Username</h4>
                 <p>{this.state.username}</p>
               </label>
               <label>
-                Age
+                  <h4>Age</h4>
                 <input
                   type="text"
                   value={this.state.age}
@@ -47,7 +47,7 @@ class UserEditForm extends React.Component {
                 />
               </label>
               <label>
-                Height
+                  <h4>Height</h4>
                 <input
                   type="text"
                   value={this.state.height}
@@ -55,7 +55,7 @@ class UserEditForm extends React.Component {
                 />
               </label>
               <label>
-                Weight
+                  <h4>Weight</h4>
                 <input
                   type="text"
                   value={this.state.weight}
@@ -63,7 +63,7 @@ class UserEditForm extends React.Component {
                 />
               </label>
               <label>
-                Activity Level
+                  <h4>Activity Level</h4>
                 <select
                   value={this.state.activity}
                   onChange={this.handleChange("activity")}
@@ -74,7 +74,7 @@ class UserEditForm extends React.Component {
                 </select>
               </label>
               <label>
-                Goals
+                  <h4>Goals</h4>
                 <select
                   value={this.state.goals}
                   onChange={this.handleChange("goals")}
