@@ -1,7 +1,7 @@
 import React from "react";
 
 import { Link, withRouter } from "react-router-dom";
-import "../../stylesheets/components/auth/login_page.css";
+import "../../stylesheets/components/auth/auth_page.css";
 import {SVG} from "./sesh_svg";
 
 class LoginForm extends React.Component {
@@ -93,9 +93,6 @@ class LoginForm extends React.Component {
   render() {
     return (
       <div className="sesh_screen">
-          {/* <div className="left_2thirds" style={{ backgroundImage: 'url("/static/media/badlands.fa7e2f06.svg")'} } > */}
-            {/* Why didn't the literal link work? */}
-          {/* </div> */}
           <div className="diagonal"></div>
           <div className="login-left">
             <img src="/login_background_4.png" />
