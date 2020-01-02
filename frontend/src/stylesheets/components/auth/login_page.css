@@ -2,9 +2,8 @@
     position: fixed;
     bottom: 0;
     height: 0px;
-    border-top: 100vh solid #464159;
-
     width: 40vw;
+    border-top: 100vh solid #464159;
     border-right: 20vh solid transparent;
 }
 
@@ -13,14 +12,6 @@
     flex-direction: row;
     font-family: 'Nunito', sans-serif;
 }
-/*
-I'll probably want to have a div centered on 1/3, and another on 2/3. 
-Margins will be like:
-  1/6 + 1/3 + 1/3 + 1/6 
-On left div I do the diagonal slash with svg.
-On right div I center the form.
-Touch up a little bit more before doing the svg
-*/
 
 .login-left {
     width: 50vw;
@@ -46,49 +37,26 @@ Touch up a little bit more before doing the svg
     display: flex;
     justify-content: center;
     align-items: center;
-
     background-color: white;
-    /* background-color: #ff7657; */
-    /* background-color: #ffba5a; */
 }
 
 .background {
     display: flex;
     flex-direction: column;
     background-color:  white;
-    /* border: 4px solid #464159; */
     border: 2px solid #464159;
     border-radius: 5px;
-    /* background-color: #665c84; */
-    /* background-color: #fcf9ed; */
     width: 30vw; 
     min-width: 380px;
     height: fit-content;
-    /* width: 100vw; */
-    /* height: 120vh; */
     
 }
 
-/* .giphy {
-    display: flex;
-} */
-
 .session-form {
-    /* margin-top: 50px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 50px;
-    width: 400px; */
-    /* background: black; */
-    /* color: black;
-    opacity: .9; */
     height: 100%;
     width: 100%;
     display: flex;
     flex-direction: column;
-    /* height: 900px; Stupid height for now. Just to show styling is safe */
-    /* margin: auto; */
-    /* padding: 30px; */
     align-items: center;
 }
 
@@ -124,6 +92,11 @@ Touch up a little bit more before doing the svg
 }
 .sesh-input:focus, .sesh-input:hover {
     font-size: 15px;
+}
+
+.submitDiv {
+    width: 100%;
+    text-align: center;
 }
 
 .session-button {

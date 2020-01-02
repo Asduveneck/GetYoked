@@ -1,7 +1,7 @@
 import React from "react";
 import { withRouter } from 'react-router-dom';
 // import GreetingContainer from "../greeting/greeting_container";
-// import "../../stylesheets/components/auth/login_page.css";
+import "../../stylesheets/components/auth/login_page.css";
 import "../../stylesheets/components/auth/signup_page.css";
 
 class SignUp extends React.Component {
@@ -55,8 +55,11 @@ class SignUp extends React.Component {
   render() {
     return (
       <div className="sesh_screen">
-        <div className="left_2thirds" >{/* Placeholder for colors */}</div>
-        <div className="right_1third">
+        <div className="diagonal"></div>
+        <div className="login-left">
+          <img src="/login_background_4.png" />
+        </div>
+        <div className="login-right">
         <div className="background">
           <form onSubmit={this.handleSubmit} className="session-form">
             <div className="session-Message">Sign up</div>
@@ -121,7 +124,7 @@ class SignUp extends React.Component {
             {/* </div> */}
             <div className="submitDiv">
               <input
-                className="session-submit signupButton"
+                className="session-button"
                 type="submit"
                 value={this.props.formType}
               />
