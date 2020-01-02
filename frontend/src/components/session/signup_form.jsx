@@ -105,26 +105,26 @@ class SignUp extends React.Component {
               className="sesh-input"
               placeholder="Weight"
             />
-            <div className="custom-select">
-              <select onChange={this.update("activity")}>
+            {/* <div className="custom-select"> */}
+              <select className="sesh-input" onChange={this.update("activity")}>
                 <option>Select Activity Level:</option>
                 <option value="light">House Cat</option>
                 <option value="medium">Average Human Level</option>
                 <option value="hard">Spartan</option>
               </select>
-            </div>
-            <div className="custom-select">
-              <select onChange={this.update("goals")}>
+            {/* </div> */}
+            {/* <div className="custom-select"> */}
+              <select className="sesh-input" onChange={this.update("goals")}>
                 <option>Select Goal:</option>
                 <option value="5k">5k</option>
                 <option value="lose weight">Lose Weight</option>
                 <option value="Michelle Obama arms">Michelle Obama Arms</option>
               </select>
-            </div>
+            {/* </div> */}
             {/* </div> */}
             <div className="submitDiv">
               <input
-                className="session-button"
+                className="session-button signup-button"
                 type="submit"
                 value={this.props.formType}
               />

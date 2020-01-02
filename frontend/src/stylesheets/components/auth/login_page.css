@@ -89,6 +89,12 @@
     /* color: white; */
     font-size: 12px;
     transition: ease-in-out, font-size .35s ease-in-out;
+
+    margin: .35em;
+    width: 75%;
+    box-sizing: border-box;
+    border-radius: 4px;
+    background-color: white;
 }
 .sesh-input:focus, .sesh-input:hover {
     font-size: 15px;
@@ -113,6 +119,10 @@
 
     text-align: center;
     font-size: 20px;
+}
+
+.signup-button {
+    margin: 1rem 0 !important;
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
