@@ -97,7 +97,7 @@ class LoginForm extends React.Component {
             {/* Why didn't the literal link work? */}
           {/* </div> */}
           <div className="login-left">
-            <img src="/login_background_3.jpg" />
+            <img src="/login_background_2.jpg" />
           </div>
           <div className="login-right">
            <div className="background">
@@ -119,17 +119,17 @@ class LoginForm extends React.Component {
               className="sesh-input"
               placeholder="Password"
             />
-            <input className="session-submit" type="submit" value="Log In" />
+            <input className="session-submit session-button" type="submit" value="Log In" />
             <input
-              className="session-submit"
+              className="session-submit session-button"
               type="submit"
               value="Guest Log In"
               onClick={this.demoUser}
           />
             <div className="loginErrors">{this.renderErrors()}</div>
-            <Link className="signupLink" to={"/signup"}>
-              SIGNUP
-            </Link>
+              <Link className="signupLink" to={"/signup"}>
+                SIGNUP
+              </Link>
           </form>
           </div>
         </div>

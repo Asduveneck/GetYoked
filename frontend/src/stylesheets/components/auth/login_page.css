@@ -37,6 +37,10 @@ Touch up a little bit more before doing the svg
     display: flex;
     justify-content: center;
     align-items: center;
+
+    background-color: white;
+    /* background-color: #ff7657; */
+    /* background-color: #ffba5a; */
 }
 
 .background {
@@ -45,10 +49,13 @@ Touch up a little bit more before doing the svg
     /* background-color: #833ab4; */
   /* background: linear-gradient(50deg, rgba(228,220,255,1) 0%, rgba(215,222,235,1) 100%); */
     background-color:  white;
+    /* border: 4px solid #156B6B; */
+    border: 5px solid #D8D0E8;
     border-radius: 5px;
-    /* background-color: maroon; */
+    /* background-color: #665c84; */
+    /* background-color: #fcf9ed; */
     width: 30vw; /* something else not working*/
-    height: 75vh;
+    height: fit-content;
     /* width: 100vw; */
     /* height: 120vh; */
     
@@ -77,14 +84,37 @@ Touch up a little bit more before doing the svg
     align-items: center;
 }
 
+.session-form input {
+    height: 50px;
+    margin: .35em;
+    width: 75%;
+    box-sizing: border-box;
+    border-radius: 4px;
+
+    
+}
+
+.session-button {
+    height: 50px;
+    margin: .35em;
+    width: 75%;
+    box-sizing: border-box;
+    border: none;
+    border-radius: 4px;
+    /* background: linear-gradient(10deg, rgba(192, 119, 47, 1) 0%, rgba(235, 195, 93, 1) 30%, rgba(235, 195, 93, 1) 70%, rgba(192, 119, 47, 1) 100%); */
+    background-color: #156B6B;
+
+    text-align: center;
+    font-size: 20px;
+}
+
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
   color: black;
   /* opacity: 2; Firefox */
 }
 
-.session-submit {
+/* .session-submit {
     background: linear-gradient(50deg, rgba(238, 163, 146, 1) 0%, rgba(233, 146, 123, 1) 100%); 
-    align-self: flex-end;
     height: 50px;
     width: auto;
     padding: 0 30px;
@@ -98,9 +128,8 @@ Touch up a little bit more before doing the svg
 
 .signupButton {
     background: linear-gradient(10deg, rgba(192, 119, 47, 1) 0%, rgba(235, 195, 93, 1) 30%, rgba(235, 195, 93, 1) 70%, rgba(192, 119, 47, 1) 100%); 
-    align-self: flex-end;
     margin-right: 10%;
-}
+} */
 
 .session-submit:hover, .session-submit:focus {
     cursor: pointer;
@@ -117,8 +146,9 @@ Touch up a little bit more before doing the svg
 .sesh-input {
     background-color: white;
     color: black;
-    border-radius: 5px;
-    border-style: inset;
+    /* border: 2px solid #156B6B; */
+    border: 2px solid rgb(191, 191, 191);
+    /* border-style: inset; */
     padding: 0 5%;
     width: 65%;
     height: 50px;
@@ -147,10 +177,13 @@ Touch up a little bit more before doing the svg
 
 .signupLink {
     text-decoration: none;
+    align-self: flex-start;
     color: white;
-    margin: 15px;
-    margin-top: 100px;
-    width: 75%;
+    padding: .85em;
+}
+
+a:-webkit-any-link.signupLink {
+    color: gray;
 }
 
 .sessionError {
