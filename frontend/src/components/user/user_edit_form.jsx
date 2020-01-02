@@ -31,65 +31,65 @@ class UserEditForm extends React.Component {
 
     render() {
         return (
-          <div className="user-info-parent">
+            <div className="user-info-parent">
             <h2>Edit User Info</h2>
             <form onSubmit={this.handleSubmit}>
-              <label>
+                <label>
                 <h4>Username</h4>
                 <p>{this.state.username}</p>
-              </label>
-              <label>
-                  <h4>Age</h4>
+                </label>
+                <label>
+                    <h4>Age</h4>
                 <input
-                  type="text"
-                  value={this.state.age}
-                  onChange={this.handleChange("age")}
+                    type="text"
+                    value={this.state.age}
+                    onChange={this.handleChange("age")}
                 />
-              </label>
-              <label>
-                  <h4>Height</h4>
+                </label>
+                <label>
+                    <h4>Height</h4>
                 <input
-                  type="text"
-                  value={this.state.height}
-                  onChange={this.handleChange("height")}
+                    type="text"
+                    value={this.state.height}
+                    onChange={this.handleChange("height")}
                 />
-              </label>
-              <label>
-                  <h4>Weight</h4>
+                </label>
+                <label>
+                    <h4>Weight</h4>
                 <input
-                  type="text"
-                  value={this.state.weight}
-                  onChange={this.handleChange("weight")}
+                    type="text"
+                    value={this.state.weight}
+                    onChange={this.handleChange("weight")}
                 />
-              </label>
-              <label>
-                  <h4>Activity Level</h4>
+                </label>
+                <label>
+                    <h4>Activity Level</h4>
                 <select
-                  value={this.state.activity}
-                  onChange={this.handleChange("activity")}
+                    value={this.state.activity}
+                    onChange={this.handleChange("activity")}
                 >
-                  <option value="light">Light</option>
-                  <option value="medium">Medium</option>
-                  <option value="hard">Hard</option>
+                    <option value="light">Light</option>
+                    <option value="medium">Medium</option>
+                    <option value="hard">Hard</option>
                 </select>
-              </label>
-              <label>
-                  <h4>Goals</h4>
+                </label>
+                <label>
+                    <h4>Goals</h4>
                 <select
-                  value={this.state.goals}
-                  onChange={this.handleChange("goals")}
+                    value={this.state.goals}
+                    onChange={this.handleChange("goals")}
                 >
-                  <option value="5k">5k</option>
-                  <option value="lose weight">Lose Weight</option>
-                  <option value="Michelle Obama arms">
+                    <option value="5k">5k</option>
+                    <option value="lose weight">Lose Weight</option>
+                    <option value="Michelle Obama arms">
                     Michelle Obama Arms
-                  </option>
+                    </option>
                 </select>
-              </label>
+                </label>
 
-              <input className="edit-button submit" type="submit" value="Update Info" />
+                <input className="edit-button submit" type="submit" value="Update Info" />
             </form>
-          </div>
+            </div>
         );
     }
 }
