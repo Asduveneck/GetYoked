@@ -287,7 +287,10 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
     flex-direction: column;
 
     * {
-      width: 90%;
+      width: 95%;
+      h3 {
+        font-size: 4vw;
+      }
     }
   }
 }
