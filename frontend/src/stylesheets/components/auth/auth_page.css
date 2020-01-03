@@ -95,6 +95,7 @@
     border-radius: 4px;
     background-color: white;
 }
+
 .sesh-input:focus, .sesh-input:hover {
     font-size: 15px;
 }
@@ -151,7 +152,6 @@
     text-decoration: none;
     align-self: flex-start;
     color: #DCD2EB;
-    /* color: #c7f0db; */
     padding: 2rem;
     font-size: 18px;
     font-weight: 900;
@@ -161,14 +161,11 @@ a:-webkit-any-link.signupLink {
     font-size: 18px;
     font-weight: 900;
     color: #DCD2EB;
-    /* color: #c7f0db; */
-    /* color: #8bbabb; */
 }
 
 .sessionError {
     z-index: 2;
     color:white;
-    /* height: 50vh; */
     width: 50vw;
     font-size: large;
     font-weight: bold;

@@ -7,8 +7,6 @@ import "../../stylesheets/components/navbar/mainnav.css";
 class Greeting extends React.Component {
   constructor(props) {
     super(props);
-    // this.state = this.props
-    // console.log(this.state)
   }
 
   componentDidMount(){
@@ -17,7 +15,6 @@ class Greeting extends React.Component {
 
   render() {
     let links;
-    console.log(this.props)
     if (!this.props.user.id) {
       links = (
         <div className="dropdown-content">

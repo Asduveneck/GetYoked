@@ -21,12 +21,9 @@ class WorkoutForm extends React.Component {
     }
 
     getWorkout(type) {
-      console.log("workout form props, pressing submit")
-      console.log(this.props)
       const intensity = this.props.currentUser.achievement
       this.props.getWorkout(type, intensity)
         .then(res => {
-          console.log(res)
           this.props.history.push(`/workout?workoutId=${res.workout.data._id}`)
         })
     }
