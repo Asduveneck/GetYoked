@@ -79,7 +79,7 @@ class SplashPage extends React.Component {
           <div className="row-splash join-content">
             <div className="column-splash join-sub-content">
               <h2>What are you waiting for?</h2>
-              <img src="/login_background_4.png" />
+              <div className="splash-img"><img src="/login_background_4.png" /></div>
             </div>
             <h3>
               <Link to={"/signup"}>Join Us Now!</Link>
