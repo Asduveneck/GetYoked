@@ -205,7 +205,7 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
 
     img {
       height: 30vh;
-      width: 35vw;
+      width: 40vw;
     }
 
     h2 {
@@ -226,7 +226,7 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
       border-radius: 10px;
       width: fit-content;
       height: fit-content;
-      border: 6px solid #D8DEEC;
+      border: 10px solid #D8DEEC;
     }
 
     h3 {
@@ -240,7 +240,7 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
 
     .diagonal-splash {
       bottom: 0;
-      width: 50vw;
+      width: 55vw;
       height: 0px;
       border-top: 70vh solid #464159;
       border-right: 10vw solid transparent;
@@ -263,4 +263,31 @@ $font-funky-main: 'Poiret One', cursive; //cute bigger notes
 .column-splash {
   display: flex;
   flex-direction: column;
+}
+
+@media screen and (max-width: 916px) {
+  .join_us {
+    background-color: #464159 !important;
+  }
+  .join-content {
+    position: relative !important;
+    top: 20vh;
+    transform: translateY(50%);
+  }
+  .join-sub-content {
+    display: none;
+  }
+
+  .diagonal-splash {
+    display: none;
+  }
+
+
+  .splash_page .how_you_grow .sp_hyg_3_cols {
+    flex-direction: column;
+
+    * {
+      width: 90%;
+    }
+  }
 }
