@@ -75,19 +75,9 @@ class SplashPage extends React.Component {
           </div>
         </div>
 
-        {/* <div className="what_we_offer">
-          <h2 className="screenshots">Lots of pics Row with screenshots</h2> */}
-          {/* Fake screenshots of our app with made up features */}
-          {/* <ul className="spaced_frames">
-            <li>Well thought-out progressions</li>
-            <li>Easy to use interface</li>
-            <li>Record your performance with a single click</li>
-          </ul>
-        </div> */}
-
         <div className="join_us">
           <div className="row-splash join-content">
-            <div className="row-column join-sub-content">
+            <div className="column-splash join-sub-content">
               <h2>What are you waiting for?</h2>
               <img src="/login_background_4.png" />
             </div>

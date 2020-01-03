@@ -105,7 +105,7 @@ class SignUp extends React.Component {
               placeholder="Weight"
             />
             {/* <div className="custom-select"> */}
-              <select className="sesh-input" onChange={this.update("activity")}>
+              <select className="sesh-input drop" onChange={this.update("activity")}>
                 <option>Select Activity Level:</option>
                 <option value="light">House Cat</option>
                 <option value="medium">Average Human Level</option>
@@ -113,7 +113,7 @@ class SignUp extends React.Component {
               </select>
             {/* </div> */}
             {/* <div className="custom-select"> */}
-              <select className="sesh-input" onChange={this.update("goals")}>
+              <select className="sesh-input drop" onChange={this.update("goals")}>
                 <option>Select Goal:</option>
                 <option value="5k">5k</option>
                 <option value="lose weight">Lose Weight</option>
