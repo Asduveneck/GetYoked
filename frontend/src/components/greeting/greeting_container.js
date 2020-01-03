@@ -9,6 +9,7 @@ let _defaultState = {};
 
 const mapStateToProps = (state = _defaultState, ownProps) => ({
   user: state.session.user,
+  loggedIn: state.session.isAuthenticated
 })
 ;
 

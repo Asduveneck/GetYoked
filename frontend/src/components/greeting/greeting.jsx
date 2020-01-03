@@ -10,7 +10,7 @@ class Greeting extends React.Component {
   }
 
   componentDidMount(){
-    this.props.fetchUser(this.props.user.id)
+    if (!!this.props.loggedIn) this.props.fetchUser(this.props.user.id)
   }
 
   render() {
