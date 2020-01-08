@@ -43,12 +43,22 @@ class Profile extends React.Component {
     render() {
         let currentTab;
         if (this.props.user === undefined) return null;
+
+        console.log("hi") //TODO: Figure out why the added workouts don't have type!
+        console.log(this.props.user.workouts);
+        let numStrength = 0; let numCardio = 0; let numFlex = 0;
+        for(let i = 0; i < this.props.user.workouts.length; i++) {
+            let workout = this.props.user.workouts[i];
+            console.log(workout)
+        }
+
         if (this.state.selectedTab === 0) {
             currentTab = (
                 <div className="achievement-parent">
                     <h2>{this.props.user.username}'s Achievements</h2>
 
                     <p>You're currently at Achievement level {this.props.user.achievement}!</p>
+                    <p>You have completed {this.props.user.workouts.length} workouts.</p>
                     <p>Keep up the good work!</p>
                 </div>
             )
