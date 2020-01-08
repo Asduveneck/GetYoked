@@ -30,6 +30,7 @@ class WorkoutDetail extends React.Component {
         _workoutId: this.props.workoutId,
         date: Date(Date.now()),
         name: this.props.workout.name,
+        type: this.props.workout.type,
         intensity: this.props.workout.intensity
       }
       const userWorkouts = (this.props.currentUser.workouts).slice();
@@ -43,6 +44,7 @@ class WorkoutDetail extends React.Component {
 
     render() {
       if (this.props.workout === undefined) return null;
+      console.log(this.props)
 
         return (
           <div className="workout-detail-window">
