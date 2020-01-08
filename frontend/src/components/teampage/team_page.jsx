@@ -60,6 +60,7 @@ class TeamPage extends React.Component {
                   <a href="https://angel.co/braeden-austgen" target="_blank">
                     <img src="AngelList.png" alt="AngelList" height="32px" />
                   </a>
+                  <a href="https://baustgen.github.io/" target="_blank" className="portfolio-link">Portfolio</a>
                 </div>
                 <p className="dev-bio">Full Stack Software Engineer with experience in Ruby, Rails, Javascript, and React / Redux. Softball player. Chicago Cubs fan</p>
               </nav>
@@ -91,7 +92,7 @@ class TeamPage extends React.Component {
                   <a href="https://angel.co/https://angel.co/maureen-durnin" target="_blank">
                     <img src="AngelList.png" alt="AngelList" height="32px" />
                   </a>
-                  <a href="https://mmdurnin.github.io/" className="portfolio-link">Portfolio</a>
+                  <a href="http://www.maureendurnin.com/" target="_blank" className="portfolio-link">Portfolio</a>
                 </div>
                 <p className="dev-bio">Software Engineer | JavaScript Rails PostgreSQL MongoDB Express Node React Redux HTML5 CSS3</p>
               </nav>
