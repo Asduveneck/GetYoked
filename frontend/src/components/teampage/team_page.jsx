@@ -16,7 +16,7 @@ class TeamPage extends React.Component {
         <div className="flip-card">
           <div className="flip-card-inner">
             <div className="flip-card-front">
-              <img src="AD.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
+              <img src="ASD.jpeg" className="circle"  alt="Avatar" width="300px" height="300px" />
             </div>
             <div className="flip-card-back">
               <nav className="dev-bio-container">
