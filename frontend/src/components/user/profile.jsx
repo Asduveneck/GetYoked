@@ -40,8 +40,6 @@ class Profile extends React.Component {
         this.setState({edit: false})
     }
 
-    // console.log(titleMaker(33, ["title 0", "title 1", "title 2", "title 3"]));
-
     render() {
         let currentTab;
         if (this.props.user === undefined) return null;
@@ -72,7 +70,7 @@ class Profile extends React.Component {
         }
         // Rewards given at 10, 25, 100
         // function that returns a pojo to make giving a workout
-        function titleMaker(categoryType, num, titlesArray) { // more like an award maker if anything
+        function awardMaker(categoryType, num, titlesArray) {
             if (num >= 100) { // if a user has completed 100 or more workouts, level 3
                 return { category: categoryType, numCompleted: 100, goal: 100, title: titlesArray[3], level: 3 };
             } else if (num > 25) {
@@ -89,14 +87,13 @@ class Profile extends React.Component {
         let titlesFlex    = ["", "Getting flex", "Contortionist", "Cobra"];
 
         // Uses titles to generate basic levels per category
-        let levelStrength = titleMaker("Strength", numStrength, titlesStrength);
-        let levelCardio = titleMaker("Cardio", numCardio, titlesCardio);
-        let levelFlex = titleMaker("Flexibility", numFlex, titlesFlex);
+        let levelStrength = awardMaker("Strength", numStrength, titlesStrength);
+        let levelCardio = awardMaker("Cardio", numCardio, titlesCardio);
+        let levelFlex = awardMaker("Flexibility", numFlex, titlesFlex);
 
         // Use previous levels per category for overall average combo award
         let titlesWorkoutAll = ["", "King", "Genos", "Saitama"];
         let workoutLevels = [levelStrength.level, levelCardio.level, levelFlex.level];
-        let levelWorkoutAll = { category: "overall"};
 
         // Make 'goals' for combo award
         function goalMaker(level) {
