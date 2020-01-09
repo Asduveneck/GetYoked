@@ -40,15 +40,19 @@ class Profile extends React.Component {
         this.setState({edit: false})
     }
 
+    // console.log(titleMaker(33, ["title 0", "title 1", "title 2", "title 3"]));
+
     render() {
         let currentTab;
         if (this.props.user === undefined) return null;
 
-        // console.log(this.props.user.workouts);
+        // Create constants to store number of workouts of each type
         let numStrength = 0; let numCardio = 0; let numFlex = 0; let numUnsorted = 0;
+
+        // Iterate through workouts array once, and increment above respectively
         for(let i = 0; i < this.props.user.workouts.length; i++) {
             let workout = this.props.user.workouts[i];
-            // console.log(workout.type)
+
             switch(workout.type) {
                 case "strength":
                     numStrength += 1;
@@ -63,14 +67,31 @@ class Profile extends React.Component {
                     numUnsorted += 1;
                     break;
                 default:
-                    // numUnsorted += 1;
-                    console.log(`default option. type: ${workout.type}`)
+                    break;
             }
         }
-        // console.log(`numStrength: ${numStrength}`)
-        // console.log(`numCardio: ${numCardio}`)
-        // console.log(`numFlex: ${numFlex}`)
-        // console.log(`numUnsorted: ${numUnsorted}`)
+        // Rewards given at 10, 25, 100
+        // function that returns a pojo to make giving a workout
+        function titleMaker(categoryType, num, titlesArray) {
+            if (num >= 100) { // if a user has completed 100 or more workouts, level 3
+                return { category: categoryType, numCompleted: 100, goal: 100, title: titlesArray[3], level: 3 }
+            } else if (num > 25) {
+                return { category: categoryType, numCompleted: num, goal: 100, title: titlesArray[2], level: 2 }
+            } else if (num > 10) {
+                return { category: categoryType, numCompleted: num, goal: 25,  title: titlesArray[1], level: 1 }
+            } else { // case num > 0
+                return {category: categoryType,  numCompleted: num, goal: 10,  title: titlesArray[0], level: 0 }
+            }
+        }
+        // titles for each category, from lowest to highest level
+        let titlesStrength = ["", "Getting Swole", "Kinda Swole", "Super Swole"]
+        let titlesCardio  = ["", "Getting fit", "Half Marathoner", "Full Marathon"]
+        let titlesFlex    = ["", "Getting flex", "Contortionist", "Cobra"]
+
+        // Uses titles to generate basic levels per category
+        let levelStrength = titleMaker("Strength", numStrength, titlesStrength)
+        let levelCardio = titleMaker("Cardio", numCardio, titlesCardio)
+        let levelFlex = titleMaker("Flexibility", numFlex, titlesFlex)
 
         if (this.state.selectedTab === 0) {
             currentTab = (
@@ -81,6 +102,22 @@ class Profile extends React.Component {
                     <p>You have completed {this.props.user.workouts.length} workouts.</p>
                     <p>More specifically, you've completed {numStrength} strength workouts, {numCardio} cardio workouts, and {numFlex} flexibility workouts.</p>
                     <p>Keep up the good work!</p>
+                    <div className="awards">
+                    {/* {awardPresenter()} */}
+                    {[levelStrength, levelCardio, levelFlex].map(award => {
+                        let { category, numCompleted, goal, title, level } = award;
+
+                        return (
+                            <div className={`indv_award ${category}`}>
+                                <h1>{title}</h1>
+                                <h3>Level {level} in {category}</h3>
+                                <div>Placeholder Div for Image?</div>
+                                <span className="workout percent">{numCompleted} / {goal}</span>
+                            </div>
+                        )
+                    })
+                    }
+                    </div>
                 </div>
             )
         } else if (this.state.selectedTab === 1) {
