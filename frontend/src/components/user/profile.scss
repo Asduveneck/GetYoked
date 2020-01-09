@@ -212,7 +212,8 @@ $hover: rgba(97, 94, 106, 0.064);
 }
 
 .awards {
-    background-color: khaki;
+    // background-color:rgba(242, 245, 245, 0);
+    background-color: white;
     display: flex;
     flex-wrap: wrap;
     align-content: center;
@@ -220,17 +221,22 @@ $hover: rgba(97, 94, 106, 0.064);
     width: 70vw;
     height: 40%;
     margin-bottom: 40px;
+    // box-shadow: inset 0 0 0 16px rgba(197, 211, 211, 0.05); // looks weird!
 
     .indv_award {
-        background-color: lawngreen;
-        margin: 4.5%;
-        width: 350px;
-        height: 350px;
         display: flex;
         flex-direction: space-between;
         flex-direction: column;
+        // background-color: lawngreen;
+        background-color: rgba(242, 245, 245, 0.8);
+        margin: 4.5%;
+        width: 350px;
+        height: 350px;
+        box-shadow: 5px 5px 10px rgba(197, 211, 211, 0.5);
+        font-family: 'Nunito', sans-serif;
     }
     h1 {
+        // font-family: 'Poiret One', cursive;
         text-align: center;
         font-size: 25px;
         margin-top: -15px;
