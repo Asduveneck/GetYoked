@@ -110,15 +110,16 @@ class Profile extends React.Component {
 
         // Function to return a pojo for our award
         function workoutAllAwardMaker() {
+            let category = "Overall"; // category for this award
             if (workoutLevels.every(atLeast(3))) { // Every workout at least level 3. 
                 // .some() would be faster, and we can possibly autogenerate these if-else chains with a clever for loop...
-                return {category: "overall", title: titlesWorkoutAll[3], level: 3, goal: "Congratulations", numCompleted: false };
+                return {category, title: titlesWorkoutAll[3], level: 3, goal: "Congratulations", numCompleted: false };
             } else if(workoutLevels.every(atLeast(2))) {
-                return {category: "overall", title: titlesWorkoutAll[2], level: 2, goal: goalMaker(3), numCompleted: false };
+                return {category, title: titlesWorkoutAll[2], level: 2, goal: goalMaker(3), numCompleted: false };
             } else if (workoutLevels.every(atLeast(1))) {
-                return {category: "overall", title: titlesWorkoutAll[1], level: 1, goal: goalMaker(2), numCompleted: false };
+                return {category, title: titlesWorkoutAll[1], level: 1, goal: goalMaker(2), numCompleted: false };
             } else { // no workouts hit level 1
-                return {category: "overall", title: titlesWorkoutAll[0], level: 0, goal: goalMaker(1), numCompleted: false };
+                return {category, title: titlesWorkoutAll[0], level: 0, goal: goalMaker(1), numCompleted: false };
             }
         }
 
@@ -150,8 +151,8 @@ class Profile extends React.Component {
                         return (
                             <div className={`indv_award ${category}`} key={`indv_award_${category}_${level}`} >
                                 <h1>{title}</h1>
-                                <h3>Level {level} in {category}</h3>
                                 <div>Image?</div>
+                                <h3>Level {level} in {category}</h3>
                                 <span className="workout_goal">{newGoal}</span>
                             </div>
                         )

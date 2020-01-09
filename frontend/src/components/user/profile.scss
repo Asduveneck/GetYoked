@@ -210,3 +210,23 @@ $hover: rgba(97, 94, 106, 0.064);
 .user-workouts-parent button:hover {
     cursor: pointer;
 }
+
+.awards {
+    background-color: khaki;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    width: 70vw;
+    height: 40%;
+    margin-bottom: 40px;
+;
+
+    .indv_award {
+        background-color: lawngreen;
+        margin: 4.5%;
+        width: 350px;
+        height: 350px;
+
+    }
+}
