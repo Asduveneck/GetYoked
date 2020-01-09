@@ -93,6 +93,33 @@ class Profile extends React.Component {
         let levelCardio = titleMaker("Cardio", numCardio, titlesCardio)
         let levelFlex = titleMaker("Flexibility", numFlex, titlesFlex)
 
+        // Use previous levels per category for overall average combo award
+        let titlesWorkoutAll = ["", "King", "Genos", "Saitama"]
+        let workoutLevels = [levelStrength.level, levelCardio.level, levelFlex.level]
+        let levelWorkoutAll = { category: "overall"}
+
+        function goalMaker(level) {
+            return `Hit level ${level} in all workout categories`
+        }
+
+        if (workoutLevels.some() < 1) { // no workouts past 1 => all workouts < 1
+            levelWorkoutAll.title = titlesWorkoutAll[0];
+            levelWorkoutAll.level = 0;
+            levelWorkoutAll.goal = goalMaker(1);
+        } else if(workoutLevels.some() < 2) { // not all workouts hit 2
+            levelWorkoutAll.title = titlesWorkoutAll[1];
+            levelWorkoutAll.level = 1;
+            levelWorkoutAll.goal = goalMaker(2);
+        } else if (workoutLevels.some() < 3) {  // not all workouts hit 3
+            levelWorkoutAll.title = titlesWorkoutAll[2];
+            levelWorkoutAll.level = 2;
+            levelWorkoutAll.goal = goalMaker(3);
+        } else { // hit level 3 in all workouts
+            levelWorkoutAll.title = titlesWorkoutAll[2];
+            levelWorkoutAll.level = 2;
+            levelWorkoutAll.goal = "Congratulations";
+        }
+
         if (this.state.selectedTab === 0) {
             currentTab = (
                 <div className="achievement-parent">
@@ -103,16 +130,27 @@ class Profile extends React.Component {
                     <p>More specifically, you've completed {numStrength} strength workouts, {numCardio} cardio workouts, and {numFlex} flexibility workouts.</p>
                     <p>Keep up the good work!</p>
                     <div className="awards">
-                    {/* {awardPresenter()} */}
+                    {/* Map through array of each workout level pojo */}
                     {[levelStrength, levelCardio, levelFlex].map(award => {
-                        let { category, numCompleted, goal, title, level } = award;
+                        // deconstruct the award for subsequent div:
+                        let { category, numCompleted, goal, title, level } = award; // Get rid of numCompleted here
+                        // Conditional logic if numCompleted is there (for comboGoals).
+                        /*
+                        let newGoal = "";
+                        if (award.numCompleted) { // NOT a combo goal
+                            newGoal = `${numCompleted} / ${goal}`
+                        } else {
+                            newGoal = goal; // original goal suffices
+                        }
+                        // replace workout_goal content with {newGoal}
+                        */
 
                         return (
                             <div className={`indv_award ${category}`}>
                                 <h1>{title}</h1>
                                 <h3>Level {level} in {category}</h3>
                                 <div>Placeholder Div for Image?</div>
-                                <span className="workout percent">{numCompleted} / {goal}</span>
+                                <span className="workout_goal">{numCompleted} / {goal}</span>
                             </div>
                         )
                     })
