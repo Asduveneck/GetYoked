@@ -74,34 +74,36 @@ class Profile extends React.Component {
         // function that returns a pojo to make giving a workout
         function titleMaker(categoryType, num, titlesArray) {
             if (num >= 100) { // if a user has completed 100 or more workouts, level 3
-                return { category: categoryType, numCompleted: 100, goal: 100, title: titlesArray[3], level: 3 }
+                return { category: categoryType, numCompleted: 100, goal: 100, title: titlesArray[3], level: 3 };
             } else if (num > 25) {
-                return { category: categoryType, numCompleted: num, goal: 100, title: titlesArray[2], level: 2 }
+                return { category: categoryType, numCompleted: num, goal: 100, title: titlesArray[2], level: 2 };
             } else if (num > 10) {
-                return { category: categoryType, numCompleted: num, goal: 25,  title: titlesArray[1], level: 1 }
+                return { category: categoryType, numCompleted: num, goal: 25,  title: titlesArray[1], level: 1 };
             } else { // case num > 0
-                return {category: categoryType,  numCompleted: num, goal: 10,  title: titlesArray[0], level: 0 }
+                return {category: categoryType,  numCompleted: num, goal: 10,  title: titlesArray[0], level: 0 };
             }
         }
         // titles for each category, from lowest to highest level
-        let titlesStrength = ["", "Getting Swole", "Kinda Swole", "Super Swole"]
-        let titlesCardio  = ["", "Getting fit", "Half Marathoner", "Full Marathon"]
-        let titlesFlex    = ["", "Getting flex", "Contortionist", "Cobra"]
+        let titlesStrength = ["", "Getting Swole", "Kinda Swole", "Super Swole"];
+        let titlesCardio  = ["", "Getting fit", "Half Marathoner", "Full Marathon"];
+        let titlesFlex    = ["", "Getting flex", "Contortionist", "Cobra"];
 
         // Uses titles to generate basic levels per category
-        let levelStrength = titleMaker("Strength", numStrength, titlesStrength)
-        let levelCardio = titleMaker("Cardio", numCardio, titlesCardio)
-        let levelFlex = titleMaker("Flexibility", numFlex, titlesFlex)
+        let levelStrength = titleMaker("Strength", numStrength, titlesStrength);
+        let levelCardio = titleMaker("Cardio", numCardio, titlesCardio);
+        let levelFlex = titleMaker("Flexibility", numFlex, titlesFlex);
 
         // Use previous levels per category for overall average combo award
-        let titlesWorkoutAll = ["", "King", "Genos", "Saitama"]
-        let workoutLevels = [levelStrength.level, levelCardio.level, levelFlex.level]
-        let levelWorkoutAll = { category: "overall"}
+        let titlesWorkoutAll = ["", "King", "Genos", "Saitama"];
+        let workoutLevels = [levelStrength.level, levelCardio.level, levelFlex.level];
+        let levelWorkoutAll = { category: "overall"};
 
         function goalMaker(level) {
-            return `Hit level ${level} in all workout categories`
+            return `Hit level ${level} in all workout categories`;
         }
-
+        
+        // Syntax for 'some' is horribly wrong.
+        /*
         if (workoutLevels.some() < 1) { // no workouts past 1 => all workouts < 1
             levelWorkoutAll.title = titlesWorkoutAll[0];
             levelWorkoutAll.level = 0;
@@ -119,7 +121,7 @@ class Profile extends React.Component {
             levelWorkoutAll.level = 2;
             levelWorkoutAll.goal = "Congratulations";
         }
-
+        */
         if (this.state.selectedTab === 0) {
             currentTab = (
                 <div className="achievement-parent">
