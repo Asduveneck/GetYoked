@@ -151,9 +151,11 @@ class Profile extends React.Component {
                         return (
                             <div className={`indv_award ${category}`} key={`indv_award_${category}_${level}`} >
                                 <h1>{title}</h1>
-                                <div>Image?</div>
-                                <h3>Level {level} in {category}</h3>
-                                <span className="workout_goal">{newGoal}</span>
+                                <div className="image_placeholder">Image?</div>
+                                <div className="level_and_goal">
+                                    <h3>Level {level} in {category}</h3>
+                                    <span className="workout_goal">{newGoal}</span>
+                                </div>
                             </div>
                         )
                     })

@@ -220,13 +220,40 @@ $hover: rgba(97, 94, 106, 0.064);
     width: 70vw;
     height: 40%;
     margin-bottom: 40px;
-;
 
     .indv_award {
         background-color: lawngreen;
         margin: 4.5%;
         width: 350px;
         height: 350px;
+        display: flex;
+        flex-direction: space-between;
+        flex-direction: column;
+    }
+    h1 {
+        text-align: center;
+        font-size: 25px;
+        margin-top: -15px;
+        margin-bottom: -10px;
+    }
+    .image_placeholder {
+        align-self: center;
+        border-radius: 50%;
+        width: 200px;
+        height: 200px;
+        background-color: lightblue;
+        text-align: center;
+    }
 
+    .level_and_goal {
+        text-align: center;
+        h3 {
+            font-size: 20px;
+            margin-top: -10px;
+            margin-bottom: -5px;
+        }
+        .workout_goal {
+            font-size: 18px;
+        }
     }
 }
