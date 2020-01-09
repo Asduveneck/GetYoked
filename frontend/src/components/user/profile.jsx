@@ -44,13 +44,33 @@ class Profile extends React.Component {
         let currentTab;
         if (this.props.user === undefined) return null;
 
-        console.log("hi") //TODO: Figure out why the added workouts don't have type!
-        console.log(this.props.user.workouts);
-        let numStrength = 0; let numCardio = 0; let numFlex = 0;
+        // console.log(this.props.user.workouts);
+        let numStrength = 0; let numCardio = 0; let numFlex = 0; let numUnsorted = 0;
         for(let i = 0; i < this.props.user.workouts.length; i++) {
             let workout = this.props.user.workouts[i];
-            console.log(workout)
+            // console.log(workout.type)
+            switch(workout.type) {
+                case "strength":
+                    numStrength += 1;
+                    break;
+                case "cardio":
+                    numCardio += 1;
+                    break;
+                case "flexibility":
+                    numFlex += 1;
+                    break;
+                case undefined:
+                    numUnsorted += 1;
+                    break;
+                default:
+                    // numUnsorted += 1;
+                    console.log(`default option. type: ${workout.type}`)
+            }
         }
+        // console.log(`numStrength: ${numStrength}`)
+        // console.log(`numCardio: ${numCardio}`)
+        // console.log(`numFlex: ${numFlex}`)
+        // console.log(`numUnsorted: ${numUnsorted}`)
 
         if (this.state.selectedTab === 0) {
             currentTab = (
@@ -59,6 +79,7 @@ class Profile extends React.Component {
 
                     <p>You're currently at Achievement level {this.props.user.achievement}!</p>
                     <p>You have completed {this.props.user.workouts.length} workouts.</p>
+                    <p>More specifically, you've completed {numStrength} strength workouts, {numCardio} cardio workouts, and {numFlex} flexibility workouts.</p>
                     <p>Keep up the good work!</p>
                 </div>
             )
