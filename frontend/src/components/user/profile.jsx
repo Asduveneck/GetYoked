@@ -110,7 +110,8 @@ class Profile extends React.Component {
 
         // Function to return a pojo for our award
         function workoutAllAwardMaker() {
-            if (workoutLevels.every(atLeast(3))) { // Every workout at least level 3
+            if (workoutLevels.every(atLeast(3))) { // Every workout at least level 3. 
+                // .some() would be faster, and we can possibly autogenerate these if-else chains with a clever for loop...
                 return {category: "overall", title: titlesWorkoutAll[3], level: 3, goal: "Congratulations", numCompleted: false };
             } else if(workoutLevels.every(atLeast(2))) {
                 return {category: "overall", title: titlesWorkoutAll[2], level: 2, goal: goalMaker(3), numCompleted: false };
@@ -142,7 +143,7 @@ class Profile extends React.Component {
                         let newGoal = "";
                         if (numCompleted) { // if there is a number of workouts
                             newGoal = `${numCompleted} / ${goal}`
-                        } else {
+                        } else { //numCompleted = false. Checking undefined was too annoying in JS.
                             newGoal = goal; // original goal suffices
                         }
 
