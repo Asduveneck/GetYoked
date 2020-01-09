@@ -43,7 +43,7 @@ class Profile extends React.Component {
     render() {
         let currentTab;
         if (this.props.user === undefined) return null;
-
+        // NB: FROM THIS LINE, to the comment beginning with FINE, should be moved to the backend...
         // Create constants to store number of workouts of each type
         let numStrength = 0; let numCardio = 0; let numFlex = 0; let numUnsorted = 0;
 
@@ -120,6 +120,8 @@ class Profile extends React.Component {
                 return {category: "overall", title: titlesWorkoutAll[0], level: 0, goal: goalMaker(1), numCompleted: false };
             }
         }
+
+        // FINE . above code block should be moved to backend.
 
         if (this.state.selectedTab === 0) {
             currentTab = (
