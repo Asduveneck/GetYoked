@@ -72,7 +72,7 @@ class Profile extends React.Component {
         }
         // Rewards given at 10, 25, 100
         // function that returns a pojo to make giving a workout
-        function titleMaker(categoryType, num, titlesArray) {
+        function titleMaker(categoryType, num, titlesArray) { // more like an award maker if anything
             if (num >= 100) { // if a user has completed 100 or more workouts, level 3
                 return { category: categoryType, numCompleted: 100, goal: 100, title: titlesArray[3], level: 3 };
             } else if (num > 25) {
@@ -98,30 +98,32 @@ class Profile extends React.Component {
         let workoutLevels = [levelStrength.level, levelCardio.level, levelFlex.level];
         let levelWorkoutAll = { category: "overall"};
 
+        // Make 'goals' for combo award
         function goalMaker(level) {
             return `Hit level ${level} in all workout categories`;
         }
-        
-        // Syntax for 'some' is horribly wrong.
-        /*
-        if (workoutLevels.some() < 1) { // no workouts past 1 => all workouts < 1
-            levelWorkoutAll.title = titlesWorkoutAll[0];
-            levelWorkoutAll.level = 0;
-            levelWorkoutAll.goal = goalMaker(1);
-        } else if(workoutLevels.some() < 2) { // not all workouts hit 2
-            levelWorkoutAll.title = titlesWorkoutAll[1];
-            levelWorkoutAll.level = 1;
-            levelWorkoutAll.goal = goalMaker(2);
-        } else if (workoutLevels.some() < 3) {  // not all workouts hit 3
-            levelWorkoutAll.title = titlesWorkoutAll[2];
-            levelWorkoutAll.level = 2;
-            levelWorkoutAll.goal = goalMaker(3);
-        } else { // hit level 3 in all workouts
-            levelWorkoutAll.title = titlesWorkoutAll[2];
-            levelWorkoutAll.level = 2;
-            levelWorkoutAll.goal = "Congratulations";
+
+        // Returns a callback function for Arr.every method that checks if a num
+            // is at least the value we pass in 
+        function atLeast(val) { 
+            return function (input) {
+                return input >= val
+            }
         }
-        */
+
+        // Function to return a pojo for our award
+        function workoutAllAwardMaker() {
+            if (workoutLevels.every(atLeast(3))) { // Every workout at least level 3
+                return {category: "overall", title: titlesWorkoutAll[3], level: 3, goal: "Congratulations", };
+            } else if(workoutLevels.every(atLeast(2))) {
+                return {category: "overall", title: titlesWorkoutAll[2], level: 2, goal: goalMaker(3), };
+            } else if (workoutLevels.every(atLeast(1))) {
+                return {category: "overall", title: titlesWorkoutAll[1], level: 1, goal: goalMaker(2), };
+            } else { // no workouts hit level 1
+                return {category: "overall", title: titlesWorkoutAll[0], level: 0, goal: goalMaker(1), };
+            }
+        }
+
         if (this.state.selectedTab === 0) {
             currentTab = (
                 <div className="achievement-parent">
@@ -148,7 +150,7 @@ class Profile extends React.Component {
                         */
 
                         return (
-                            <div className={`indv_award ${category}`}>
+                            <div className={`indv_award ${category}`} key={`indv_award_${category}_${level}`} >
                                 <h1>{title}</h1>
                                 <h3>Level {level} in {category}</h3>
                                 <div>Placeholder Div for Image?</div>
