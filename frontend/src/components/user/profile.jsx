@@ -85,14 +85,14 @@ class Profile extends React.Component {
         let titlesStrength = ["", "Getting Swole", "Kinda Swole", "Super Swole"];
         let titlesCardio  = ["", "Getting fit", "Half Marathoner", "Full Marathon"];
         let titlesFlex    = ["", "Getting flex", "Contortionist", "Cobra"];
+        let titlesWorkoutAll = ["", "King", "Genos", "Saitama"]; // for combo!
 
         // Uses titles to generate basic levels per category
         let levelStrength = awardMaker("Strength", numStrength, titlesStrength);
         let levelCardio = awardMaker("Cardio", numCardio, titlesCardio);
         let levelFlex = awardMaker("Flexibility", numFlex, titlesFlex);
 
-        // Use previous levels per category for overall average combo award
-        let titlesWorkoutAll = ["", "King", "Genos", "Saitama"];
+        // Store previous levels per category in array for making average combo award
         let workoutLevels = [levelStrength.level, levelCardio.level, levelFlex.level];
 
         // Make 'goals' for combo award
@@ -100,8 +100,8 @@ class Profile extends React.Component {
             return `Hit level ${level} in all workout categories`;
         }
 
-        // Returns a callback function for Arr.every method that checks if a num
-            // is at least the value we pass in 
+        // Simplifies checking array of levels by returning a CB for Arr.every method. 
+        // checks if a num is at least the value we pass in 
         function atLeast(val) { 
             return function (input) {
                 return input >= val
