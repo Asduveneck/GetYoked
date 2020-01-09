@@ -111,13 +111,13 @@ class Profile extends React.Component {
         // Function to return a pojo for our award
         function workoutAllAwardMaker() {
             if (workoutLevels.every(atLeast(3))) { // Every workout at least level 3
-                return {category: "overall", title: titlesWorkoutAll[3], level: 3, goal: "Congratulations", };
+                return {category: "overall", title: titlesWorkoutAll[3], level: 3, goal: "Congratulations", numCompleted: false };
             } else if(workoutLevels.every(atLeast(2))) {
-                return {category: "overall", title: titlesWorkoutAll[2], level: 2, goal: goalMaker(3), };
+                return {category: "overall", title: titlesWorkoutAll[2], level: 2, goal: goalMaker(3), numCompleted: false };
             } else if (workoutLevels.every(atLeast(1))) {
-                return {category: "overall", title: titlesWorkoutAll[1], level: 1, goal: goalMaker(2), };
+                return {category: "overall", title: titlesWorkoutAll[1], level: 1, goal: goalMaker(2), numCompleted: false };
             } else { // no workouts hit level 1
-                return {category: "overall", title: titlesWorkoutAll[0], level: 0, goal: goalMaker(1), };
+                return {category: "overall", title: titlesWorkoutAll[0], level: 0, goal: goalMaker(1), numCompleted: false };
             }
         }
 
@@ -132,26 +132,24 @@ class Profile extends React.Component {
                     <p>Keep up the good work!</p>
                     <div className="awards">
                     {/* Map through array of each workout level pojo */}
-                    {[levelStrength, levelCardio, levelFlex].map(award => {
+                    {[levelStrength, levelCardio, levelFlex, workoutAllAwardMaker()].map(award => {
                         // deconstruct the award for subsequent div:
-                        let { category, numCompleted, goal, title, level } = award; // Get rid of numCompleted here
-                        // Conditional logic if numCompleted is there (for comboGoals).
-                        /*
+                        let { category, goal, title, level, numCompleted } = award;
+
+                        // Make a new goal if our goal is to hit a target number
                         let newGoal = "";
-                        if (award.numCompleted) { // NOT a combo goal
+                        if (numCompleted) { // if there is a number of workouts
                             newGoal = `${numCompleted} / ${goal}`
                         } else {
                             newGoal = goal; // original goal suffices
                         }
-                        // replace workout_goal content with {newGoal}
-                        */
 
                         return (
                             <div className={`indv_award ${category}`} key={`indv_award_${category}_${level}`} >
                                 <h1>{title}</h1>
                                 <h3>Level {level} in {category}</h3>
-                                <div>Placeholder Div for Image?</div>
-                                <span className="workout_goal">{numCompleted} / {goal}</span>
+                                <div>Image?</div>
+                                <span className="workout_goal">{newGoal}</span>
                             </div>
                         )
                     })
