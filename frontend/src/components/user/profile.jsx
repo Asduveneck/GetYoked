@@ -194,7 +194,7 @@ class Profile extends React.Component {
                     workouts={this.props.user.workouts}
                     fetchUser={this.props.fetchUser}
                     userId={this.props.match.params.id}
-                    workoutSum={{ numStrength, numCardio, numFlex, numUnsorted, totalWorkouts }}
+                    workoutSum={{ numStrength, numCardio, numFlex, totalWorkouts }}
                 />
             )
         }
