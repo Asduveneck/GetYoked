@@ -187,16 +187,26 @@ $hover: rgba(97, 94, 106, 0.064);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    padding: .85em;
-    // background-color: khaki;
+    margin: .85em;
     width: 70vw;
 }
 
-.user-workout-item div {
+.user-workout-item {
+
+    div {
     padding: .85em;
     font-family: 'Nunito', sans-serif; 
     color: gray;
+    align-self: flex-start;
+    }
+    .name {
+        width: 10vw;
+    }
+    .date {
+        text-align: center;
+    }
 }
+
 
 .user-workouts-parent button {
     position: absolute;

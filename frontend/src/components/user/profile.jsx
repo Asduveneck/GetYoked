@@ -46,9 +46,9 @@ class Profile extends React.Component {
         // NB: FROM THIS LINE, to the comment beginning with FINE, should be moved to the backend...
         // Create constants to store number of workouts of each type
         let numStrength = 0; let numCardio = 0; let numFlex = 0; let numUnsorted = 0;
-
+        let totalWorkouts = this.props.user.workouts.length
         // Iterate through workouts array once, and increment above respectively
-        for(let i = 0; i < this.props.user.workouts.length; i++) {
+        for(let i = 0; i < totalWorkouts; i++) {
             let workout = this.props.user.workouts[i];
 
             switch(workout.type) {
@@ -122,6 +122,9 @@ class Profile extends React.Component {
                 return {category, title: titlesWorkoutAll[0], level: 0, goal: goalMaker(1), numCompleted: false };
             }
         }
+        // TODO: 
+        
+        
 
         // FINE . above code block should be moved to backend.
 
@@ -132,7 +135,7 @@ class Profile extends React.Component {
                     <h2>{this.props.user.username}'s Achievements</h2>
 
                     <p>You're currently at Achievement level {this.props.user.achievement}!</p>
-                    <p>You have completed {this.props.user.workouts.length} workouts.</p>
+                    <p>You have completed {totalWorkouts} workouts.</p>
                     <p>Keep up the good work!</p>
                     <div className="awards">
                     {/* Map through array of each workout level pojo */}
@@ -191,6 +194,7 @@ class Profile extends React.Component {
                     workouts={this.props.user.workouts}
                     fetchUser={this.props.fetchUser}
                     userId={this.props.match.params.id}
+                    workoutSum={{ numStrength, numCardio, numFlex, numUnsorted, totalWorkouts }}
                 />
             )
         }
