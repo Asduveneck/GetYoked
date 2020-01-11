@@ -125,14 +125,14 @@ class Profile extends React.Component {
 
         // FINE . above code block should be moved to backend.
 
-        if (this.state.selectedTab === 0) {
+        if (this.state.selectedTab === 0) {       
+
             currentTab = (
                 <div className="achievement-parent">
                     <h2>{this.props.user.username}'s Achievements</h2>
 
                     <p>You're currently at Achievement level {this.props.user.achievement}!</p>
                     <p>You have completed {this.props.user.workouts.length} workouts.</p>
-                    <p>More specifically, you've completed {numStrength} strength workouts, {numCardio} cardio workouts, and {numFlex} flexibility workouts.</p>
                     <p>Keep up the good work!</p>
                     <div className="awards">
                     {/* Map through array of each workout level pojo */}
@@ -200,9 +200,9 @@ class Profile extends React.Component {
                 <div className="user-profile">
                     <div className="user-profile-greeting">Hi there, {this.props.user.username}</div>
                     <ul className="tab-container">
-                        <h2 onClick={this.selectTab(0)}>Achievements</h2>
-                        <h2 onClick={this.selectTab(1)}>User Info</h2>
-                        <h2 onClick={this.selectTab(2)}>Workout History</h2>
+                        <h2 onClick={this.selectTab(0)} id="js-tab_0">Achievements</h2>
+                        <h2 onClick={this.selectTab(1)} id="js-tab_1">User Info</h2>
+                        <h2 onClick={this.selectTab(2)} id="js-tab_2">Workout History</h2>
                     </ul>
 
                     <div className="currentTab">
