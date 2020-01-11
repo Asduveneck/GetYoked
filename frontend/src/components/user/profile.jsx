@@ -195,14 +195,17 @@ class Profile extends React.Component {
             )
         }
 
+        // Should be updating the classname and styling it there, but given how we set up tabs, this is a patch. TODO: refactor
+        let style = {backgroundColor: "white", color: "black" };
+
         return (
             <div className="profile-window">
                 <div className="user-profile">
                     <div className="user-profile-greeting">Hi there, {this.props.user.username}</div>
                     <ul className="tab-container">
-                        <h2 onClick={this.selectTab(0)} id="js-tab_0">Achievements</h2>
-                        <h2 onClick={this.selectTab(1)} id="js-tab_1">User Info</h2>
-                        <h2 onClick={this.selectTab(2)} id="js-tab_2">Workout History</h2>
+                        <h2 onClick={this.selectTab(0)} style={[style, {}, {}][this.state.selectedTab]}>Achievements</h2>
+                    <h2 onClick={this.selectTab(1)} style={[{}, style, {}][this.state.selectedTab]}>User Info</h2>
+                        <h2 onClick={this.selectTab(2)} style={[{}, {}, style][this.state.selectedTab]}>Workout History</h2>
                     </ul>
 
                     <div className="currentTab">

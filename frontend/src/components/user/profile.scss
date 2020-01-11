@@ -52,7 +52,7 @@ $hover: rgba(97, 94, 106, 0.064);
     align-items: center;
     // margin-top: 4rem;
     font-family: 'Nunito', sans-serif;
-    background-color: white;
+    // background-color: white;
     border-radius: 3px;
     width: 60%;
     height: 40px;
@@ -69,13 +69,9 @@ $hover: rgba(97, 94, 106, 0.064);
     width: 100%;
     margin: 0px;
     padding: 0px;
-    opacity: 0.3;
+    // opacity: 0.3;
     border-left: $divider;
     border-right: $divider;
-}
-
-.tab-container.js-tab_chosen {
-    background-color: magenta;
 }
 
 .tab-container > *:hover {
