@@ -10,13 +10,18 @@ class UserWorkouts extends React.Component {
       
         return (
             <div className="user-workouts-parent">
+                {/* Put in a classname for the date, align-self center it.
+                Put in a message.
+                Add filter for workout history here too? */}
+
+
                 <ul>
                     {
                         this.props.workouts.map((workout, i) => {
                             return <div key={i} className="user-workout-item">
-                                <div>{workout.name}</div>
-                                <div>{workout.date}</div>
-                                <div>Intensity: {workout.intensity}</div>
+                                <div className="name">{workout.name}</div>
+                                <div className="date">{workout.date}</div>
+                                <div className="ints">Intensity: {workout.intensity}</div>
                             </div>
                         })
                     }
