@@ -6,12 +6,17 @@ class UserWorkouts extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            selectedCat: "all",
+            value: "all",
         }
+        this.handleChange = this.handleChange.bind(this);
     }
 
     componentDidMount() {
         this.props.fetchUser(this.props.userId)
+    }
+
+    handleChange(event) {
+        this.setState({value: event.target.value})
     }
 
 
@@ -26,7 +31,13 @@ class UserWorkouts extends React.Component {
                 <div className="user-workouts-summary">
                     <p >You have completed {totalWorkouts} workouts.</p>
                     <p >You've completed {numStrength} strength workouts, {numCardio} cardio workouts, and {numFlex} flexibility workouts!</p>
-                    
+
+                    <select onChange={this.handleChange} value={this.state.value}>
+                        <option value="all">all</option>
+                        <option value="strength">strength</option>
+                        <option value="cardio">cardio</option>
+                        <option value="flexibility">flexibility</option>
+                    </select>
                 </div>
 
                 <div className="user-workout-item wk-header">
@@ -40,12 +51,14 @@ class UserWorkouts extends React.Component {
                     {
                         this.props.workouts.map((workout, i) => {
                             // Make a conditional dropdown so we filter our history on the frontend here
+                            if(this.state.value === "all" || this.state.value === workout.type) {
                             return <div key={i} className="user-workout-item">
                                 <div className="name">{workout.name}</div>
                                 {/* <div className="type">{workout.type}</div> */}
                                 <div className="date">{workout.date}</div>
                                 <div className="ints">{workout.intensity}</div>
                             </div>
+                            }
                         })
                     }
                 </ul> 
