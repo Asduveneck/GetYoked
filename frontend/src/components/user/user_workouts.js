@@ -78,7 +78,7 @@ class UserWorkouts extends React.Component {
                         })
                     }
                 </ul> 
-                <button onClick={() => this.props.history.push("/workoutnew")}>Start a new workout!</button>
+                {/* <button onClick={() => this.props.history.push("/workoutnew")}>Start a new workout!</button> */}
             </div>
         )
     }
