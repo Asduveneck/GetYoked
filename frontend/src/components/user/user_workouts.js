@@ -3,6 +3,13 @@ import { withRouter } from 'react-router-dom';
 
 class UserWorkouts extends React.Component {
 
+    constructor(props) {
+        super(props)
+        this.state = {
+            selectedCat: "all",
+        }
+    }
+
     componentDidMount() {
         this.props.fetchUser(this.props.userId)
     }
