@@ -22,6 +22,23 @@ class UserWorkouts extends React.Component {
 
     render() {
         let { numStrength, numCardio, numFlex, totalWorkouts} = this.props.workoutSum
+        const allStyle = {width: "20px"};
+        let chosenStyle = {};
+        if (this.state.value === "all") {
+            chosenStyle = allStyle
+        } else {
+            chosenStyle = {}
+        }
+        const filter = () => (
+            <select onChange={this.handleChange} value={this.state.value} style = {chosenStyle}>
+                <option value="all">all</option>
+                <option value="strength">strength</option>
+                <option value="cardio">cardio</option>
+                <option value="flexibility">flexibility</option>
+            </select> 
+        )
+
+
         return (
             <div className="user-workouts-parent">
                 {/* Put in a classname for the date, align-self center it.
@@ -31,12 +48,7 @@ class UserWorkouts extends React.Component {
                 <div className="user-workouts-summary">
                     <p >You have completed {totalWorkouts} workouts.</p>
                     <p >You've completed {numStrength} strength workouts, {numCardio} cardio workouts, and {numFlex} flexibility workouts!</p>
-                    <p >View <select onChange={this.handleChange} value={this.state.value}>
-                        <option value="all">all</option>
-                        <option value="strength">strength</option>
-                        <option value="cardio">cardio</option>
-                        <option value="flexibility">flexibility</option>
-                    </select> workouts below, or <span>start a new one!</span>  
+                    <p >View {filter()} workouts below, or <span>start a new one!</span>  
                     </p>
                 </div>
 
