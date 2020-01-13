@@ -135,11 +135,12 @@ class Profile extends React.Component {
                     <h2>{this.props.user.username}'s Achievements</h2>
 
                     <p>You're currently at Achievement level {this.props.user.achievement}!</p>
-                    <p>You have completed {totalWorkouts} workouts.</p>
+                    {/* <p>You have completed {totalWorkouts} workouts.</p> */} 
+                    {/* TODO: Put in next closest goal up here instead */}
                     <p>Keep up the good work!</p>
                     <div className="awards">
                     {/* Map through array of each workout level pojo */}
-                    {[levelStrength, levelCardio, levelFlex, workoutAllAwardMaker()].map(award => {
+                        {[workoutAllAwardMaker(), levelStrength, levelCardio, levelFlex ].map(award => {
                         // deconstruct the award for subsequent div:
                         let { category, goal, title, level, numCompleted } = award;
 
