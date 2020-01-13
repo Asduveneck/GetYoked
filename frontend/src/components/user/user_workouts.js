@@ -31,13 +31,13 @@ class UserWorkouts extends React.Component {
                 <div className="user-workouts-summary">
                     <p >You have completed {totalWorkouts} workouts.</p>
                     <p >You've completed {numStrength} strength workouts, {numCardio} cardio workouts, and {numFlex} flexibility workouts!</p>
-
-                    <select onChange={this.handleChange} value={this.state.value}>
+                    <p >View all of your workouts below, or choose a category: <select onChange={this.handleChange} value={this.state.value}>
                         <option value="all">all</option>
                         <option value="strength">strength</option>
                         <option value="cardio">cardio</option>
                         <option value="flexibility">flexibility</option>
                     </select>
+                    </p>
                 </div>
 
                 <div className="user-workout-item wk-header">
