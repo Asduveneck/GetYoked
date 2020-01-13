@@ -38,6 +38,10 @@ class UserWorkouts extends React.Component {
             </select> 
         )
 
+        const newWorkout = () => (
+            <span onClick={() => this.props.history.push("/workoutnew")}>start a new one!</span>  
+        )
+
 
         return (
             <div className="user-workouts-parent">
@@ -48,7 +52,7 @@ class UserWorkouts extends React.Component {
                 <div className="user-workouts-summary">
                     <p >You have completed {totalWorkouts} workouts.</p>
                     <p >You've completed {numStrength} strength workouts, {numCardio} cardio workouts, and {numFlex} flexibility workouts!</p>
-                    <p >View {filter()} workouts below, or <span>start a new one!</span>  
+                    <p >View {filter()} workouts below, or {newWorkout()}
                     </p>
                 </div>
 
