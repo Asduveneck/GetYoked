@@ -23,9 +23,10 @@ class UserWorkouts extends React.Component {
                 Style the message
                 Add filter for workout history here too? */}
                 
-                <div className="summary">
+                <div className="user-workouts-summary">
                     <p >You have completed {totalWorkouts} workouts.</p>
                     <p >You've completed {numStrength} strength workouts, {numCardio} cardio workouts, and {numFlex} flexibility workouts!</p>
+                    
                 </div>
 
                 <div className="user-workout-item wk-header">
