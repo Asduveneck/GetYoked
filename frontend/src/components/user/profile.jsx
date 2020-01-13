@@ -72,13 +72,13 @@ class Profile extends React.Component {
         // function that returns a pojo to make giving a workout
         function awardMaker(categoryType, num, titlesArray) {
             if (num >= 100) { // if a user has completed 100 or more workouts, level 3
-                return { category: categoryType, numCompleted: 100, goal: 100, title: titlesArray[3], level: 3 };
+                return { category: categoryType, numCompleted: 100, goal: 100, title: titlesArray[3], level: 3, badge: { url: `images/icons/${categoryType}_3`, alt: `Icon for ${categoryType}, level 3` } }; {/* Zaid: image will be in images/icon/Category_Level . */ }
             } else if (num > 25) {
-                return { category: categoryType, numCompleted: num, goal: 100, title: titlesArray[2], level: 2 };
+                return { category: categoryType, numCompleted: num, goal: 100, title: titlesArray[2], level: 2, badge: { url: `images/icons/${categoryType}_2`, alt: `Icon for ${categoryType}, level 2` } };
             } else if (num > 10) {
-                return { category: categoryType, numCompleted: num, goal: 25,  title: titlesArray[1], level: 1 };
+                return { category: categoryType, numCompleted: num, goal: 25, title: titlesArray[1], level: 1, badge: { url: `images/icons/${categoryType}_1`, alt: `Icon for ${categoryType}, level 1` } };
             } else { // case num > 0
-                return {category: categoryType,  numCompleted: num, goal: 10,  title: titlesArray[0], level: 0 };
+                return { category: categoryType, numCompleted: num, goal: 10, title: titlesArray[0], level: 0, badge: { url: `images/icons/${categoryType}_0`, alt: `Icon for ${categoryType}, level 0` } };
             }
         }
         // titles for each category, from lowest to highest level
@@ -113,13 +113,13 @@ class Profile extends React.Component {
             let category = "Overall"; // category for this award
             if (workoutLevels.every(atLeast(3))) { // Every workout at least level 3. 
                 // .some() would be faster, and we can possibly autogenerate these if-else chains with a clever for loop...
-                return {category, title: titlesWorkoutAll[3], level: 3, goal: "Congratulations", numCompleted: false };
+                return { category, title: titlesWorkoutAll[3], level: 3, goal: "Congratulations", numCompleted: false, badge: { url: `images/icons/overall_3`, alt: `Icon for overall, level 3` } }; {/* Zaid: image will be in images/icon/Category_Level . */}
             } else if(workoutLevels.every(atLeast(2))) {
-                return {category, title: titlesWorkoutAll[2], level: 2, goal: goalMaker(3), numCompleted: false };
+                return { category, title: titlesWorkoutAll[2], level: 2, goal: goalMaker(3), numCompleted: false, badge: { url: `images/icons/overall_2`, alt: `Icon for overall, level 2` }  };
             } else if (workoutLevels.every(atLeast(1))) {
-                return {category, title: titlesWorkoutAll[1], level: 1, goal: goalMaker(2), numCompleted: false };
+                return { category, title: titlesWorkoutAll[1], level: 1, goal: goalMaker(2), numCompleted: false, badge: { url: `images/icons/overall_1`, alt: `Icon for overall, level 1` }  };
             } else { // no workouts hit level 1
-                return {category, title: titlesWorkoutAll[0], level: 0, goal: goalMaker(1), numCompleted: false };
+                return { category, title: titlesWorkoutAll[0], level: 0, goal: goalMaker(1), numCompleted: false, badge: { url: `images/icons/overall_0`, alt: `Icon for overall, level 0` }  };
             }
         }
         // TODO: 
@@ -142,7 +142,7 @@ class Profile extends React.Component {
                     {/* Map through array of each workout level pojo */}
                         {[workoutAllAwardMaker(), levelStrength, levelCardio, levelFlex ].map(award => {
                         // deconstruct the award for subsequent div:
-                        let { category, goal, title, level, numCompleted } = award;
+                        let { category, goal, title, level, numCompleted, badge } = award;
 
                         // Make a new goal if our goal is to hit a target number
                         let newGoal = "";
@@ -155,7 +155,7 @@ class Profile extends React.Component {
                         return (
                             <div className={`indv_award ${category}`} key={`indv_award_${category}_${level}`} >
                                 <h1>{title}</h1>
-                                <div className="image_placeholder">Image?</div>
+                                <div className="image_placeholder">Image?</div> {/*<img src={badge.url} alt={badge.alt} className="image_placeholder"/>*/}  {/* Zaid: We can replace the previous div with this img tag. */}
                                 <div className="level_and_goal">
                                     <h3>Level {level} in {category}</h3>
                                     <span className="workout_goal">{newGoal}</span>
