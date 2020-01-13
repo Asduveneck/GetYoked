@@ -9,7 +9,6 @@ class UserWorkouts extends React.Component {
 
 
     render() {
-        console.log(this.props.workoutSum);
         let { numStrength, numCardio, numFlex, totalWorkouts} = this.props.workoutSum
         return (
             <div className="user-workouts-parent">
@@ -24,10 +23,10 @@ class UserWorkouts extends React.Component {
 
                 <div className="user-workout-item wk-header">
                     <div className="name">Name</div>
+                    {/* <div className="type">Type</div> */}
                     <div className="date">Date</div>
                     <div className="ints">Intensity</div>
                 </div>
-
 
                 <ul>
                     {
@@ -35,8 +34,9 @@ class UserWorkouts extends React.Component {
                             // Make a conditional dropdown so we filter our history on the frontend here
                             return <div key={i} className="user-workout-item">
                                 <div className="name">{workout.name}</div>
+                                {/* <div className="type">{workout.type}</div> */}
                                 <div className="date">{workout.date}</div>
-                                <div className="ints">Intensity: {workout.intensity}</div>
+                                <div className="ints">{workout.intensity}</div>
                             </div>
                         })
                     }
