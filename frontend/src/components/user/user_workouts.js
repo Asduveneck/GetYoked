@@ -31,12 +31,12 @@ class UserWorkouts extends React.Component {
                 <div className="user-workouts-summary">
                     <p >You have completed {totalWorkouts} workouts.</p>
                     <p >You've completed {numStrength} strength workouts, {numCardio} cardio workouts, and {numFlex} flexibility workouts!</p>
-                    <p >View all of your workouts below, or choose a category: <select onChange={this.handleChange} value={this.state.value}>
+                    <p >View <select onChange={this.handleChange} value={this.state.value}>
                         <option value="all">all</option>
                         <option value="strength">strength</option>
                         <option value="cardio">cardio</option>
                         <option value="flexibility">flexibility</option>
-                    </select>
+                    </select> workouts below, or <span>start a new one!</span>  
                     </p>
                 </div>
 
@@ -62,7 +62,7 @@ class UserWorkouts extends React.Component {
                         })
                     }
                 </ul> 
-                <button onClick={() => this.props.history.push("/workoutnew")}>Start a new wokout!</button>
+                <button onClick={() => this.props.history.push("/workoutnew")}>Start a new workout!</button>
             </div>
         )
     }
