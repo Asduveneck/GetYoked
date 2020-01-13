@@ -244,13 +244,51 @@ $hover: rgba(97, 94, 106, 0.064);
     align-self: center;
     font-size: 20px;
     color: black;
+    background-color: white;
     div {
         color: black;
         padding-bottom: 0em;
         margin-bottom: 0.25em;
     }
+
+    position: -webkit-sticky; /* Safari */ 
+    position: sticky;
+    top: 0px;
+    z-index: 100; // for nifty shadow
+}
+// shadow for workout history
+.user-workouts-parent {
+    .shadow {
+        // height: 35px; // height didn't work so used font-size with &nbsp;
+        width: 70vw;
+        align-self: center;
+    }
+    .s_cover {
+        font-size: 20px;
+        margin-bottom: -20px;
+        z-index: 2;
+        background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+    }
+    .s_main {
+        top: 40px;
+        font-size: 20px;
+        color: rgba(255, 255, 255, 1);
+        background-color: black;
+        background-color: rgba(255, 255, 255, 0);
+        position: -webkit-sticky; /* Safari */ 
+        position: sticky;
+        box-shadow: inset 0px 5px 5px -5px rgba(197, 211, 211, 0.9);
+        background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
+
+    }
 }
 
+.user-workouts-list {
+    .user-workout-item:first-of-type {
+    // background-color: tomato;
+    margin-top: -15px;
+}
+}
 // .user-workouts-parent button {
 //     position: absolute;
 //     box-sizing: border-box;

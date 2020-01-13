@@ -63,8 +63,9 @@ class UserWorkouts extends React.Component {
                     <div className="date">Date</div>
                     <div className="ints">Intensity</div>
                 </div>
-
-                <ul>
+                <div className="shadow s_cover">{/*Cover*/} &nbsp; </div>
+                <div className="shadow s_main">     &nbsp;  {/*Shadow*/}</div>
+                <ul className="user-workouts-list">
                     {
                         this.props.workouts.map((workout, i) => {
                             // Make a conditional dropdown so we filter our history on the frontend here
