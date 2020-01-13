@@ -22,12 +22,13 @@ class UserWorkouts extends React.Component {
 
     render() {
         let { numStrength, numCardio, numFlex, totalWorkouts} = this.props.workoutSum
-        const allStyle = {width: "20px"};
         let chosenStyle = {};
         if (this.state.value === "all") {
-            chosenStyle = allStyle
+            chosenStyle = { width: "20px" };
+        } else if (this.state.value === "cardio") {
+            chosenStyle = {width: "50px" };
         } else {
-            chosenStyle = {}
+            chosenStyle = {};
         }
         const filter = () => (
             <select onChange={this.handleChange} value={this.state.value} style = {chosenStyle}>
