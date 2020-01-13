@@ -19,7 +19,6 @@ class UserWorkouts extends React.Component {
         this.setState({value: event.target.value})
     }
 
-
     render() {
         let { numStrength, numCardio, numFlex, totalWorkouts} = this.props.workoutSum
         let chosenStyle = {};
@@ -45,11 +44,7 @@ class UserWorkouts extends React.Component {
 
 
         return (
-            <div className="user-workouts-parent">
-                {/* Put in a classname for the date, align-self center it.
-                Style the message
-                Add filter for workout history here too? */}
-                
+            <div className="user-workouts-parent">                
                 <div className="user-workouts-summary">
                     <p >You have completed {totalWorkouts} workouts.</p>
                     <p >You've completed {numStrength} strength workouts, {numCardio} cardio workouts, and {numFlex} flexibility workouts!</p>
@@ -68,7 +63,6 @@ class UserWorkouts extends React.Component {
                 <ul className="user-workouts-list">
                     {
                         this.props.workouts.map((workout, i) => {
-                            // Make a conditional dropdown so we filter our history on the frontend here
                             if(this.state.value === "all" || this.state.value === workout.type) {
                             return <div key={i} className="user-workout-item">
                                 <div className="name">{workout.name}</div>
