@@ -217,6 +217,12 @@ $hover: rgba(97, 94, 106, 0.064);
         text-overflow: '';
         margin-bottom: 1px;
     }
+
+    select, span {
+        color: teal;
+        text-decoration: underline;
+    }
+
     select:hover, span:hover, select:focus, span:focus {
         cursor: pointer;
         // border: 1px solid #777;

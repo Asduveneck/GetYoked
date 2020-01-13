@@ -21,7 +21,7 @@ class UserWorkouts extends React.Component {
 
     render() {
         let { numStrength, numCardio, numFlex, totalWorkouts} = this.props.workoutSum
-        let chosenStyle = {};
+        let chosenStyle = {}; // TODO: width too truncated in firefox!
         if (this.state.value === "all") {
             chosenStyle = { width: "20px" };
         } else if (this.state.value === "cardio") {
@@ -39,7 +39,7 @@ class UserWorkouts extends React.Component {
         )
 
         const newWorkout = () => (
-            <span onClick={() => this.props.history.push("/workoutnew")}>start a new one!</span>  
+            <span onClick={() => this.props.history.push("/workoutnew")}>here</span>  
         )
 
 
@@ -48,8 +48,7 @@ class UserWorkouts extends React.Component {
                 <div className="user-workouts-summary">
                     <p >You have completed {totalWorkouts} workouts.</p>
                     <p >You've completed {numStrength} strength workouts, {numCardio} cardio workouts, and {numFlex} flexibility workouts!</p>
-                    <p >View {filter()} workouts below, or {newWorkout()}
-                    </p>
+                    <p >View {filter()} workouts below, or click {newWorkout()} to start a new one!</p>
                 </div>
 
                 <div className="user-workout-item wk-header">
