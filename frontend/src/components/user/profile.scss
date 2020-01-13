@@ -262,30 +262,26 @@ $hover: rgba(97, 94, 106, 0.064);
         // height: 35px; // height didn't work so used font-size with &nbsp;
         width: 70vw;
         align-self: center;
+        background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
     }
     .s_cover {
         font-size: 20px;
         margin-bottom: -20px;
         z-index: 2;
-        background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
     }
     .s_main {
         top: 40px;
         font-size: 20px;
         color: rgba(255, 255, 255, 1);
-        background-color: black;
         background-color: rgba(255, 255, 255, 0);
         position: -webkit-sticky; /* Safari */ 
         position: sticky;
-        box-shadow: inset 0px 5px 5px -5px rgba(197, 211, 211, 0.9);
-        background-image: linear-gradient(rgba(255, 255, 255, 1), rgba(255, 255, 255, 0));
-
+        box-shadow: inset 0px 5px 5px -5px rgba(88, 116, 116, 0.9);
     }
 }
 
 .user-workouts-list {
     .user-workout-item:first-of-type {
-    // background-color: tomato;
     margin-top: -15px;
 }
 }
