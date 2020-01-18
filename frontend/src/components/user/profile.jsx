@@ -82,7 +82,7 @@ class Profile extends React.Component {
             }
         }
         // titles for each category, from lowest to highest level
-        let titlesStrength = ["", "Young Spartan", "Biceps King", " Hercules"];
+        let titlesStrength = ["Master Roshi", "Buff Master Roshi", "Hercules", "Super Alloy"];
         let titlesCardio = ["", "Half Marathoner", "Full Marathon", "Olympian"];
         let titlesFlex = ["", "Split Champion", "Contortionist", "Cobra"];
         let titlesWorkoutAll = ["", "Morty", "Pickle Rick", "Buff Rick"]; // for combo!
