@@ -82,10 +82,10 @@ class Profile extends React.Component {
             }
         }
         // titles for each category, from lowest to highest level
-        let titlesStrength = ["", "Getting Swole", "Kinda Swole", "Super Swole"];
-        let titlesCardio  = ["", "Getting fit", "Half Marathoner", "Full Marathon"];
-        let titlesFlex    = ["", "Getting flex", "Contortionist", "Cobra"];
-        let titlesWorkoutAll = ["", "King", "Genos", "Saitama"]; // for combo!
+        let titlesStrength = ["", "Young Spartan", "Biceps King", " Hercules"];
+        let titlesCardio = ["", "Half Marathoner", "Full Marathon", "Olympian"];
+        let titlesFlex = ["", "Split Champion", "Contortionist", "Cobra"];
+        let titlesWorkoutAll = ["", "Morty", "Pickle Rick", "Buff Rick"]; // for combo!
 
         // Uses titles to generate basic levels per category
         let levelStrength = awardMaker("Strength", numStrength, titlesStrength);
