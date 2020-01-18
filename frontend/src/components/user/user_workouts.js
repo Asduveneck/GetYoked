@@ -22,13 +22,13 @@ class UserWorkouts extends React.Component {
     render() {
         let { numStrength, numCardio, numFlex, totalWorkouts} = this.props.workoutSum
         let chosenStyle = {}; // TODO: width too truncated in firefox!
-        if (this.state.value === "all") {
-            chosenStyle = { width: "20px" };
-        } else if (this.state.value === "cardio") {
-            chosenStyle = {width: "50px" };
-        } else {
-            chosenStyle = {};
-        }
+        // if (this.state.value === "all") {
+        //     chosenStyle = { width: "20px" };
+        // } else if (this.state.value === "cardio") {
+        //     chosenStyle = {width: "50px" };
+        // } else {
+        //     chosenStyle = {};
+        // }
         const filter = () => (
             <select onChange={this.handleChange} value={this.state.value} style = {chosenStyle}>
                 <option value="all">all</option>

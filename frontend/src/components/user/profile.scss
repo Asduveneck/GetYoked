@@ -205,20 +205,20 @@ $hover: rgba(97, 94, 106, 0.064);
 
 .user-workouts-summary {
     margin-top: 16px;
-    select {
-        border: none;
-        background-color: white;
-        color: darkslategrey;
-        font-family: 'Rubik', sans-serif;
-        font-size: 16px;
-            -webkit-appearance: none;
-        -moz-appearance: none;
-        text-indent: 1px;
-        text-overflow: '';
-        margin-bottom: 1px;
-    }
+    // select {
+    //     border: none;
+    //     background-color: white;
+    //     color: darkslategrey;
+    //     font-family: 'Rubik', sans-serif;
+    //     font-size: 16px;
+    //         -webkit-appearance: none;
+    //     -moz-appearance: none;
+    //     text-indent: 1px;
+    //     text-overflow: '';
+    //     margin-bottom: 1px;
+    // }
 
-    select, span {
+    span {
         color: teal;
         text-decoration: underline;
     }
