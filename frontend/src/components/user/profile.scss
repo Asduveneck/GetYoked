@@ -230,6 +230,24 @@ $hover: rgba(97, 94, 106, 0.064);
     }
 }
 
+.user-workouts-list {
+    .user-workout-item:first-of-type {
+        margin-top: -15px;
+    }
+    .user-workout-item:nth-child(odd){
+        background-color: rgba(255, 255, 255, 0.3);
+        box-shadow: inset 0 3px 3px -3px rgba(88, 116, 116, 0.9), inset 0 -3px 3px -3px rgba(88, 116, 116, 0.9);
+    }
+    .user-workout-item:nth-child(even){
+        // background-color: rgba(142, 172, 187, 0.5); // blue grey background
+        background-color: rgba(117, 125, 232, 0.3);
+    }
+    // .user-workout-item { // future: maybe fix height and shadow to both
+        // box-shadow: inset 0 3px 3px -3px rgba(88, 116, 116, 0.9), inset 0 -3px 3px -3px rgba(88, 116, 116, 0.9);
+        // height: 45px; 
+    // }
+}
+
 .wk-header {
     align-self: center;
     font-size: 20px;
@@ -267,23 +285,6 @@ $hover: rgba(97, 94, 106, 0.064);
         position: -webkit-sticky; /* Safari */ 
         position: sticky;
         box-shadow: inset 0px 5px 5px -5px rgba(88, 116, 116, 0.9);
-    }
-}
-
-.user-workouts-list {
-    .user-workout-item:first-of-type {
-        margin-top: -15px;
-    }
-    .odd {
-        background-color: rgba(255, 255, 255, 0.3);
-        box-shadow: inset 0 3px 3px -3px rgba(88, 116, 116, 0.9), inset 0 -3px 3px -3px rgba(88, 116, 116, 0.9);
-    }
-    .even {
-        // background-color: rgba(142, 172, 187, 0.5); // blue grey background
-        background-color: rgba(117, 125, 232, 0.3);
-    }
-    .even, .odd {
-        // height: 45px; // future maybe
     }
 }
 
