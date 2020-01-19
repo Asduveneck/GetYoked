@@ -63,6 +63,7 @@
 .session-Message {
     font-size: 35px;
     width: 100%;
+    min-width: 380px;
     padding: 1.35rem;
     padding-left: 3rem;
     margin-bottom: 1.5rem;
@@ -89,7 +90,7 @@
     font-size: 12px;
     transition: ease-in-out, font-size .35s ease-in-out;
 
-    margin: .35em;
+    margin: 15px;
     width: 75%;
     box-sizing: border-box;
     border-radius: 4px;
@@ -97,7 +98,9 @@
 }
 
 .sesh-input:focus, .sesh-input:hover {
+    box-sizing: border-box;
     font-size: 15px;
+    height: 50px;
 }
 
 .submitDiv {
@@ -151,16 +154,21 @@
 .signupLink {
     text-decoration: none;
     align-self: flex-start;
-    color: #DCD2EB;
+    color: #6c7b95;
     padding: 2rem;
     font-size: 18px;
     font-weight: 900;
+    margin-left: 1.5vw;
 }
 
 a:-webkit-any-link.signupLink {
     font-size: 18px;
     font-weight: 900;
-    color: #DCD2EB;
+    color: #6c7b95;
+}
+.signupLink:hover, a:-webkit-any-link.signupLink:hover {
+    color: #464159;
+    text-decoration: underline;
 }
 
 .sessionError {
@@ -203,5 +211,8 @@ a:-webkit-any-link.signupLink {
     .session-Message {
         background-color: white;
         color: black;
+    }
+    .signupLink {
+        margin-left: 2vw;
     }
 }

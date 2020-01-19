@@ -126,7 +126,7 @@ class LoginForm extends React.Component {
           />
             <div className="loginErrors">{this.renderErrors()}</div>
               <Link className="signupLink" to={"/signup"}>
-                SIGN UP INSTEAD
+              SIGN UP INSTEAD
               </Link>
           </form>
           </div>
