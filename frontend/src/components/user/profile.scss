@@ -199,7 +199,7 @@ $hover: rgba(97, 94, 106, 0.064);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin: .25em;
+    margin: 0 .25em;
     width: 70vw;
 }
 
@@ -232,11 +232,11 @@ $hover: rgba(97, 94, 106, 0.064);
 }
 
 .user-workout-item {
-
+    // spacing of items within each row
     div {
     padding: .85em;
     font-family: 'Nunito', sans-serif; 
-    color: gray;
+    color: #1c313a;
     align-self: flex-start;
     }
     .name, .type {
@@ -291,6 +291,20 @@ $hover: rgba(97, 94, 106, 0.064);
     .user-workout-item:first-of-type {
     margin-top: -15px;
 }
+
+    .odd {
+        background-color: rgba(255, 255, 255, 0.3);
+        box-shadow: inset 0 3px 3px -3px rgba(88, 116, 116, 0.9), inset 0 -3px 3px -3px rgba(88, 116, 116, 0.9);
+    }
+    .even {
+        // background-color: rgba(142, 172, 187, 0.5); // blue grey background
+        background-color: rgba(117, 125, 232, 0.3);
+        // box-shadow: 0 5px 5px -5px rgba(88, 116, 116, 0.9);
+    }
+    .even, .odd {
+        // height: 45px;
+    }
+
 }
 // .user-workouts-parent button {
 //     position: absolute;
