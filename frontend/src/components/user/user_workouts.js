@@ -62,8 +62,8 @@ class UserWorkouts extends React.Component {
                 <ul className="user-workouts-list">
                     {
                         this.props.workouts.map((workout, i) => {
-                            let evenOdd="even"
-                            if (i%2 !== 0) evenOdd="odd"
+                            let evenOdd="odd" // we start at 0
+                            if (i%2 !== 0) evenOdd="even"
                             if(this.state.value === "all" || this.state.value === workout.type) {
                             return <div key={i} className={`user-workout-item ${evenOdd}`}>
                                 <div className="name">{workout.name}</div>
