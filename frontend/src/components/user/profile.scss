@@ -231,7 +231,8 @@ $hover: rgba(97, 94, 106, 0.064);
     }
 }
 
-.user-workout-item { // individual workouts
+.user-workout-item {
+
     div {
     padding: .85em;
     font-family: 'Nunito', sans-serif; 
@@ -239,14 +240,14 @@ $hover: rgba(97, 94, 106, 0.064);
     align-self: flex-start;
     }
     .name, .type {
-        width: 15vw;
+        width: 10vw;
     }
     .date {
         text-align: center;
     }
 }
 
-.wk-header { // header row
+.wk-header {
     align-self: center;
     font-size: 20px;
     color: black;
@@ -287,12 +288,10 @@ $hover: rgba(97, 94, 106, 0.064);
 }
 
 .user-workouts-list {
-    .user-workout-item:first-of-type { // adjust first to fix shadow div trick
-        margin-top: -15px;
-    }
-    // alternate colors:
+    .user-workout-item:first-of-type {
+    margin-top: -15px;
 }
-.user-workouts-list 
+}
 // .user-workouts-parent button {
 //     position: absolute;
 //     box-sizing: border-box;
