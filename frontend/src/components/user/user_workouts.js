@@ -62,8 +62,10 @@ class UserWorkouts extends React.Component {
                 <ul className="user-workouts-list">
                     {
                         this.props.workouts.map((workout, i) => {
+                            let evenOdd="even"
+                            if (i%2 !== 0) evenOdd="odd"
                             if(this.state.value === "all" || this.state.value === workout.type) {
-                            return <div key={i} className="user-workout-item">
+                            return <div key={i} className={`user-workout-item ${evenOdd}`}>
                                 <div className="name">{workout.name}</div>
                                 {/* <div className="type">{workout.type}</div> */}
                                 <div className="date">{workout.date}</div>
