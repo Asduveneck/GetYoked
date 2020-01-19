@@ -70,15 +70,15 @@ async function workoutResHandler (name, type, intensity, description, exercisesA
     })
 } 
 
-workoutResHandler("Introduction to Cardio", "cardio", 1, "An introduction to cardio", ["Stretch!", "Walk-outs", "Arm circles"]);
-workoutResHandler("Introduction to Strength", "strength", 1, "An introduction to strength", ["Stretch!", "Lunge twist", "Squats"]);
-workoutResHandler("Introduction to Flexibility", "flexibility", 1, "An introduction to flexibility", ["Stretch!", "Hip circles", "Scorpion"]);
-workoutResHandler("Intro to Strength: Chest Abs Legs",	"strength",	1,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push Ups (Basic)", "Assisted Squats", "Flat knee raises"]);
+workoutResHandler("Intro to Cardio", "cardio", 1, "An introduction to cardio", ["Stretch!", "Walk-outs", "Arm circles"]);
+workoutResHandler("Intro to Strength 1.0", "strength", 1, "An introduction to strength", ["Stretch!", "Lunge twist", "Squats"]);
+workoutResHandler("Intro to Flexibility", "flexibility", 1, "An introduction to flexibility", ["Stretch!", "Hip circles", "Scorpion"]);
+workoutResHandler("Chest Abs Legs",	"strength",	1,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push Ups (Basic)", "Assisted Squats", "Flat knee raises"]);
 workoutResHandler("Intro to Cardio 2",	"cardio",	1,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Arm circles", "Air bikes"]);
-workoutResHandler("Intro to Strength 2: Chest abs legs",	"strength",	2,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push Ups (Diamond)", "Bulgarian split squats", "Flat straight leg raises"]);
-workoutResHandler("Intro to strength 2.1",	"strength",	2,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push Ups (arm by side)", "Beginner Shrimp Squats", "Forearm bent leg raise"]);
-workoutResHandler("Intro to Strength 1.0",	"strength",	1,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push Ups (Basic)", "Deep assisted squats", "Flat bent leg raises"]);
-workoutResHandler("Intro to Strength 1.1",	"strength",	3,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push ups (arm by side)", "Renegade pistol squats", "Hanging bent leg raise"]);
+workoutResHandler("Chest abs legs Level 2",	"strength",	2,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push Ups (Diamond)", "Bulgarian split squats", "Flat straight leg raises"]);
+workoutResHandler("Intro to Strength 2.1",	"strength",	2,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push Ups (arm by side)", "Beginner Shrimp Squats", "Forearm bent leg raise"]);
+workoutResHandler("Intro to Strength 1.1",	"strength",	1,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push Ups (Basic)", "Deep assisted squats", "Flat bent leg raises"]);
+workoutResHandler("Intro to Strength 3",	"strength",	3,	"A light set to work out your core, chest, and legs",	[	"Stretch!", "Push ups (arm by side)", "Renegade pistol squats", "Hanging bent leg raise"]);
 // Zaid Weight Lifting Workouts
 workoutResHandler("Future Arnold Schwarzenegger",	"strength",	3,	"Blast those back and shoulder muscles!",	[	"Stretch!", "Barbell Row", "Farmers Carry", "Standing Barbell Military Press" ]);
 workoutResHandler("Future Wonder Woman",	"strength",	3,	"Push, Pull and legs all in one day!",	[	"Stretch!", "Barbell Deadlift", "Dumbell Benchpress", "Bulgarian split squats" ]);
