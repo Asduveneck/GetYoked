@@ -90,6 +90,8 @@ In above example, "validPositiveNumber" checks that the input field is of JavaSc
 
 ### User Workout History
 
+<img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/userprofile.gif" width="95%" align="center" > 
+
 Because MongoDB is not a relational database, each user record includes an array of its completed workouts, rather than a reference to each completed workout from the workout model.
 
 When a user clicks "I finished this workout", the user's workout history is updated. 
