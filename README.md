@@ -136,7 +136,7 @@ router.patch('/adduserworkout/:id', (req, res, next) => {
 })
 ```
 
-
+<img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/workouthistory.gif" width="95%" align="center" > 
 
 
 ## Future Features
