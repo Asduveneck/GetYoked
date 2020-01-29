@@ -8,7 +8,10 @@ GetYoked is a fitness app to help you get exercise daily. Select a workout categ
 - [How to Use](#How-to-Use)
 - [Features](#Features)
   * [Fresh Workouts](#Fresh-Workouts)
+  * [Submitting Workouts](#Submitting-Workouts)
   * [User Profile](#User-Profile)
+    - [User Achievements](#User-Achievements)
+    - [User Info](#User-Info)
     - [User Workout History](#User-Workout-History)
 - [Other Features](#Other-Features)
   * [Custom Error Handling](#Custom-Error-Handling)
@@ -73,7 +76,7 @@ componentDidUpdate(prevProps) {
     }
 ```
 
-### Fresh Workouts
+### Submitting Workouts
 
 <img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/userprofile.gif" width="95%" align="center" > 
 
@@ -364,10 +367,7 @@ export const updateUser = user => {
 </tr>
 </table>
 
-
-
-
-#### User Workout History
+### User Workout History
 
   Users can view all of their completed workouts, or filter them by workout category.
 
