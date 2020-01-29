@@ -126,6 +126,73 @@ router.patch('/adduserworkout/:id', (req, res, next) => {
 
   On the user's profile page, the User can view their achievements, personal information, and workout history.
 
+### User Achievements
+
+  Users can accomplish achievements based upon the number of workouts they complete as well as their other achievements.
+
+  To accomplish this, I iterate through the user's workouts, and count how many workouts of each type they complete.
+<details>
+  <summary>Click here to see the Code</summary>
+
+```js
+// Create constants to store number of workouts of each type
+let numStrength = 0; let numCardio = 0; let numFlex = 0; let numUnsorted = 0;
+let totalWorkouts = this.props.user.workouts.length
+// Iterate through workouts array once, and increment above respectively
+for(let i = 0; i < totalWorkouts; i++) {
+    let workout = this.props.user.workouts[i];
+
+    switch(workout.type) {
+        case "strength":
+            numStrength += 1;
+            break;
+        case "cardio":
+            numCardio += 1;
+            break;
+        case "flexibility":
+            numFlex += 1;
+            break;
+        case undefined:
+            numUnsorted += 1;
+            break;
+        default:
+            break;
+    }
+}
+```
+</details>
+ 
+  Each achievement will have a `title`, a `badge` (image with alt text), `level`, and a `goal`. For each workout category, the goal is directly linked to the number of completed workouts (`numCompleted`), so we can automate making the achievement.
+
+```js
+function awardMaker(categoryType, num, titlesArray) {
+    if (num >= 100) { // if a user has completed 100 or more workouts, level 3
+        return { category: categoryType, numCompleted: 100, goal: 100, title: titlesArray[3], level: 3, badge: { url: `images/icons/${categoryType}_3.jpg`, alt: `Icon for ${categoryType}, level 3` } };
+    } else if (num > 25) {
+        return { category: categoryType, numCompleted: num, goal: 100, title: titlesArray[2], level: 2, badge: { url: `images/icons/${categoryType}_2.jpg`, alt: `Icon for ${categoryType}, level 2` } };
+    } else if (num > 10) {
+        return { category: categoryType, numCompleted: num, goal: 25, title: titlesArray[1], level: 1, badge: { url: `images/icons/${categoryType}_1.jpg`, alt: `Icon for ${categoryType}, level 1` } };
+    } else { // case num > 0
+        return { category: categoryType, numCompleted: num, goal: 10, title: titlesArray[0], level: 0, badge: { url: `images/icons/${categoryType}_0.jpg`, alt: `Icon for ${categoryType}, level 0` } };
+    }
+}
+```
+  And to utilize this function, we first define an array of titles for our categories:
+
+```js
+  let titlesCardio = ["", "Half Marathoner", "Full Marathon", "Olympian"];
+  let titlesFlex = ["", "Split Champion", "Contortionist", "Cobra"];
+```
+
+And then invoke our function with the number of completed workouts.
+```js
+// numCardio and numFlex represent the number of cardio and flexibility workouts completed
+  let levelCardio = awardMaker("Cardio", numCardio, titlesCardio);
+  let levelFlex = awardMaker("Flexibility", numFlex, titlesFlex);
+```
+
+### User Info
+
 #### User Workout History
 
 <img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/workouthistory.gif" width="95%" align="center" > 
