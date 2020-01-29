@@ -309,15 +309,38 @@ handleSubmit(e) {
 }
 ```
 
-  The `patchUser` dispatches an action that triggers an axios `patch` to our user.
+  Within the container, `patchUser` dispatches the function `patchUser` (from within our User Actions file). `patchUser` then triggers `updateUser` from within our API call.
 
-```js
+<table>
+<tr>
+<th>
+Container
+</th>
+<th>
+User Actions
+</th>
+
+<th>
+API Utils
+</th>
+
+</tr>
+
+<tr>
+
+<td>
+ 
+ ```js
 const mapDTP = (dispatch) => ({
     fetchUser: (userId) => dispatch(fetchUser(userId)),
     patchUser: (user) => dispatch(patchUser(user))
 })
-```
+``` 
 
+</td>
+
+<td>
+ 
 ```js
 export const patchUser = user => dispatch => {
     updateUser(user)
@@ -326,11 +349,24 @@ export const patchUser = user => dispatch => {
 };
 ```
 
+</td>
+
+<td>
+ 
 ```js
 export const updateUser = user => {
     return axios.patch(`/api/users/${user._id}`, user)
 };
 ```
+
+</td>
+
+</tr>
+</table>
+
+
+
+
 #### User Workout History
 
 <img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/workouthistory.gif" width="95%" align="center" > 
