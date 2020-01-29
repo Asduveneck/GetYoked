@@ -246,6 +246,35 @@ function workoutAllAwardMaker() {
   Because the result from this function is not stored to any object, to return the object, we must directly invoke this function.
 </details>
 
+  We can now map through the resulting objects to return content for the Achievements page.
+
+```js
+{[workoutAllAwardMaker(), levelStrength, levelCardio, levelFlex ].map(award => {
+    // deconstruct the award for subsequent div:
+    let { category, goal, title, level, numCompleted, badge } = award;
+
+    // Make a new goal if our goal is to hit a target number
+    let newGoal = "";
+    if (numCompleted) { // if there is a number of workouts
+        newGoal = `${numCompleted} / ${goal}`
+    } else {
+        newGoal = goal; // original goal suffices
+    }
+
+    return (
+        <div className={`indv_award ${category}`} key={`indv_award_${category}_${level}`} >
+            <h1>{title}</h1>
+            <img src={badge.url} alt={badge.alt} className="image_placeholder"/>  
+            <div className="level_and_goal">
+                <h3>Level {level} in {category}</h3>
+                <span className="workout_goal">{newGoal}</span>
+            </div>
+        </div>
+    )
+  })
+}
+```
+
 ### User Info
 
 #### User Workout History
