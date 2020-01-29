@@ -409,6 +409,20 @@ const filter = () => (
 </ul> 
 ```
 
+  To alternate the row colors, I used the `nth-child` property.
+
+```scss
+.user-workouts-list {
+  .user-workout-item:nth-child(odd){
+      background-color: rgba(255, 255, 255, 0.3);
+      box-shadow: inset 0 3px 3px -3px rgba(88, 116, 116, 0.9), inset 0 -3px 3px -3px rgba(88, 116, 116, 0.9);
+  }
+  .user-workout-item:nth-child(even){
+      background-color: rgba(117, 125, 232, 0.3);
+  }
+}
+```
+  I previously used the index `i` to assign class `odd` or `even`, but these assignments would fail upon filtering our workouts.
 
 ### Other Features
 
