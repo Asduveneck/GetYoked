@@ -369,7 +369,46 @@ export const updateUser = user => {
 
 #### User Workout History
 
+  Users can view all of their completed workouts, or filter them by workout category.
+
 <img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/workouthistory.gif" width="95%" align="center" > 
+
+  To filter each workout, we create a dropdown that updates our State:
+
+```js
+handleChange(event) {
+    this.setState({value: event.target.value})
+}
+
+const filter = () => (
+    <select onChange={this.handleChange} value={this.state.value} style = {chosenStyle}>
+        <option value="all">all</option>
+        <option value="strength">strength</option>
+        <option value="cardio">cardio</option>
+        <option value="flexibility">flexibility</option>
+    </select> 
+)
+```
+
+  To return a workout that matches the filter, we just need to compare the workout's type to the value in state, and if it matches, we return it.
+
+```js
+<ul className="user-workouts-list">
+    {
+        this.props.workouts.map((workout, i) => {
+            if(this.state.value === "all" || this.state.value === workout.type) {
+            return <div key={i} className={`user-workout-item`}>
+                <div className="name">{workout.name}</div>
+                {/* <div className="type">{workout.type}</div> */}
+                <div className="date">{workout.date}</div>
+                <div className="ints">{workout.intensity}</div>
+            </div>
+            }
+        })
+    }
+</ul> 
+```
+
 
 ### Other Features
 
