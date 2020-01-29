@@ -27,6 +27,7 @@ Once you've signed up or logged in, select one of the buttons to choose a `worko
 
 ## Features
 
+
 ### Fresh Workouts
 
 **Randomized workout generation, specific to user activity level and preferred workout type**
@@ -71,24 +72,7 @@ componentDidUpdate(prevProps) {
     }
 ```
 
-### Custom Error Handling
-
-New users are required to provide several pieces of information in order to create a GetYoked account. To ensure valid inputs, (e.g., passwords over 6 characters), validations targeting each each specific input field were put into place. For instance:
-
-```javascript
-const validPositiveNumber = number => {
-    return typeof number === "number" && number > 0;
-}
-```
-
-```javascript
-if (validPositiveNumber(data.weight) === false) {
-        errors.weight = 'Please provide a valid weight in pounds';
-}
-```
-In above example, "validPositiveNumber" checks that the input field is of JavaScript type "number" and that the user provided a number above 0. If these conditions are not met, the returned error message reminds the user that they must provide this piece of information and that it must be in pounds.
-
-### User Workout History
+### Choosing a Workout
 
 <img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/userprofile.gif" width="95%" align="center" > 
 
@@ -136,8 +120,31 @@ router.patch('/adduserworkout/:id', (req, res, next) => {
 })
 ```
 
+### User Profile
+
+  On the user's profile page, there are 3 tabs a user can navigate be
+
+#### User Workout History
+
 <img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/workouthistory.gif" width="95%" align="center" > 
 
+### Other Features
+#### Custom Error Handling
+
+New users are required to provide several pieces of information in order to create a GetYoked account. To ensure valid inputs, (e.g., passwords over 6 characters), validations targeting each each specific input field were put into place. For instance:
+
+```javascript
+const validPositiveNumber = number => {
+    return typeof number === "number" && number > 0;
+}
+```
+
+```javascript
+if (validPositiveNumber(data.weight) === false) {
+        errors.weight = 'Please provide a valid weight in pounds';
+}
+```
+In above example, "validPositiveNumber" checks that the input field is of JavaScript type "number" and that the user provided a number above 0. If these conditions are not met, the returned error message reminds the user that they must provide this piece of information and that it must be in pounds.
 
 ## Future Features
 
