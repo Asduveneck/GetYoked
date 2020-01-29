@@ -8,8 +8,10 @@ GetYoked is a fitness app to help you get exercise daily. Select a workout categ
 - [How to Use](#How-to-Use)
 - [Features](#Features)
   * [Fresh Workouts](#Fresh-Workouts)
+  * [User Profile](#User-Profile)
+    - [User Workout History](#User-Workout-History)
+- [Other Features](#Other-Features)
   * [Custom Error Handling](#Custom-Error-Handling)
-  * [User Workout History](#User-Workout-History)
 - [Future Features](#Future-Features)
 
 
@@ -26,7 +28,6 @@ GetYoked is a fitness app to help you get exercise daily. Select a workout categ
 Once you've signed up or logged in, select one of the buttons to choose a `workout category`. Once you've completed your workout, click the button saying you've completed the workout and it will be stored in your profile.
 
 ## Features
-
 
 ### Fresh Workouts
 
@@ -72,7 +73,7 @@ componentDidUpdate(prevProps) {
     }
 ```
 
-### Choosing a Workout
+### Fresh Workouts
 
 <img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/userprofile.gif" width="95%" align="center" > 
 
@@ -108,6 +109,7 @@ export const updateUserWorkouts = (userId, workout) => {
 ```
 
 The express route appends the workout to the user record:
+
 ```javascript
 router.patch('/adduserworkout/:id', (req, res, next) => {
 
@@ -122,13 +124,14 @@ router.patch('/adduserworkout/:id', (req, res, next) => {
 
 ### User Profile
 
-  On the user's profile page, there are 3 tabs a user can navigate be
+  On the user's profile page, the User can view their achievements, personal information, and workout history.
 
 #### User Workout History
 
 <img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/workouthistory.gif" width="95%" align="center" > 
 
 ### Other Features
+
 #### Custom Error Handling
 
 New users are required to provide several pieces of information in order to create a GetYoked account. To ensure valid inputs, (e.g., passwords over 6 characters), validations targeting each each specific input field were put into place. For instance:
