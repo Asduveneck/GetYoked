@@ -180,6 +180,7 @@ function awardMaker(categoryType, num, titlesArray) {
   And to utilize this function, we first define an array of titles for our categories:
 
 ```js
+  let titlesStrength = ["Master Roshi", "Buff Master Roshi", "Hercules", "Super Alloy"];
   let titlesCardio = ["", "Half Marathoner", "Full Marathon", "Olympian"];
   let titlesFlex = ["", "Split Champion", "Contortionist", "Cobra"];
 ```
@@ -187,9 +188,63 @@ function awardMaker(categoryType, num, titlesArray) {
 And then invoke our function with the number of completed workouts.
 ```js
 // numCardio and numFlex represent the number of cardio and flexibility workouts completed
+  let levelStrength = awardMaker("Strength", numStrength, titlesStrength);
   let levelCardio = awardMaker("Cardio", numCardio, titlesCardio);
   let levelFlex = awardMaker("Flexibility", numFlex, titlesFlex);
 ```
+
+I also define the helper function, `workoutAllAwardMaker()` to make an award based upon a user's level per category.
+
+<details>
+  <summary>Click here for code</summary>
+
+  I define an array to store the titles and the workout levels in the other categories.
+
+```js
+  let titlesWorkoutAll = ["Morty", "Buff Morty", "Pickle Rick", "Buff Rick"]; // for combo!
+  let workoutLevels = [levelStrength.level, levelCardio.level, levelFlex.level];
+```
+  I define `goalMaker` to return a string stating the next goal, and `atLeast` to set the minimum level per category needed.
+
+<details> 
+  <summary>Click here for Code </summary>
+
+```js
+  // Make 'goals' for combo award
+  function goalMaker(level) {
+      return `Hit level ${level} in all workout categories`;
+  }
+
+  // Simplifies checking array of levels by returning a CB for Arr.every method. 
+  // checks if a num is at least the value we pass in 
+  function atLeast(val) { 
+      return function (input) {
+          return input >= val
+      }
+  }
+```
+</details>
+
+  And now I can write a function similar to `awardMaker()` to return an object with nearly the same key-value pairs as objects from the `awardMaker` helper function.
+
+```js
+function workoutAllAwardMaker() {
+    let category = "Overall"; // category for this award
+    if (workoutLevels.every(atLeast(3))) { // Every workout at least level 3. 
+        // .some() would be faster, and we can possibly autogenerate these if-else chains with a clever for loop...
+        return { category, title: titlesWorkoutAll[3], level: 3, goal: "Congratulations", numCompleted: false, badge: { url: `images/icons/overall_3.jpg`, alt: `Icon for overall, level 3` } }; {/* Zaid: image will be in images/icon/Category_Level . */}
+    } else if(workoutLevels.every(atLeast(2))) {
+        return { category, title: titlesWorkoutAll[2], level: 2, goal: goalMaker(3), numCompleted: false, badge: { url: `images/icons/overall_2.jpg`, alt: `Icon for overall, level 2` }  };
+    } else if (workoutLevels.every(atLeast(1))) {
+        return { category, title: titlesWorkoutAll[1], level: 1, goal: goalMaker(2), numCompleted: false, badge: { url: `images/icons/overall_1.jpg`, alt: `Icon for overall, level 1` }  };
+    } else { // no workouts hit level 1
+        return { category, title: titlesWorkoutAll[0], level: 0, goal: goalMaker(1), numCompleted: false, badge: { url: `images/icons/overall_0.jpg`, alt: `Icon for overall, level 0` }  };
+    }
+}
+```
+
+  Because the result from this function is not stored to any object, to return the object, we must directly invoke this function.
+</details>
 
 ### User Info
 
