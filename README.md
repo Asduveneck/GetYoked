@@ -277,6 +277,60 @@ function workoutAllAwardMaker() {
 
 ### User Info
 
+  On the User Info page, a user can view their profile, as well as update their info. This tab alternates between two components: `UserEditForm`, and `UserInfo`. 
+
+```js
+if (this.state.edit) {
+    currentTab = (
+        <UserEditForm
+            user={this.props.user}
+            cancelEdit={this.cancelEdit}
+            patchUser={this.props.patchUser}
+        />
+    )
+} else {
+    currentTab = (
+        <UserInfo 
+            user={this.props.user}
+            beginEdit={this.beginEdit}
+            cancelEdit={this.cancelEdit}
+        />
+    )
+}
+```
+
+  The `UserEditForm` is nearly identical to the `UserInfo`. When a user updates his or her info, they trigger:
+
+```js
+handleSubmit(e) {
+    e.preventDefault();
+    this.props.patchUser(this.state)
+    this.props.cancelEdit()
+}
+```
+
+  The `patchUser` dispatches an action that triggers an axios `patch` to our user.
+
+```js
+const mapDTP = (dispatch) => ({
+    fetchUser: (userId) => dispatch(fetchUser(userId)),
+    patchUser: (user) => dispatch(patchUser(user))
+})
+```
+
+```js
+export const patchUser = user => dispatch => {
+    updateUser(user)
+        .then(user => dispatch(receiveUser(user)))
+        .catch(err => console.log(`Errored out in user_actions:\n ${err}`))
+};
+```
+
+```js
+export const updateUser = user => {
+    return axios.patch(`/api/users/${user._id}`, user)
+};
+```
 #### User Workout History
 
 <img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/workouthistory.gif" width="95%" align="center" > 
