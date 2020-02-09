@@ -30,8 +30,9 @@ class TeamPage extends React.Component {
                   <a href="https://angel.co/alexander-duveneck" target="_blank">
                     <img src="AngelList.png" alt="AngelList" height="32px"/>
                   </a>
+                  <a href="https://asduveneck.github.io/personal_site/" target="_blank" className="portfolio-link"></a>
                 </div>
-                      <p className="dev-bio">Full Stack Software Engineer experienced in Ruby, Rails, MongoDB, Javascript, Express, React / Redux. Former biologist and snowboarding instructor.</p>
+                  <p className="dev-bio">Full Stack Software Engineer experienced in Ruby, Rails, MongoDB, Javascript, Express, React / Redux. Former biologist and snowboarding instructor.</p>
               </nav>
             </div> 
         </div>
