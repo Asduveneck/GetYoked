@@ -36,7 +36,7 @@ Once you've signed up or logged in, select one of the buttons to choose a `worko
 
 **Randomized workout generation, specific to user activity level and preferred workout type**
 
-<img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/choose_workout.gif" width="95%" align="center" > 
+<img src="https://github.com/Asduveneck/GetYoked/blob/master/README_assets/choose_workout.gif" width="95%" align="center" > 
 
 
 After logging in, a user is presented with a set of workout options: "Cardio", "Strength & Weights", "Balance & Flexibility". The generated workout must be specific to this preferred workout type. Furthermore, workouts progress over time and as such, each generated workout must be specific to the user's activity level. This was achieved with the following Express routing method:
@@ -125,7 +125,7 @@ router.patch('/adduserworkout/:id', (req, res, next) => {
 
 ### User Profile
 
-  <img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/userprofile.gif" width="95%" align="center" >
+  <img src="https://github.com/Asduveneck/GetYoked/blob/master/README_assets/userprofile.gif" width="95%" align="center" >
 
   On the user's profile page, the User can view their achievements, personal information, and workout history.
 
@@ -372,7 +372,7 @@ export const updateUser = user => {
 
   Users can view all of their completed workouts, or filter them by workout category.
 
-<img src="https://github.com/Asduveneck/GetYoked/blob/master/frontend/public/workouthistory.gif" width="95%" align="center" > 
+<img src="https://github.com/Asduveneck/GetYoked/blob/master/README_assets/workouthistory.gif" width="95%" align="center" > 
 
   To filter each workout, we create a dropdown that updates our State:
 
