@@ -1,6 +1,7 @@
 # GetYoked
 [Live Link](https://get-yoked.herokuapp.com/#/)
 
+<img src="https://github.com/Asduveneck/GetYoked/blob/master/README_assets/splash.gif" alt="home page" width="95%" align="center" >
 GetYoked is a fitness app to help you get exercise daily. Select a workout category and GetYoked will suggest a workout for you; you don't have to do any of the planning yourself!  
 
 ## Table of Contents
