@@ -44,7 +44,6 @@ class WorkoutDetail extends React.Component {
 
     render() {
       if (this.props.workout === undefined) return null;
-      console.log(this.props)
 
         return (
           <div className="workout-detail-window">
